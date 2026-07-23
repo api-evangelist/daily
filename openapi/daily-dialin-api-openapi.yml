@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms dialin API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: dialin
+paths:
+  /dialin/pinlessCallUpdate:
+    post:
+      summary: /dialin/pinlessCallUpdate
+      description: Direct a SIP or PSTN call on hold to a specified SIP URI associated to a Daily Room.
+      operationId: PinlessCallUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                callId:
+                  type: string
+                  description: CallId is represented by UUID and represents the sessionId in the SIP Network. This is obtained from the [webhook payload](/guides/features/dial-in-dial-out/sip-interconnect-pinless).
+                callDomain:
+                  type: string
+                  description: Call Domain is represented by UUID and represents your Daily Domain on the SIP Network. This is obtained from the [webhook payload](/guides/features/dial-in-dial-out/sip-interconnect-pinless).
+                sipUri:
+                  type: string
+                  description: This SIP URI is associated to the Daily Room that you want to forward the SIP Interconnect call to.
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value:
+                    ok: 'true'
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - dialin
+      security:
+      - bearerAuth: []
+components:
+  responses:
+    '400':
+      description: '400'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              info:
+                type: string
+          examples:
+            Result:
+              value:
+                error: invalid-request-error
+                info: missing required field
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

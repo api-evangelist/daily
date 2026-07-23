@@ -1,0 +1,86 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms presence API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: presence
+paths:
+  /presence:
+    get:
+      summary: /presence
+      operationId: GetPresence
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                description: A map of room name to array of currently present participants.
+                additionalProperties:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      room:
+                        type: string
+                        description: The room name.
+                      id:
+                        type: string
+                        description: Unique participant session ID.
+                      userId:
+                        type: string
+                        nullable: true
+                        description: The user ID if set on the meeting token, otherwise null.
+                      userName:
+                        type: string
+                        nullable: true
+                        description: Display name of the participant.
+                      mtgSessionId:
+                        type: string
+                        description: The meeting session ID.
+                      joinTime:
+                        type: string
+                        format: date-time
+                        description: ISO 8601 timestamp of when this participant joined.
+                      duration:
+                        type: integer
+                        description: How long this participant has been in the meeting, in seconds.
+                x-additionalPropertiesName: room
+              examples:
+                Result:
+                  value:
+                    my-room:
+                    - room: my-room
+                      id: aaaaaaaa-0000-0000-0000-000000000001
+                      userId: null
+                      userName: Alice
+                      mtgSessionId: 16e9701a-93e0-4933-83c9-223e7c40d552
+                      joinTime: '2026-03-27T16:37:22.000Z'
+                      duration: 22
+                    - room: my-room
+                      id: aaaaaaaa-0000-0000-0000-000000000002
+                      userId: null
+                      userName: Bob
+                      mtgSessionId: 16e9701a-93e0-4933-83c9-223e7c40d552
+                      joinTime: '2026-03-27T16:37:25.000Z'
+                      duration: 19
+      deprecated: false
+      tags:
+      - presence
+      security:
+      - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

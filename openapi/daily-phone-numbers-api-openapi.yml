@@ -1,0 +1,324 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms phone-numbers API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: phone-numbers
+paths:
+  /list-available-numbers:
+    get:
+      summary: /list-available-numbers
+      x-paidPlan: paid
+      description: Search for available phone numbers to purchase
+      operationId: ListAvailableNumbers
+      parameters:
+      - name: areacode
+        in: query
+        description: An areacode to search within.
+        required: false
+        schema:
+          type: string
+      - name: region
+        in: query
+        description: A region or state to search within. Must be an ISO 3166-2 alpha-2 code, i.e. CA for California. Cannot be used in combination with areacode.
+        required: false
+        schema:
+          type: string
+      - name: city
+        in: query
+        description: A specific City to search within. Example, New York. The string must be url encoded because it is a url parameter. Must be used in combination with region. Cannot be used in combination with areacode, starts_with, contains, or ends_with.
+        required: false
+        schema:
+          type: string
+      - name: contains
+        in: query
+        description: A string of 3 to 7 digits that should appear somewhere in the number.
+        required: false
+        schema:
+          type: string
+      - name: starts_with
+        in: query
+        description: A string of 3 to 7 digits that should be used as the start of a number. Cannot be used in combination with contains or ends_with.
+        required: false
+        schema:
+          type: string
+      - name: ends_with
+        in: query
+        description: A string of 3 to 7 digits that should be used as the end of a number. Cannot be used in combination with starts_with or contains.
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value:
+                    total_count: 6
+                    data:
+                    - phoneNumber: '+13058700061'
+                      region: FL
+                    - phoneNumber: '+13058700062'
+                      region: FL
+                    - phoneNumber: '+13058700063'
+                      region: FL
+                    - phoneNumber: '+13058700064'
+                      region: FL
+                    - phoneNumber: '+13058700065'
+                      region: FL
+                    - phoneNumber: '+13058700066'
+                      region: FL
+        '400':
+          description: 400 Validation Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Result:
+                  value:
+                    error: validation-error
+                    info: invalid path parameter
+        '500':
+          description: 500 Vendor Unavailable
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Result:
+                  value:
+                    error: vendor-unavailable
+                    info: Phone number unavailable
+      deprecated: false
+      tags:
+      - phone-numbers
+      security:
+      - bearerAuth: []
+  /purchased-phone-numbers:
+    get:
+      summary: /purchased-phone-numbers
+      x-paidPlan: paid
+      description: List the purchased phone numbers for this domain
+      operationId: PurchasedPhoneNumbers
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: ending_before
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: starting_after
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: filter_name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: filter_number
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value:
+                    total_count: 2
+                    data:
+                    - name: Acme Enterprises
+                      type: purchased_phone_number
+                      id: 85a70a9a-e22f-4a8d-8302-bbf1b88dd909
+                      pagination_id: 3391
+                      created_date: '2025-03-14T04:46:31.000Z'
+                      number: '+18058700061'
+                      status: verified
+                      verified: true
+                    - name: Acme Enterprises Dialin
+                      type: purchased_phone_number
+                      id: 841d430e-bd9e-42c1-8abb-8f35d78b33b9
+                      pagination_id: 3392
+                      created_date: '2025-02-11T05:46:20.000Z'
+                      number: '+16575870006'
+                      status: verified
+                      verified: true
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - phone-numbers
+      security:
+      - bearerAuth: []
+  /buy-phone-number:
+    post:
+      summary: /buy-phone-number
+      x-paidPlan: paid
+      description: This will buy a phone number. In the POST request you can either provide the phone number you want to buy, or leave it empty. If the specified `number` is still available, it will be bought or the API will return a failure. Alternatively, if you skipped the `number` field, a random phone number from California (CA) will be bought.
+      operationId: BuyPhoneNumber
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                number:
+                  type: string
+                  description: The phone number to purchase, in E.164 format (e.g. "+18058700061"). If not provided, a random US number will be purchased.
+                  example: '+18058700061'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Result:
+                  value:
+                    id: 85a70a9a-e22f-4a8d-8302-bbf1b88dd909
+                    number: '+18058700061'
+        '400':
+          $ref: '#/components/responses/400'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        detail:
+                          type: string
+                        status:
+                          type: string
+                        title:
+                          type: string
+                        code:
+                          type: string
+                  status:
+                    type: integer
+              examples:
+                Result:
+                  value:
+                    errors:
+                    - detail: Number is invalid.
+                      status: '422'
+                      title: Invalid Attribute
+                      code: '422'
+                    status: 422
+      deprecated: false
+      tags:
+      - phone-numbers
+      security:
+      - bearerAuth: []
+  /release-phone-number/{id}:
+    delete:
+      summary: release-phone-number/:id
+      x-paidPlan: paid
+      description: Release a purchased number. The number is referenced by its id. A number cannot be deleted within the 14 days of purchase. Calling this API before this period expires results in an error.
+      operationId: ReleasePhoneNumber
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+              examples:
+                Result:
+                  value:
+                    status: ok
+        '400':
+          $ref: '#/components/responses/400'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              examples:
+                Result:
+                  value:
+                    error: Failed to release new number, try again in 14 days
+      deprecated: false
+      tags:
+      - phone-numbers
+      security:
+      - bearerAuth: []
+components:
+  responses:
+    '400':
+      description: '400'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              info:
+                type: string
+          examples:
+            Result:
+              value:
+                error: invalid-request-error
+                info: missing required field
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

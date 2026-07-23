@@ -1,0 +1,352 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms meeting-tokens API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: meeting-tokens
+paths:
+  /meeting-tokens:
+    post:
+      summary: meeting-tokens
+      description: Create a meeting token
+      operationId: CreateMeetingToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                properties:
+                  $ref: '#/components/schemas/properties'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyIjoicm9vbS0wMjUzIiwiZCI6IjI1ZGY1MDU3LWVmMGQtNGQ5Ny1iZGU2LTBjZjI4NzI3NmNiYiIsImlhdCI6MTU0ODcyMjIwN30.LXZtTnksTjWLTNvucr0MCHL6cOaqCa2m3DKk4ugnkSQ
+              examples:
+                Example Response:
+                  value:
+                    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyIjoicm9vbS0wMjUzIiwiZCI6IjI1ZGY1MDU3LWVmMGQtNGQ5Ny1iZGU2LTBjZjI4NzI3NmNiYiIsImlhdCI6MTU0ODcyMjIwN30.LXZtTnksTjWLTNvucr0MCHL6cOaqCa2m3DKk4ugnkSQ
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - meeting-tokens
+      security:
+      - bearerAuth: []
+  /meeting-tokens/{meeting_token}:
+    get:
+      summary: meeting-tokens/:meeting_token
+      description: Validate meeting tokens
+      operationId: ValidateMeetingToken
+      parameters:
+      - name: meeting_token
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: ignoreNbf
+        in: query
+        description: Ignore the `nbf` in a JWT, if given
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  room_name:
+                    type: string
+                    example: EevVrrxee4JBxKzmKkjC
+                  is_owner:
+                    type: boolean
+                    example: true
+                    default: true
+                  user_name:
+                    type: string
+                    example: host
+                  start_video_off:
+                    type: boolean
+                    example: false
+                    default: true
+                  start_audio_off:
+                    type: boolean
+                    example: true
+                    default: true
+                  lang:
+                    type: string
+                    example: en
+              examples:
+                Result:
+                  value:
+                    room_name: EevVrrxee4JBxKzmKkjC
+                    is_owner: true
+                    user_name: host
+                    start_video_off: false
+                    start_audio_off: true
+                    lang: en
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - meeting-tokens
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    permissions:
+      type: object
+      description: 'Specifies the initial default permissions for a non-[meeting-owner](/guides/configurations-and-settings/controlling-who-joins-a-meeting#meeting-owner-privileges) participant joining a call.
+
+
+        Each permission (i.e. each of the properties listed below) can be configured in the meeting token, the room, and/or the domain, in decreasing order of precedence.
+
+
+        Participant admins (those with the `''participants''` value in their `canAdmin` permission) can also change participants'' permissions on the fly during a call using [`updateParticipant()`](/products/daily-js/instance-methods/update-participant#param-update-permissions) or [`updateParticipants()`](/products/daily-js/instance-methods/update-participants).'
+      properties:
+        hasPresence:
+          type: boolean
+          description: Whether the participant appears as "present" in the call, i.e. whether they appear in [`participants()`](/products/daily-js/instance-methods/participants).
+        canSend:
+          oneOf:
+          - type: boolean
+          - type: array
+            items:
+              type: string
+          description: 'Which types of media a participant should be permitted to send.
+
+
+            Can be:
+
+            - An Array containing any of `''video''`, `''audio''`, `''screenVideo''`, and `''screenAudio''`
+
+            - `true` (meaning "all")
+
+            - `false` (meaning "none")'
+        canReceive:
+          type: object
+          description: "Which media the participant should be permitted to receive. \n\n[See here for `canReceive` object format](/products/daily-js/instance-methods/participants#permissionscanreceive-properties)."
+        canAdmin:
+          oneOf:
+          - type: boolean
+          - type: array
+            items:
+              type: string
+          description: 'Which admin tasks a participant is permitted to do.
+
+
+            Can be:
+
+            - An array containing any of `''participants''`, `''streaming''`, or `''transcription''`
+
+            - `true` (meaning "all")
+
+            - `false` (meaning "none")'
+    properties:
+      type: object
+      additionalProperties: false
+      properties:
+        room_name:
+          type: string
+          description: The room for which this token is valid. If `room_name` isn't set, the token is valid for all rooms in your domain. *You should always set `room_name` if you are using this token to control access to a meeting.
+        eject_at_token_exp:
+          type: boolean
+          default: false
+          description: 'Kick this user out of the meeting at the time this meeting token expires. If either this property or `eject_after_elapsed` are set for the token, the room''s `eject` properties are overridden.
+
+
+            _See an example in our [advanced security tutorial](https://www.daily.co/blog/add-advanced-security-features-to-video-chats-with-the-daily-api/)_.'
+        eject_after_elapsed:
+          type: integer
+          format: int32
+          description: 'Kick this user out of the meeting this many seconds after they join the meeting. If either this property or `eject_at_token_exp` are set for the token, the room''s `eject` properties are overridden.
+
+
+            _See an example in our [advanced security tutorial](https://www.daily.co/blog/add-advanced-security-features-to-video-chats-with-the-daily-api/)_.'
+        nbf:
+          type: integer
+          format: int32
+          description: '"Not before". This is a [unix timestamp](https://stackoverflow.com/questions/20822821/what-is-a-unix-timestamp-and-why-use-it) (seconds since the epoch.) Users cannot join a meeting in with this token before this time.'
+        exp:
+          type: integer
+          format: int32
+          description: '"Expires". This is a unix timestamp (seconds since the epoch.) Users cannot join a meeting with this token after this time.
+
+
+            Daily strongly recommends adding an `exp` value to all meeting tokens. Learn more in our Daily blog post: [Add advanced security to video chats with the Daily API](https://www.daily.co/blog/add-advanced-security-features-to-video-chats-with-the-daily-api/)'
+        is_owner:
+          type: boolean
+          default: false
+          description: The user has [meeting owner privileges](/docs/guides/privacy-and-security/controlling-who-joins-a-meeting#meeting-owner-privileges). For example, this user can send video, audio, and screenshare, and can perform administrative actions like muting other participants.
+        user_name:
+          type: string
+          description: The user's name in this meeting. The name displays in the user interface when the user is muted or has turned off the camera, and in the chat window. This username is also saved in the meeting events log (meeting events are retrievable using the [analytics](/products/rest-api/meetings) API methods.)
+        user_id:
+          type: string
+          description: 'The user''s ID for this meeting session. During a session, this ID is retrievable in the [`participants()`](/products/daily-js/instance-methods/participants) method and [related participant events](/products/daily-js/events/participant-events). Either during or after a session concludes, this ID is retrievable using the [/meetings](/products/rest-api/meetings) REST API endpoint. You can use `user_id` to map between your user database and meeting events/attendance.
+
+
+            For domains configured for [HIPAA compliance](/guides/privacy-and-security/hipaa), if the `user_id` value is a [UUID](https://www.ietf.org/rfc/rfc4122.txt) (for example, `f81d4fae-7dec-11d0-a765-00a0c91e6bf6`), then the UUID will be returned for the participant in the [`/meetings`](/products/rest-api/meetings) REST API endpoint. Otherwise, the string `hipaa` will be returned in order to remove potential PHI. During a session, the provided `user_id` will always be returned through the `participants()` method and related events, regardless of the `user_id` value.
+
+
+            The `user_id` has a limit of 36 characters.'
+        enable_screenshare:
+          type: boolean
+          default: true
+          description: Sets whether or not the user is allowed to screen share. This setting applies for the duration of the meeting. If you're looking to dynamically control whether a user can screen share during a meeting, then use the [`permissions`](/products/rest-api/meeting-tokens/config#permissions) token property.
+        start_video_off:
+          type: boolean
+          default: false
+          description: Disable the default behavior of automatically turning on a participant's camera on a direct `join()` (i.e. without `startCamera()` first).
+        start_audio_off:
+          type: boolean
+          default: false
+          description: Disable the default behavior of automatically turning on a participant's microphone on a direct `join()` (i.e. without `startCamera()` first).
+        enable_recording:
+          description: Jump to [recording docs](/products/rest-api/recordings).
+          oneOf:
+          - type: string
+            enum:
+            - cloud
+            - cloud-audio-only
+            - local
+            - raw-tracks
+          - type: array
+            uniqueItems: true
+            items:
+              type: string
+              enum:
+              - cloud
+              - cloud-audio-only
+              - local
+              - raw-tracks
+        enable_prejoin_ui:
+          type: boolean
+          description: 'Determines whether the participant using the meeting token enters a waiting room with a camera, mic, and browser check before joining a call. If this property is also set in the room or domain''s configuration, the meeting token''s configuration will take priority.
+
+
+            ⚠️ You must be using [Daily Prebuilt](https://daily.co/prebuilt) to use `enable_prejoin_ui`.'
+        enable_live_captions_ui:
+          type: boolean
+          description: 'Sets whether the participant sees a closed captions button in their Daily Prebuilt call tray. When the closed caption button is clicked, closed captions are displayed locally.
+
+
+            When set to `true`, a closed captions button appears in the call tray. When set to `false`, the closed captions button is hidden from the call tray.
+
+
+            Note: Transcription must be enabled for the room or users must have permission to start transcription for this feature to be enabled. View the [transcription guide](/guides/products/transcription) for more details.
+
+
+            ⚠️ You must be using [Daily Prebuilt](https://daily.co/blog/daily-prebuilt-video-chat) to use `enable_live_captions_ui`.'
+        enable_recording_ui:
+          type: boolean
+          description: "Determines whether the participant using the meeting token can see the Recording button in Daily Prebuilt's UI, which can be found in the video call tray. If this value is `false`, the button will not be included in the tray. If it's `true`, the Recording button will be displayed.\n\nThis option is useful when only specific call participants should have recording permissions.\n\n ⚠️ You must be using [Daily Prebuilt](https://daily.co/prebuilt) to use `enable_recording_ui`."
+        enable_terse_logging:
+          $ref: '#/components/schemas/enable_terse_logging'
+        knocking:
+          type: boolean
+          default: false
+          description: Requires the `enable_knocking` property to be set on the room. By default, if a user joins a room with `enable_knocking` set, and with a token, they will bypass the waiting screen and join the room directly. If this property is set to `true`, the user will be required to request access, and the owner will need to accept them before they can join.
+        start_cloud_recording:
+          type: boolean
+          default: false
+          x-paidPlan: paid
+          description: 'Start cloud recording when the user joins the room. This can be used to always record and archive meetings, for example in a customer support context.
+
+
+            Note: This requires the `enable_recording` property of the room or token to be set to `cloud`. If you want to automatically record calls with other recording modes, use `callObject.startRecording()` after `await callObject.join()` in your code.'
+        start_cloud_recording_opts:
+          type: object
+          x-paidPlan: paid
+          description: 'Options for use when `start_cloud_recording` is `true`. See [`startRecording`](/products/daily-js/instance-methods/start-recording) for available options.
+
+
+            ⚠️ Specifying too many options may cause the token size to be very large. It is recommended to use token less than 2048 characters. For complex usecases, use the daily-js API.'
+        auto_start_transcription:
+          type: boolean
+          default: false
+          x-paidPlan: paid
+          description: Start transcription when an owner joins the room. This property can be used to always transcribe meetings once an owner joins.
+        close_tab_on_exit:
+          type: boolean
+          default: false
+          description: (For meetings that open in a separate browser tab.) When a user leaves a meeting using the button in the in-call menu bar, the browser tab closes. This can be a good way, especially on mobile, for users to be returned to a previous website flow after a call.
+        redirect_on_meeting_exit:
+          type: string
+          description: (For meetings that open in a separate browser tab.) When a user leaves a meeting using the button in the in-call menu bar, the browser loads this URL. A query string that includes a parameter of the form `recent-call=<domain>/<room>` is appended to the URL. On mobile, you can redirect to a deep link to bring a user back into your app.
+        lang:
+          type: string
+          description: "The default language of the [Daily prebuilt video call UI](/products/prebuilt), for this room. \n\nSetting the language at the token level will override any room or domain-level language settings you have.\n\n`*` Norwegian `\"no\"` and Russian `\"ru\"` are only available in the new Daily Prebuilt.\n\nSee [language settings](/products/prebuilt/language) for all supported values and priority order."
+          enum:
+          - da
+          - de
+          - en
+          - es
+          - fi
+          - fr
+          - it
+          - jp
+          - ka
+          - nl
+          - 'no'
+          - pt
+          - pt-BR
+          - pl
+          - ru
+          - sv
+          - tr
+          - user
+          default: en
+        permissions:
+          $ref: '#/components/schemas/permissions'
+    enable_terse_logging:
+      type: boolean
+      description: 'Reduces the volume of log messages. This feature should be enabled when there are more than 200 participants in a meeting to help improve performance.
+
+
+        See our [guides for supporting large experiences](/guides/scaling-calls) for additional instruction.'
+      default: false
+  responses:
+    '400':
+      description: '400'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              info:
+                type: string
+          examples:
+            Result:
+              value:
+                error: invalid-request-error
+                info: missing required field
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,359 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms logs API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: logs
+paths:
+  /logs:
+    get:
+      summary: /logs
+      operationId: ListLogs
+      parameters:
+      - name: includeLogs
+        in: query
+        description: If true, you get a "logs" array in the results
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+          default: true
+      - name: includeMetrics
+        in: query
+        description: If true, results have "metrics" array
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+          default: false
+      - name: userSessionId
+        in: query
+        description: Filters by this user ID (aka "participant ID"). Required if `mtgSessionId` is not present in the request
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: mtgSessionId
+        in: query
+        description: Filters by this Session ID. Required if `userSessionId` is not present in the request
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: logLevel
+        in: query
+        description: Filters by the given log level name
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - ERROR
+          - INFO
+          - DEBUG
+      - name: order
+        in: query
+        description: ASC or DESC, case insensitive
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: DESC
+      - name: startTime
+        in: query
+        description: A JS timestamp (ms since epoch in UTC)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: endTime
+        in: query
+        description: A JS timestamp (ms since epoch), defaults to the current time
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: limit
+        in: query
+        description: Limit the number of logs and/or metrics returned
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: i32
+          default: 20
+      - name: offset
+        in: query
+        description: Number of records to skip before returning results
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: i32
+          default: 0
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  logs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        time:
+                          type: string
+                          format: date-time
+                        clientTime:
+                          type: string
+                          format: date-time
+                        message:
+                          type: string
+                        mtgSessionId:
+                          type: string
+                        userSessionId:
+                          type: string
+                        peerId:
+                          type: string
+                          nullable: true
+                        domainName:
+                          type: string
+                        level:
+                          type: integer
+                        code:
+                          type: integer
+                          nullable: true
+              examples:
+                Result:
+                  value:
+                    logs:
+                    - time: '2026-03-23T16:32:55.473000000Z'
+                      clientTime: '2026-03-23T16:32:55.324000000Z'
+                      message: disconnect on pagehide
+                      mtgSessionId: 008c1f0f-6fc5-4e5f-b872-1b9623cb1e7a
+                      userSessionId: 7a51a4b2-92cf-4ad2-b53b-9d01cc985a38
+                      peerId: null
+                      domainName: your-domain
+                      level: 2
+                      code: 7991
+                    - time: '2026-03-23T16:32:55.473000000Z'
+                      clientTime: '2026-03-23T16:32:55.324000000Z'
+                      message: leaving session
+                      mtgSessionId: 008c1f0f-6fc5-4e5f-b872-1b9623cb1e7a
+                      userSessionId: 7a51a4b2-92cf-4ad2-b53b-9d01cc985a38
+                      peerId: null
+                      domainName: your-domain
+                      level: 1
+                      code: 8000
+                    - time: '2026-03-23T16:32:55.473000000Z'
+                      clientTime: '2026-03-23T16:32:54.338000000Z'
+                      message: participant left
+                      mtgSessionId: 008c1f0f-6fc5-4e5f-b872-1b9623cb1e7a
+                      userSessionId: 7a51a4b2-92cf-4ad2-b53b-9d01cc985a38
+                      peerId: 6436dbcb-f60a-48c4-90ca-4588f60f6fbc
+                      domainName: your-domain
+                      level: 1
+                      code: 8020
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  info:
+                    type: string
+              examples:
+                Result:
+                  value:
+                    error: invalid-request-error
+                    info: mtgSessionId or userSessionId is required
+      deprecated: false
+      tags:
+      - logs
+      security:
+      - bearerAuth: []
+  /logs/api:
+    get:
+      summary: /logs/api
+      operationId: ListAPILogs
+      parameters:
+      - name: starting_after
+        description: Given the log ID, will return all records after that ID. See [pagination docs](../../rest-api#pagination)
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ending_before
+        description: Given the log ID, will return all records before that ID. See [pagination docs](../../rest-api#pagination)
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limit the number of logs and/or metrics returned
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: i32
+          default: 20
+      - name: source
+        in: query
+        description: The source of the given logs, either `"api"` or `"webhook"`
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: api
+      - name: url
+        in: query
+        description: Either the webhook server URL, or the API endpoint that was logged
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: An ID identifying the log that was generated.
+                    userId:
+                      type: string
+                      description: The user ID associated with the owner of the account.
+                    domainId:
+                      type: string
+                      description: The domain ID associated with this log statement.
+                    source:
+                      type: string
+                      description: The source of this log statement. This will be `"api"` or `"webhook"`.
+                    ip:
+                      type: string
+                      description: The originating IP address of this request.
+                    method:
+                      type: string
+                      description: The HTTP method used for this request.
+                    url:
+                      type: string
+                      description: The API route that was queried.
+                    status:
+                      type: integer
+                      description: The HTTP status code returned by the endpoint.
+                    createdAt:
+                      type: string
+                      format: date-time
+                      description: The timestamp representing when the record was created.
+                    request:
+                      type: string
+                      nullable: true
+                      description: A JSON string representing the request body of this API request.
+                    response:
+                      type: string
+                      nullable: true
+                      description: A JSON string representing the response body of this API request.
+              examples:
+                Result:
+                  value:
+                  - id: aaaaaaaa-0000-0000-0000-000000000001
+                    userId: bbbbbbbb-0000-0000-0000-000000000001
+                    domainId: cccccccc-0000-0000-0000-000000000001
+                    source: api
+                    ip: 203.0.113.10
+                    method: GET
+                    url: /v1/rooms
+                    status: 200
+                    createdAt: '2024-03-15T18:42:00.000Z'
+                    request: null
+                    response: '{"total_count":3,"data":[{"id":"room-1","name":"hello"},{"id":"room-2","name":"world"},{"id":"room-3","name":"test"}]}'
+                  - id: aaaaaaaa-0000-0000-0000-000000000002
+                    userId: bbbbbbbb-0000-0000-0000-000000000001
+                    domainId: cccccccc-0000-0000-0000-000000000001
+                    source: api
+                    ip: 203.0.113.10
+                    method: POST
+                    url: /v1/rooms
+                    status: 200
+                    createdAt: '2024-03-15T18:41:30.000Z'
+                    request: '{"name":"my-room","properties":{"exp":1710527690}}'
+                    response: '{"id":"aaaaaaaa-0000-0000-0000-000000000099","name":"my-room","api_created":true}'
+                  - id: aaaaaaaa-0000-0000-0000-000000000003
+                    userId: bbbbbbbb-0000-0000-0000-000000000001
+                    domainId: cccccccc-0000-0000-0000-000000000001
+                    source: api
+                    ip: 203.0.113.10
+                    method: POST
+                    url: /v1/meeting-tokens
+                    status: 400
+                    createdAt: '2024-03-15T18:41:00.000Z'
+                    request: '{"properties":{"room_name":"nonexistent-room"}}'
+                    response: '{"error":"invalid-request-error","info":"room not found"}'
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  info:
+                    type: string
+              examples:
+                Result:
+                  value:
+                    info: '"source" must be one of [webhook, api] [Received source="api"]
+
+                      '
+                    error: invalid-request-error
+      deprecated: false
+      tags:
+      - logs
+      security:
+      - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,414 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms transcript API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: transcript
+paths:
+  /transcript:
+    get:
+      summary: /transcript
+      description: List transcripts
+      operationId: ListTranscript
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: ending_before
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: starting_after
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: roomId
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: mtgSessionId
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                    example: 3
+                    default: 0
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        transcriptId:
+                          type: string
+                          example: 0cb313e1-211f-4be0-833d-8c7305b19902
+                          description: A unique, opaque ID for this object. You can use this ID in API calls, and in paginated list operations.
+                        domainId:
+                          type: string
+                          description: The Id of the domain [domain](/reference/rest-api/domain).
+                        roomId:
+                          type: string
+                          example: 1a5afbf4-211f-4be0-833d-8c7305b19902
+                          description: The id of the room [room](/reference/rest-api/rooms).
+                        mtgSessionId:
+                          type: string
+                          example: 257764e6-c74e-4c30-944a-a887a03173a3
+                          description: The meeting session ID for this transcription.
+                        status:
+                          type: string
+                          example: t_finished
+                          enum:
+                          - t_finished
+                          - t_in_progress
+                          - t_error
+                          - t_deleted
+                        isVttAvailable:
+                          type: boolean
+                          example: true
+                          description: Whether the transcription has been stored in a WebVTT file. See [transcription storage](/docs/guides/features/transcription#storage).
+                        duration:
+                          type: integer
+                          example: 277
+                          description: How many seconds long the transcription is, approximately.
+                        created_at:
+                          type: string
+                          format: date-time
+                          example: '2024-01-15T10:30:00.000Z'
+                          description: When the transcript record was created (i.e. transcription started).
+                        updated_at:
+                          type: string
+                          format: date-time
+                          example: '2024-01-15T10:35:00.000Z'
+                          description: When the transcript record was last updated.
+              examples:
+                Result:
+                  value:
+                    total_count: 3
+                    data:
+                    - transcriptId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                      domainId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                      roomId: 1a5afbf4-211f-4be0-833d-8c7305b19902
+                      mtgSessionId: 257764e6-c74e-4c30-944a-a887a03173a3
+                      status: t_finished
+                      duration: 277
+                      created_at: '2024-01-15T10:30:00.000Z'
+                      updated_at: '2024-01-15T10:35:00.000Z'
+                    - transcriptId: 257764e6-211f-4be0-833d-8c7305b19903
+                      domainId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                      roomId: 1a5afbf4-211f-4be0-833d-8c7305b19902
+                      mtgSessionId: 211f64e6-c74e-4c30-944a-a887a03173a3
+                      status: t_in_progress
+                      duration: 21
+                      created_at: '2024-01-15T10:28:00.000Z'
+                      updated_at: '2024-01-15T10:28:00.000Z'
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - transcript
+      security:
+      - bearerAuth: []
+  /transcript/{transcriptId}:
+    get:
+      summary: transcript/:transcriptId
+      description: Get info about a Transcript
+      operationId: GetTranscriptInfo
+      parameters:
+      - name: transcriptId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transcriptId:
+                    type: string
+                    example: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    description: A unique, opaque ID for this object. You can use this ID in API calls, and in paginated list operations.
+                  domainId:
+                    type: string
+                    description: The Id of the [domain](/reference/rest-api/domain).
+                  roomId:
+                    type: string
+                    example: 1a5afbf4-211f-4be0-833d-8c7305b19902
+                    description: The id of the [room](/reference/rest-api/rooms).
+                  mtgSessionId:
+                    type: string
+                    example: 257764e6-c74e-4c30-944a-a887a03173a3
+                    description: The meeting session ID for this transcription.
+                  status:
+                    type: string
+                    example: t_finished
+                    enum:
+                    - t_finished
+                    - t_in_progress
+                    - t_error
+                    - t_deleted
+                  isVttAvailable:
+                    type: boolean
+                    example: true
+                    description: Whether the transcription has been stored in a WebVTT file. See [transcription storage](/docs/guides/features/transcription#storage).
+                  duration:
+                    type: integer
+                    example: 277
+                    description: How many seconds long the transcription is, approximately.
+                  outParams:
+                    description: Object representing the storage location for the transcript if `transcription_bucket` is defined.
+                    type: object
+                    properties:
+                      s3key:
+                        type: string
+                        example: mydomain/test-recording-room/11245260397
+                      bucket:
+                        type: string
+                        example: my-transcript-bucket
+                      region:
+                        type: string
+                        example: us-west-2
+                  error:
+                    type: string
+                    example: Failed to upload Vtt
+                    description: If `status` is `t_error`, this provide the description of the error, otherwise `null`.
+                  created_at:
+                    type: string
+                    format: date-time
+                    example: '2024-01-15T10:30:00.000Z'
+                    description: When the transcript record was created (i.e. transcription started).
+                  updated_at:
+                    type: string
+                    format: date-time
+                    example: '2024-01-15T10:35:00.000Z'
+                    description: When the transcript record was last updated.
+              examples:
+                Result:
+                  value:
+                    transcriptId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    domainId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    roomId: 1a5afbf4-211f-4be0-833d-8c7305b19902
+                    mtgSessionId: 257764e6-c74e-4c30-944a-a887a03173a3
+                    status: t_finished
+                    duration: 277
+                    outParams:
+                      key: my-transcript.vtt
+                      bucket: my-transcript-bucket
+                      region: us-west-2
+                    created_at: '2024-01-15T10:30:00.000Z'
+                    updated_at: '2024-01-15T10:35:00.000Z'
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - transcript
+      security:
+      - bearerAuth: []
+    delete:
+      summary: transcript/:id
+      description: Delete a transcript
+      operationId: DeleteTranscript
+      parameters:
+      - name: transcriptId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transcriptId:
+                    type: string
+                    example: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    description: A unique, opaque ID for this object. You can use this ID in API calls, and in paginated list operations.
+                  domainId:
+                    type: string
+                    description: The ID of the domain [domain](/reference/rest-api/domain).
+                  roomId:
+                    type: string
+                    example: 1a5afbf4-211f-4be0-833d-8c7305b19902
+                    description: The ID of the room [room](/reference/rest-api/rooms).
+                  mtgSessionId:
+                    type: string
+                    example: 257764e6-c74e-4c30-944a-a887a03173a3
+                    description: The meeting session ID for this transcription.
+                  status:
+                    type: string
+                    example: t_finished
+                    enum:
+                    - t_finished
+                    - t_in_progress
+                    - t_error
+                    - t_deleted
+                  isVttAvailable:
+                    type: boolean
+                    example: true
+                    description: Whether the transcription has been stored in a WebVTT file. See [transcription storage](/docs/guides/features/transcription#storage).
+                  duration:
+                    type: integer
+                    example: 277
+                    description: Transcription length in seconds
+                  outParams:
+                    description: Object representing the storage location for the transcript if `transcription_bucket` is defined.
+                    type: object
+                    properties:
+                      s3key:
+                        type: string
+                        example: mydomain/test-recording-room/11245260397
+                      bucket:
+                        type: string
+                        example: my-transcript-bucket
+                      region:
+                        type: string
+                        example: us-west-2
+                  created_at:
+                    type: string
+                    format: date-time
+                    example: '2024-01-15T10:30:00.000Z'
+                    description: When the transcript record was created (i.e. transcription started).
+              examples:
+                Result:
+                  value:
+                    transcriptId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    domainId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    roomId: 1a5afbf4-211f-4be0-833d-8c7305b19902
+                    mtgSessionId: 257764e6-c74e-4c30-944a-a887a03173a3
+                    status: t_deleted
+                    duration: 277
+                    outParams:
+                      key: my-transcript.vtt
+                      bucket: my-transcript-bucket
+                      region: us-west-2
+                    created_at: '2024-01-15T10:30:00.000Z'
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - transcript
+      security:
+      - bearerAuth: []
+  /transcript/{transcriptId}/access-link:
+    get:
+      summary: transcript/:id/access-link
+      description: Generate an access link for a transcript
+      operationId: GetTranscriptLink
+      parameters:
+      - name: transcriptId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transcriptId:
+                    type: string
+                    example: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    description: A unique, opaque ID for this object. You can use this ID in API calls, and in paginated list operations.
+                  link:
+                    type: string
+                    example: https://daily-meeting-transcripts.s3.us-west-2.amazonaws.com/api-demo/hello/1548790973821?AWSAccessKeyId=AKIAJVYA3B2F4672K3RQ&Expires=1548809176&Signature=xfSPW1kXksNriqmlm%2FT9hb%2Fq%2Bas%3D&response-content-disposition=attachment%3B%20filename%3D%22api-demo%2Fhello%2F1548790973821.webm%22
+                  outParams:
+                    description: Object representing the storage location for the transcript if `transcription_bucket` is defined.
+                    type: object
+                    properties:
+                      s3key:
+                        type: string
+                        example: mydomain/test-recording-room/11245260397
+                      bucket:
+                        type: string
+                        example: my-transcript-bucket
+                      region:
+                        type: string
+                        example: us-west-2
+              examples:
+                Result:
+                  value:
+                    transcriptId: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    download_link: https://daily-meeting-transcripts.s3.us-west-2.amazonaws.com/api-demo/hello/1548790973821?AWSAccessKeyId=AKIAJVYA3B2F4672K3RQ&Expires=1548809176&Signature=xfSPW1kXksNriqmlm%2FT9hb%2Fq%2Bas%3D&response-content-disposition=attachment%3B%20filename%3D%22api-demo%2Fhello%2F1548790973821.webm%22
+                    outParams:
+                      key: my-transcript.vtt
+                      bucket: my-transcript-bucket
+                      region: us-west-2
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - transcript
+      security:
+      - bearerAuth: []
+components:
+  responses:
+    '400':
+      description: '400'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              info:
+                type: string
+          examples:
+            Result:
+              value:
+                error: invalid-request-error
+                info: missing required field
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

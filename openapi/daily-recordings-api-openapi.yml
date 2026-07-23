@@ -1,0 +1,331 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms recordings API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: recordings
+paths:
+  /recordings:
+    get:
+      summary: /recordings
+      description: List recordings
+      operationId: ListRecordings
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: ending_before
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: starting_after
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: room_name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                    example: 3
+                    default: 0
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: bfd0c52b-3a2a-4269-80ce-cae9eef55536
+                        start_ts:
+                          type: integer
+                          example: 1548790974
+                          default: 0
+                        status:
+                          type: string
+                          example: in-progress
+                        max_participants:
+                          type: integer
+                          example: 2
+                          default: 0
+                        share_token:
+                          type: string
+                          example: NcWgEiJuqD8v
+                        s3key:
+                          type: string
+                          example: mydomain/test-recording-room/11245260397
+                        mtgSessionId:
+                          type: string
+                          example: 257764e6-c74e-4c30-944a-a887a03173a3
+              examples:
+                Result:
+                  value:
+                    total_count: 3
+                    data:
+                    - id: bfd0c52b-3a2a-4269-80ce-cae9eef55536
+                      start_ts: 1548790974
+                      status: in-progress
+                      max_participants: 2
+                      share_token: NcWgEiJuqD8v
+                      s3key: mydomain/test-recording-room/11245260397
+                      mtgSessionId: 411c96b4-c13b-4f35-b639-4fda02863743
+                    - id: 0cb313e1-211f-4be0-833d-8c7305b19902
+                      start_ts: 1548789650
+                      status: finished
+                      max_participants: 2
+                      duration: 277
+                      share_token: TivXjlD22QQt
+                      s3key: mydomain/test-recording-room/277255707741,
+                      mtgSessionId: 1117a5d8-f6c4-4ff5-a9ec-2a324666f0da
+                    - id: 89a4a0a4-03cf-454f-b874-e83d91b0296f
+                      start_ts: 1548788621
+                      status: finished
+                      max_participants: 1
+                      duration: 53
+                      share_token: QehWXiO2zMMf
+                      s3key: mydomain/test-recording-room/11245260397,
+                      mtgSessionId: 257764e6-c74e-4c30-944a-a887a03173a3,
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - recordings
+      security:
+      - bearerAuth: []
+  /recordings/{recording_id}:
+    get:
+      summary: recordings/:id
+      description: Get info about a recording
+      operationId: GetRecordingInfo
+      parameters:
+      - name: recording_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    description: A unique, opaque ID for this object. You can use this ID in API calls, and in paginated list operations.
+                  room_name:
+                    type: string
+                    description: The name of the [room](/reference/rest-api/rooms).
+                  start_ts:
+                    type: integer
+                    example: 1548789650
+                    description: When the recording started. This is a unix timestamp (seconds since the epoch).
+                  status:
+                    type: string
+                    example: finished
+                    enum:
+                    - finished
+                    - in-progress
+                    - canceled
+                  max_participants:
+                    type: integer
+                    example: 2
+                    description: The maximum number of participants that were ever in this room together during the meeting session that was recorded.
+                  duration:
+                    type: integer
+                    example: 277
+                    description: How many seconds long the recording is, approximately. This property is not returned for recordings that are in-progress.
+                  share_token:
+                    type: string
+                    example: TivXjlD22QQt
+                    description: Deprecated.
+                  s3key:
+                    type: string
+                    example: mydomain/test-recording-room/11245260397
+                    description: The S3 Key associated with this recording.
+                  mtgSessionId:
+                    type: string
+                    example: 257764e6-c74e-4c30-944a-a887a03173a3
+                    description: The meeting session ID for this recording.
+                  tracks:
+                    type: array
+                    description: If the recording is a raw-tracks recording, a tracks field will be provided. If role permissions have been removed, the tracks field may be null.
+                    items:
+                      type: object
+                      properties:
+                        size:
+                          type: integer
+                          example: 15620
+                          description: The size of the file.
+                        type:
+                          type: string
+                          example: audio
+                          enum:
+                          - audio
+                          - video
+                          description: The type of track file, audio or video.
+                        s3key:
+                          type: string
+                          example: mydomain/test-recording-room/11245260397-audio
+                          description: The S3 Key associated with this partiicular track file.
+              examples:
+                Result:
+                  value:
+                    id: 0cb313e1-211f-4be0-833d-8c7305b19902
+                    start_ts: 1548789650
+                    status: finished
+                    max_participants: 2
+                    duration: 277
+                    share_token: TivXjlD22QQt
+                    s3key: mydomain/test-recording-room/11245260397
+                    mtgSessionId: 257764e6-c74e-4c30-944a-a887a03173a3
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - recordings
+      security:
+      - bearerAuth: []
+    delete:
+      summary: recordings/:id
+      description: Delete a recording
+      operationId: DeleteRecording
+      parameters:
+      - name: recording_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deleted:
+                    type: boolean
+                  id:
+                    type: string
+                  s3_bucket:
+                    type: string
+                  s3_region:
+                    type: string
+                  s3_key:
+                    type: string
+              examples:
+                Result:
+                  value:
+                    deleted: true
+                    id: 0868d783-69c0-4556-b39e-0fbd6bf2bd45
+                    s3_bucket: daily-meeting-recordings
+                    s3_region: us-west-2
+                    s3_key: mydomain/raw-tracks/1234567890
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - recordings
+      security:
+      - bearerAuth: []
+  /recordings/{recording_id}/access-link:
+    get:
+      summary: recordings/:id/access-link
+      description: Generate an access link for a recording
+      operationId: GetRecordingLink
+      parameters:
+      - name: recording_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  download_link:
+                    type: string
+                    example: https://daily-meeting-recordings.s3.us-west-2.amazonaws.com/api-demo/hello/1548790973821?AWSAccessKeyId=AKIAJVYA3B2F4672K3RQ&Expires=1548809176&Signature=xfSPW1kXksNriqmlm%2FT9hb%2Fq%2Bas%3D&response-content-disposition=attachment%3B%20filename%3D%22api-demo%2Fhello%2F1548790973821.webm%22
+                  expires:
+                    type: integer
+                    example: 1548809176
+                    default: 0
+              examples:
+                Result:
+                  value:
+                    download_link: https://daily-meeting-recordings.s3.us-west-2.amazonaws.com/api-demo/hello/1548790973821?AWSAccessKeyId=AKIAJVYA3B2F4672K3RQ&Expires=1548809176&Signature=xfSPW1kXksNriqmlm%2FT9hb%2Fq%2Bas%3D&response-content-disposition=attachment%3B%20filename%3D%22api-demo%2Fhello%2F1548790973821.webm%22
+                    expires: 1548809176
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - recordings
+      security:
+      - bearerAuth: []
+components:
+  responses:
+    '400':
+      description: '400'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              info:
+                type: string
+          examples:
+            Result:
+              value:
+                error: invalid-request-error
+                info: missing required field
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

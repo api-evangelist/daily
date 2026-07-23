@@ -1,0 +1,365 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms meetings API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: meetings
+paths:
+  /meetings:
+    get:
+      summary: /meetings
+      description: retrieve meeting analytics
+      operationId: GetMeetingInfo
+      parameters:
+      - name: room
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: timeframe_start
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: timeframe_end
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: limit
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: starting_after
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ending_before
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ongoing
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: no_participants
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                    description: Total number of meetings matching the query.
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Unique meeting session ID.
+                        room:
+                          type: string
+                          description: The room name the meeting took place in.
+                        start_time:
+                          type: integer
+                          description: Unix timestamp of when the meeting started.
+                        duration:
+                          type: integer
+                          description: Duration of the meeting in seconds.
+                        ongoing:
+                          type: boolean
+                          description: Whether the meeting is currently in progress.
+                        max_participants:
+                          type: integer
+                          description: Peak number of simultaneous participants during the meeting.
+                        participants:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              user_id:
+                                type: string
+                                nullable: true
+                                description: The user ID if set on the meeting token, otherwise null.
+                              participant_id:
+                                type: string
+                                description: Unique participant session ID.
+                              user_name:
+                                type: string
+                                nullable: true
+                                description: Display name of the participant.
+                              join_time:
+                                type: integer
+                                description: Unix timestamp of when this participant joined.
+                              duration:
+                                type: integer
+                                description: How long this participant was in the meeting, in seconds.
+              examples:
+                Result:
+                  value:
+                    total_count: 42
+                    data:
+                    - id: aaaaaaaa-0000-0000-0000-000000000001
+                      room: my-room
+                      start_time: 1774363859
+                      duration: 600
+                      ongoing: false
+                      max_participants: 1
+                      participants:
+                      - user_id: null
+                        participant_id: bbbbbbbb-0000-0000-0000-000000000001
+                        user_name: Alice
+                        join_time: 1774363859
+                        duration: 600
+                    - id: aaaaaaaa-0000-0000-0000-000000000002
+                      room: my-room
+                      start_time: 1774283912
+                      duration: 187
+                      ongoing: false
+                      max_participants: 2
+                      participants:
+                      - user_id: null
+                        participant_id: bbbbbbbb-0000-0000-0000-000000000002
+                        user_name: Alice
+                        join_time: 1774283925
+                        duration: 174
+                      - user_id: null
+                        participant_id: bbbbbbbb-0000-0000-0000-000000000003
+                        user_name: Bob
+                        join_time: 1774283912
+                        duration: 179
+                    - id: aaaaaaaa-0000-0000-0000-000000000003
+                      room: my-room
+                      start_time: 1773860661
+                      duration: 304
+                      ongoing: false
+                      max_participants: 2
+                      participants:
+                      - user_id: cccccccc-0000-0000-0000-000000000001
+                        participant_id: cccccccc-0000-0000-0000-000000000001
+                        user_name: Pipecat Bot
+                        join_time: 1773860661
+                        duration: 296
+                      - user_id: null
+                        participant_id: bbbbbbbb-0000-0000-0000-000000000004
+                        user_name: null
+                        join_time: 1773860662
+                        duration: 303
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - meetings
+      security:
+      - bearerAuth: []
+  /meetings/{meeting}:
+    get:
+      summary: /meetings/:meeting
+      description: retrieve info about a particular meeting
+      operationId: GetIndividualMeetingInfo
+      parameters:
+      - name: meeting
+        in: path
+        description: the ID of the meeting session
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/meetings_meeting-get-res'
+              examples:
+                Result:
+                  value:
+                    id: d61cd7b2-a273-42b4-89bd-be763fd562c1
+                    room: room-name
+                    start_time: 1672606399
+                    duration: 2055
+                    ongoing: false
+                    max_participants: 5
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - meetings
+      security:
+      - bearerAuth: []
+  /meetings/{meeting}/participants:
+    get:
+      summary: /meetings/:meeting/participants
+      description: retrieve info about the participants in a particular meeting
+      operationId: GetMeetingParticipants
+      parameters:
+      - name: meeting
+        in: path
+        description: the ID of the meeting session
+        required: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: the largest number of participant records to return
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: joined_after
+        in: query
+        description: limit to participants who joined after the given participant, identified by `participant_id`
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: joined_before
+        in: query
+        description: limit to participants who joined before the given participant, identified by `participant_id`
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/meeting_participants-get-res'
+              examples:
+                Result:
+                  value:
+                    data:
+                    - user_id: 4q47OTmqa/w=
+                      participant_id: d61cd7b2-a273-42b4-89bd-be763fd562c1
+                      user_name: Lindsey
+                      join_time: 1672786813
+                      duration: 150
+                    - user_id: pbZ+ismP7dk=
+                      participant_id: b3d56359-14d7-46af-ac8b-18f8c991f5f6
+                      user_name: Moishe
+                      join_time: 1672786797
+                      duration: 165
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - meetings
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    meetings_meeting-get-res:
+      type: object
+      properties:
+        id:
+          type: string
+          example: d61cd7b2-a273-42b4-89bd-be763fd562c1
+        room:
+          type: string
+          example: room-name
+        start_time:
+          type: integer
+          example: 1672606399
+        duration:
+          type: integer
+          example: 2055
+        ongoing:
+          type: boolean
+          example: false
+        max_participants:
+          type: integer
+          example: 4
+    meeting_participants-get-res:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                example: d61cd7b2-a273-42b4-89bd-be763fd562c1
+              room:
+                type: string
+                example: room-name
+              start_time:
+                type: integer
+                example: 1672606399
+              duration:
+                type: integer
+                example: 2055
+              ongoing:
+                type: boolean
+                example: false
+              max_participants:
+                type: integer
+                example: 4
+  responses:
+    '400':
+      description: '400'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              info:
+                type: string
+          examples:
+            Result:
+              value:
+                error: invalid-request-error
+                info: missing required field
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

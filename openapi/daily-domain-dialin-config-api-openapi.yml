@@ -1,0 +1,391 @@
+openapi: 3.0.3
+info:
+  title: Daily batch/rooms domain-dialin-config API
+  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  version: 1.1.1
+  contact:
+    name: Daily
+    url: https://docs.daily.co
+    email: help@daily.co
+servers:
+- url: https://api.daily.co/v1
+security:
+- bearerAuth: []
+tags:
+- name: domain-dialin-config
+paths:
+  /domain-dialin-config:
+    get:
+      summary: /domain-dialin-config
+      description: List all the pinless_dialin and pin_dialin configs for the domain, with pagination
+      operationId: ListDomainDialinConfigs
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: ending_before
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: starting_after
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: phone_number
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: phone_numbers
+        in: query
+        required: false
+        style: form
+        explode: false
+        description: a comma separated list of phone numbers to filter by. The filter will match any phone number that contains the provided numbers as a substring (partial match).
+        schema:
+          type: string
+      - name: sip_username
+        in: query
+        required: false
+        style: form
+        explode: true
+        description: The sip username associated with this dialin config (only the username part of the sip uri)
+        schema:
+          type: string
+      - name: name_prefix
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        required: false
+        style: form
+        explode: true
+        description: The type of dialin config. It can be pinless_dialin or pin_dialin.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                    example: 3
+                    default: 0
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 0cb313e1-211f-4be0-833d-8c7305b19902
+                          description: A unique, opaque ID for this object. You can use this ID in API calls, and in paginated list operations.
+                        type:
+                          type: string
+                          example: pinless_dialin
+                          description: describe the type of configuration. It can be pinless_dialin or pin_dialin.
+                          enum:
+                          - pinless_dialin
+                          - pin_dialin
+                        config:
+                          $ref: '#/components/schemas/domain_dialin_config_create_req'
+              examples:
+                Result:
+                  value:
+                    total_count: 2
+                    data:
+                    - id: bfd0c52b-3a2a-4269-80ce-cae9eef55536
+                      type: pinless_dialin
+                      config:
+                        sip_uri: user--1739943585193@daily-<domainId>-stage-pinless-sip.dapp.signalwire.com
+                        name_prefix: new-api
+                    - id: 0cb313e1-211f-4be0-833d-8c7305b19902
+                      type: pin_dialin
+                      config:
+                        sip_uri: null
+                        name_prefix: new-api-pin
+                        phone_number: '+12555599999'
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - domain-dialin-config
+      security:
+      - bearerAuth: []
+    post:
+      summary: create new config
+      description: create a new pinless_dialin or pin_dialin config
+      operationId: CreateDomainDialConfigInfo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/domain_dialin_config_create_req'
+      responses:
+        '200':
+          description: The final dialin config for the id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/domain_dialin_config_info_res'
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  info:
+                    type: string
+              examples:
+                Result:
+                  value:
+                    error: invalid-request-error
+                    info: 'Failed to configure pin dialin: 12096181843 not associated with domain: your-domain'
+      deprecated: false
+      tags:
+      - domain-dialin-config
+      security:
+      - bearerAuth: []
+  /domain-dialin-config/{id}:
+    get:
+      summary: domain-dialin-config/:id
+      description: Get info about an existing pinless_dialin or pin_dialin config
+      operationId: GetDomainDialinConfigInfo
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/domain_dialin_config_info_res'
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - domain-dialin-config
+      security:
+      - bearerAuth: []
+    put:
+      summary: domain-dialin-config/:id
+      description: update an existing pinless_dialin or pin_dialin config
+      operationId: UpdateDomainDialConfigInfo
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/domain_dialin_config_update_req'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/domain_dialin_config_info_res'
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - domain-dialin-config
+      security:
+      - bearerAuth: []
+    delete:
+      summary: domain-dialin-config/:id
+      description: Delete a given pinless_dialin or pin_dialin config
+      operationId: DeleteDomainDialinConfig
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+              examples:
+                Result:
+                  value:
+                    status: ok
+        '400':
+          $ref: '#/components/responses/400'
+      deprecated: false
+      tags:
+      - domain-dialin-config
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    domain_dialin_config_info_res:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 0cb313e1-211f-4be0-833d-8c7305b19902
+          description: A unique, opaque ID for this object. You can use this ID in API calls, and in paginated list operations.
+        type:
+          type: string
+          example: pinless_dialin
+          description: describes the type of configuration. It can be pinless_dialin or pin_dialin.
+          enum:
+          - pinless_dialin
+          - pin_dialin
+        config:
+          $ref: '#/components/schemas/domain_dialin_config_create_req'
+    domain_dialin_config_update_req:
+      type: object
+      description: the configuration object passed to update an existing pinless or pin dialin.
+      properties:
+        phone_number:
+          type: string
+          example: '+12555599999'
+          description: The phone number to update to the existing dialin config, in E.164 format (e.g. "+18058700061"). If the same number is used by any other config then the API will fail.
+        name_prefix:
+          type: string
+          example: my-identifier-prefix
+          description: Update the name_prefix of an existing config.
+        hmac:
+          type: string
+          example: 9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=
+          description: The [HMAC signature](/guides/products/dial-in-dial-out/dialin-pinless#hmac) used to verify the webhook called to "room_creation_api". (only for pinless_dialin type).
+        room_creation_api:
+          type: string
+          example: https://mydomain.com/api/create-room
+          description: The URL to call when a call is received on configured phoneNumber or sip_uri. (only for pinless_dialin type). flow is described [here](/guides/products/dial-in-dial-out/dialin-pinless#quick-overview)
+        hold_music_url:
+          type: string
+          example: https://mydomain.com/hold-music.mp3
+          description: The URL to the hold music to play when the call is received, (only for pinless_dialin type). The hold music must be a publicly accessible URL in MP3 format. The hold music must be less than 10MB in size and less than 60 seconds in duration. In pinless_dialin, the hold music will be played twice.
+        timeout_config:
+          type: object
+          description: The timeout configuration for the dialin config.
+          properties:
+            message:
+              type: string
+              example: No Agents are available right now, please try again later
+              description: If room_creation_api does not respond within the timeout period, this message will be played to the caller.
+        ivr_greeting:
+          type: object
+          description: configuration when the call is received on phone number (only for pin_dialin).
+          properties:
+            message:
+              type: string
+              example: Please enter the dialin code for the meeting, it is in the meeting invite
+              description: The message to play when call first connects.
+    domain_dialin_config_create_req:
+      type: object
+      description: the configuration object passed to the POST API that creates the dialin config.
+      required:
+      - type
+      - phone_number
+      properties:
+        type:
+          type: string
+          enum:
+          - pin_dialin
+          - pinless_dialin
+          description: The type of dial-in configuration to create.
+        phone_number:
+          type: string
+          example: '+12555599999'
+          description: The phone number to configure for pinless_dialin or pin_dialin, in E.164 format (e.g. "+18058700061"). If the same number is used by any other config then the API will fail. Required for pinless_dialin, optional for pin_dialin.
+        name_prefix:
+          type: string
+          example: my-identifier-prefix
+          description: friendly name for the configuration.
+        hmac:
+          type: string
+          example: 9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=
+          description: The [HMAC signature](/guides/products/dial-in-dial-out/dialin-pinless#hmac) used to verify the webhook called to "room_creation_api". (only for pinless_dialin type)
+        room_creation_api:
+          type: string
+          example: https://mydomain.com/api/create-room
+          description: The API to request when a call is received on configured phoneNumber or sip_uri. (only for pinless_dialin type). flow is described [here](/guides/products/dial-in-dial-out/dialin-pinless#quick-overview)
+        hold_music_url:
+          type: string
+          example: https://mydomain.com/hold-music.mp3
+          description: The URL to the hold music to play when the call is received, (only for pinless_dialin type). The hold music must be a publicly accessible URL in MP3 format. The hold music must be less than 10MB in size and less than 60 seconds in duration. In pinless_dialin, the hold music will be played twice.
+        timeout_config:
+          type: object
+          description: The timeout configuration for the dialin config.
+          properties:
+            message:
+              type: string
+              example: No Agents are available right now, please try again later
+              description: If room_creation_api does not respond within the timeout period, this message will be played to the caller.
+        ivr_greeting:
+          type: object
+          description: configuration when the call is received on phone number (only for pin_dialin).
+          properties:
+            message:
+              type: string
+              example: Please enter the dialin code for the meeting, it is in the meeting invite
+              description: The message to play when call first connects.
+  responses:
+    '400':
+      description: '400'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              info:
+                type: string
+          examples:
+            Result:
+              value:
+                error: invalid-request-error
+                info: missing required field
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

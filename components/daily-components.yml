@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.daily.co/ (daily-js, daily-react, Prebuilt, VCS docs)
+families:
+- family: Daily Prebuilt
+  kind: hosted-embeddable-ui
+  description: A complete, ready-made video call UI embedded via iframe (createFrame) — join
+    flow, grid/active-speaker layouts, controls, chat, screen share, recording. Minimal code.
+  loader: "@daily-co/daily-js (DailyIframe.createFrame)"
+  docs: https://docs.daily.co/guides/products/prebuilt
+- family: daily-react components
+  kind: react-components
+  description: React building blocks for custom call UIs.
+  components:
+  - DailyProvider
+  - DailyVideo
+  - DailyAudio
+  loader: "@daily-co/daily-react"
+  docs: https://docs.daily.co/reference/daily-react
+- family: Video Component System (VCS)
+  kind: compositing-toolkit
+  description: Declarative layout/compositing system for customizing recording and live-stream
+    output layouts, overlays, and graphics.
+  docs: https://docs.daily.co/docs/guides/products/vcs

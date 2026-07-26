@@ -1,0 +1,77 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/daily-openapi-original.json
+note: Entity graph derived from the Daily REST API resource paths and id-reference fields.
+entities:
+- name: domain
+  description: Top-level account/domain configuration; the root scope of an API key.
+  key: domain name
+- name: room
+  description: A video/audio call room. The core resource most operations act on.
+  key: room_name (also id)
+  operations: [ListRooms, CreateRoom, GetRoomConfig, SetRoomConfig, DeleteRoom]
+- name: meeting_token
+  description: A signed JWT granting a participant scoped access to a room.
+  key: meeting_token
+  operations: [CreateMeetingToken, ValidateMeetingToken]
+- name: meeting
+  description: A meeting session (analytics record) that occurred in a room.
+  key: meeting id (mtgSessionId)
+  operations: [GetMeetingInfo, GetIndividualMeetingInfo, GetMeetingParticipants]
+- name: recording
+  description: A cloud recording produced from a room session.
+  key: recording_id
+  operations: [ListRecordings, GetRecordingInfo, DeleteRecording, GetRecordingLink]
+- name: transcript
+  description: A transcription produced from a room session.
+  key: transcriptId
+  operations: [ListTranscript, GetTranscriptInfo, DeleteTranscript, GetTranscriptLink]
+- name: webhook
+  description: A subscription that delivers Daily events to a target URL.
+  key: id
+  operations: [GetWebhooks, CreateWebhook, GetWebhookConfig, UpdateWebhookConfig, DeleteWebhook]
+- name: domain_dialin_config
+  description: A pin_dialin or pinless_dialin telephony routing configuration.
+  key: id
+  operations: [ListDomainDialinConfigs, CreateDomainDialConfigInfo, GetDomainDialinConfigInfo,
+    UpdateDomainDialConfigInfo, DeleteDomainDialinConfig]
+- name: phone_number
+  description: A purchased PSTN phone number for dial-in/dial-out.
+  key: id
+  operations: [ListAvailableNumbers, PurchasedPhoneNumbers, BuyPhoneNumber, ReleasePhoneNumber]
+- name: batch_processor_job
+  description: A post-processing job over call media (submitted via the batch processor).
+  key: job id
+relationships:
+- from: room
+  to: domain
+  type: belongs_to
+  via: domain scope
+- from: meeting_token
+  to: room
+  type: belongs_to
+  via: room_name
+- from: meeting
+  to: room
+  type: belongs_to
+  via: room
+- from: recording
+  to: room
+  type: belongs_to
+  via: room_name
+- from: transcript
+  to: meeting
+  type: belongs_to
+  via: mtgSessionId
+- from: recording
+  to: meeting
+  type: has_one
+  via: mtgSessionId
+- from: domain_dialin_config
+  to: domain
+  type: belongs_to
+  via: domain scope
+- from: phone_number
+  to: domain_dialin_config
+  type: has_many
+  via: dialin routing

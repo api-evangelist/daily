@@ -1,0 +1,250 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/daily-openapi-original.json
+note: No official hosted Daily MCP server was found. This is a candidate tool list
+  derived one-to-one from the Daily REST API OpenAPI operations for building an MCP server.
+server:
+  name: daily
+  transport: http
+tools:
+- name: list_rooms
+  description: "/rooms"
+  http: GET /rooms
+  source_operation: openapi/daily-openapi-original.json#ListRooms
+- name: create_room
+  description: "/rooms"
+  http: POST /rooms
+  source_operation: openapi/daily-openapi-original.json#CreateRoom
+- name: get_room_config
+  description: "rooms/:name"
+  http: GET /rooms/{room_name}
+  source_operation: openapi/daily-openapi-original.json#GetRoomConfig
+- name: set_room_config
+  description: "rooms/:name"
+  http: POST /rooms/{room_name}
+  source_operation: openapi/daily-openapi-original.json#SetRoomConfig
+- name: delete_room
+  description: "rooms/:name"
+  http: DELETE /rooms/{room_name}
+  source_operation: openapi/daily-openapi-original.json#DeleteRoom
+- name: get_room_presence
+  description: "rooms/:name/presence"
+  http: GET /rooms/{room_name}/presence
+  source_operation: openapi/daily-openapi-original.json#GetRoomPresence
+- name: send_app_message
+  description: "rooms/:name/send-app-message"
+  http: POST /rooms/{room_name}/send-app-message
+  source_operation: openapi/daily-openapi-original.json#SendAppMessage
+- name: get_session_data
+  description: "rooms/:name/get-session-data"
+  http: GET /rooms/{room_name}/get-session-data
+  source_operation: openapi/daily-openapi-original.json#GetSessionData
+- name: set_session_data
+  description: "rooms/:name/set-session-data"
+  http: POST /rooms/{room_name}/set-session-data
+  source_operation: openapi/daily-openapi-original.json#SetSessionData
+- name: eject
+  description: "rooms/:name/eject"
+  http: POST /rooms/{room_name}/eject
+  source_operation: openapi/daily-openapi-original.json#Eject
+- name: update_permissions
+  description: "rooms/:name/update-permissions"
+  http: POST /rooms/{room_name}/update-permissions
+  source_operation: openapi/daily-openapi-original.json#UpdatePermissions
+- name: room_recordings_start
+  description: "rooms/:name/recordings/start"
+  http: POST /rooms/{room_name}/recordings/start
+  source_operation: openapi/daily-openapi-original.json#RoomRecordingsStart
+- name: room_recordings_update
+  description: "rooms/:name/recordings/update"
+  http: POST /rooms/{room_name}/recordings/update
+  source_operation: openapi/daily-openapi-original.json#RoomRecordingsUpdate
+- name: room_recordings_stop
+  description: "rooms/:name/recordings/stop"
+  http: POST /rooms/{room_name}/recordings/stop
+  source_operation: openapi/daily-openapi-original.json#RoomRecordingsStop
+- name: room_livestreaming_start
+  description: "rooms/:name/live-streaming/start"
+  http: POST /rooms/{room_name}/live-streaming/start
+  source_operation: openapi/daily-openapi-original.json#RoomLivestreamingStart
+- name: room_livestreaming_update
+  description: "rooms/:name/live-streaming/update"
+  http: POST /rooms/{room_name}/live-streaming/update
+  source_operation: openapi/daily-openapi-original.json#RoomLivestreamingUpdate
+- name: room_livestreaming_stop
+  description: "rooms/:name/live-streaming/stop"
+  http: POST /rooms/{room_name}/live-streaming/stop
+  source_operation: openapi/daily-openapi-original.json#RoomLivestreamingStop
+- name: room_transcription_start
+  description: "rooms/:name/transcription/start"
+  http: POST /rooms/{room_name}/transcription/start
+  source_operation: openapi/daily-openapi-original.json#RoomTranscriptionStart
+- name: room_transcription_update
+  description: "rooms/:name/transcription/update"
+  http: POST /rooms/{room_name}/transcription/update
+  source_operation: openapi/daily-openapi-original.json#RoomTranscriptionUpdate
+- name: room_transcription_stop
+  description: "rooms/:name/transcription/stop"
+  http: POST /rooms/{room_name}/transcription/stop
+  source_operation: openapi/daily-openapi-original.json#RoomTranscriptionStop
+- name: room_dial_out_start
+  description: "rooms/:name/dialOut/start"
+  http: POST /rooms/{room_name}/dialOut/start
+  source_operation: openapi/daily-openapi-original.json#RoomDialOutStart
+- name: room_dial_out_send_d_t_m_f
+  description: "rooms/:name/dialOut/sendDTMF"
+  http: POST /rooms/{room_name}/dialOut/sendDTMF
+  source_operation: openapi/daily-openapi-original.json#RoomDialOutSendDTMF
+- name: room_dial_out_stop
+  description: "rooms/:name/dialOut/stop"
+  http: POST /rooms/{room_name}/dialOut/stop
+  source_operation: openapi/daily-openapi-original.json#RoomDialOutStop
+- name: room_sip_call_transfer
+  description: "rooms/:name/sipCallTransfer"
+  http: POST /rooms/{room_name}/sipCallTransfer
+  source_operation: openapi/daily-openapi-original.json#RoomSipCallTransfer
+- name: room_sip_refer
+  description: "rooms/:name/sipRefer"
+  http: POST /rooms/{room_name}/sipRefer
+  source_operation: openapi/daily-openapi-original.json#RoomSipRefer
+- name: create_meeting_token
+  description: "meeting-tokens"
+  http: POST /meeting-tokens
+  source_operation: openapi/daily-openapi-original.json#CreateMeetingToken
+- name: validate_meeting_token
+  description: "meeting-tokens/:meeting_token"
+  http: GET /meeting-tokens/{meeting_token}
+  source_operation: openapi/daily-openapi-original.json#ValidateMeetingToken
+- name: list_recordings
+  description: "/recordings"
+  http: GET /recordings
+  source_operation: openapi/daily-openapi-original.json#ListRecordings
+- name: get_recording_info
+  description: "recordings/:id"
+  http: GET /recordings/{recording_id}
+  source_operation: openapi/daily-openapi-original.json#GetRecordingInfo
+- name: delete_recording
+  description: "recordings/:id"
+  http: DELETE /recordings/{recording_id}
+  source_operation: openapi/daily-openapi-original.json#DeleteRecording
+- name: get_recording_link
+  description: "recordings/:id/access-link"
+  http: GET /recordings/{recording_id}/access-link
+  source_operation: openapi/daily-openapi-original.json#GetRecordingLink
+- name: list_transcript
+  description: "/transcript"
+  http: GET /transcript
+  source_operation: openapi/daily-openapi-original.json#ListTranscript
+- name: get_transcript_info
+  description: "transcript/:transcriptId"
+  http: GET /transcript/{transcriptId}
+  source_operation: openapi/daily-openapi-original.json#GetTranscriptInfo
+- name: delete_transcript
+  description: "transcript/:id"
+  http: DELETE /transcript/{transcriptId}
+  source_operation: openapi/daily-openapi-original.json#DeleteTranscript
+- name: get_transcript_link
+  description: "transcript/:id/access-link"
+  http: GET /transcript/{transcriptId}/access-link
+  source_operation: openapi/daily-openapi-original.json#GetTranscriptLink
+- name: list_domain_dialin_configs
+  description: "/domain-dialin-config"
+  http: GET /domain-dialin-config
+  source_operation: openapi/daily-openapi-original.json#ListDomainDialinConfigs
+- name: create_domain_dial_config_info
+  description: "create new config"
+  http: POST /domain-dialin-config
+  source_operation: openapi/daily-openapi-original.json#CreateDomainDialConfigInfo
+- name: get_domain_dialin_config_info
+  description: "domain-dialin-config/:id"
+  http: GET /domain-dialin-config/{id}
+  source_operation: openapi/daily-openapi-original.json#GetDomainDialinConfigInfo
+- name: update_domain_dial_config_info
+  description: "domain-dialin-config/:id"
+  http: PUT /domain-dialin-config/{id}
+  source_operation: openapi/daily-openapi-original.json#UpdateDomainDialConfigInfo
+- name: delete_domain_dialin_config
+  description: "domain-dialin-config/:id"
+  http: DELETE /domain-dialin-config/{id}
+  source_operation: openapi/daily-openapi-original.json#DeleteDomainDialinConfig
+- name: get_webhooks
+  description: "/webhooks"
+  http: GET /webhooks
+  source_operation: openapi/daily-openapi-original.json#GetWebhooks
+- name: create_webhook
+  description: "/webhooks"
+  http: POST /webhooks
+  source_operation: openapi/daily-openapi-original.json#CreateWebhook
+- name: get_webhook_config
+  description: "webhooks/:id"
+  http: GET /webhooks/{id}
+  source_operation: openapi/daily-openapi-original.json#GetWebhookConfig
+- name: update_webhook_config
+  description: "webhooks/:id"
+  http: POST /webhooks/{id}
+  source_operation: openapi/daily-openapi-original.json#UpdateWebhookConfig
+- name: delete_webhook
+  description: "webhooks/:id"
+  http: DELETE /webhooks/{id}
+  source_operation: openapi/daily-openapi-original.json#DeleteWebhook
+- name: get_meeting_info
+  description: "/meetings"
+  http: GET /meetings
+  source_operation: openapi/daily-openapi-original.json#GetMeetingInfo
+- name: get_individual_meeting_info
+  description: "/meetings/:meeting"
+  http: GET /meetings/{meeting}
+  source_operation: openapi/daily-openapi-original.json#GetIndividualMeetingInfo
+- name: get_meeting_participants
+  description: "/meetings/:meeting/participants"
+  http: GET /meetings/{meeting}/participants
+  source_operation: openapi/daily-openapi-original.json#GetMeetingParticipants
+- name: list_logs
+  description: "/logs"
+  http: GET /logs
+  source_operation: openapi/daily-openapi-original.json#ListLogs
+- name: list_a_p_i_logs
+  description: "/logs/api"
+  http: GET /logs/api
+  source_operation: openapi/daily-openapi-original.json#ListAPILogs
+- name: get_presence
+  description: "/presence"
+  http: GET /presence
+  source_operation: openapi/daily-openapi-original.json#GetPresence
+- name: batch_room_create
+  description: "/batch/rooms"
+  http: POST /batch/rooms
+  source_operation: openapi/daily-openapi-original.json#BatchRoomCreate
+- name: batch_room_delete
+  description: "/batch/rooms"
+  http: DELETE /batch/rooms
+  source_operation: openapi/daily-openapi-original.json#BatchRoomDelete
+- name: list_available_numbers
+  description: "/list-available-numbers"
+  http: GET /list-available-numbers
+  source_operation: openapi/daily-openapi-original.json#ListAvailableNumbers
+- name: purchased_phone_numbers
+  description: "/purchased-phone-numbers"
+  http: GET /purchased-phone-numbers
+  source_operation: openapi/daily-openapi-original.json#PurchasedPhoneNumbers
+- name: buy_phone_number
+  description: "/buy-phone-number"
+  http: POST /buy-phone-number
+  source_operation: openapi/daily-openapi-original.json#BuyPhoneNumber
+- name: release_phone_number
+  description: "release-phone-number/:id"
+  http: DELETE /release-phone-number/{id}
+  source_operation: openapi/daily-openapi-original.json#ReleasePhoneNumber
+- name: pinless_call_update
+  description: "/dialin/pinlessCallUpdate"
+  http: POST /dialin/pinlessCallUpdate
+  source_operation: openapi/daily-openapi-original.json#PinlessCallUpdate
+- name: get_domain_config
+  description: "Get domain configuration"
+  http: GET /
+  source_operation: openapi/daily-openapi-original.json#GetDomainConfig
+- name: set_domain_config
+  description: "Set domain configuration"
+  http: POST /
+  source_operation: openapi/daily-openapi-original.json#SetDomainConfig

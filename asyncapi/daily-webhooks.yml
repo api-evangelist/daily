@@ -1,0 +1,107 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.daily.co/reference/rest-api/webhooks + openapi/daily-openapi-original.json
+spec_type: Webhooks
+note: Daily documents a webhook subscription API (/webhooks CRUD) and a fixed event
+  catalog delivered as HTTP POSTs. No standalone AsyncAPI document is published; this is
+  the event surface derived from the OpenAPI webhook event schemas.
+management_endpoints:
+- GET /webhooks (GetWebhooks)
+- POST /webhooks (CreateWebhook)
+- GET /webhooks/{id} (GetWebhookConfig)
+- POST /webhooks/{id} (UpdateWebhookConfig)
+- DELETE /webhooks/{id} (DeleteWebhook)
+events:
+- event: batch-processor.job-finished
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/batch_processor_job_finished
+- event: calltransfer.answered
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/calltransfer_answered
+- event: calltransfer.completed
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/calltransfer_completed
+- event: calltransfer.initiated
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/calltransfer_initiated
+- event: calltransfer.triggered
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/calltransfer_triggered
+- event: dialin.connected
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialin_connected
+- event: dialin.error
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialin_error
+- event: dialin.ready
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialin_ready
+- event: dialin.stopped
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialin_stopped
+- event: dialin.warning
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialin_warning
+- event: dialout.answered
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialout_answered
+- event: dialout.connected
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialout_connected
+- event: dialout.error
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialout_error
+- event: dialout.stopped
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialout_stopped
+- event: dialout.warning
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/dialout_warning
+- event: meeting.ended
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/meeting_ended
+- event: meeting.started
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/meeting_started
+- event: participant.joined
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/participant_joined
+- event: participant.left
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/participant_left
+- event: recording.error
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/recording_error
+- event: recording.ready-to-download
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/recording_ready_to_download
+- event: recording.started
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/recording_started
+- event: streaming.ended
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/streaming_ended
+- event: streaming.error
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/streaming_error
+- event: streaming.started
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/streaming_started
+- event: streaming.updated
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/streaming_updated
+- event: transcript.error
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/transcript_error
+- event: transcript.ready-to-download
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/transcript_ready_to_download
+- event: transcript.started
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/transcript_started
+- event: waiting-participant.joined
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/waiting_participant_joined
+- event: waiting-participant.left
+  description: "The type of event that is being provided."
+  schema: openapi/daily-openapi-original.json#/components/schemas/waiting_participant_left

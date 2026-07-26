@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.daily.co/reference/rest-api and https://docs.daily.co/changelog/index
+versioning:
+  scheme: uri-path
+  current: v1
+  base_url: https://api.daily.co/v1
+  docs: https://docs.daily.co/docs/rest-api/index
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation/Sunset (RFC 8594) policy is published; SDK changes are announced
+    via the dated changelog and GitHub release notes.
+sla:
+  url: null
+  uptime_target: null
+  note: No public SLA/uptime-target document found; operational status is tracked on the status page.
+status_page: https://status.daily.co/
+changelog: https://docs.daily.co/changelog/index
+resilience:
+  note: Automatic client domain failover (daily.co -> dailywebrtc.com/.net) shipped June 2026
+    across client SDKs for connection resilience.
+deprecated_operations: []

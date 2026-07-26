@@ -1,0 +1,38 @@
+{
+  "provider": "daily",
+  "sources": [
+    "daily-batch-rooms-api-openapi.yml",
+    "daily-dialin-api-openapi.yml",
+    "daily-domain-api-openapi.yml",
+    "daily-domain-dialin-config-api-openapi.yml",
+    "daily-logs-api-openapi.yml",
+    "daily-meeting-tokens-api-openapi.yml",
+    "daily-meetings-api-openapi.yml",
+    "daily-phone-numbers-api-openapi.yml",
+    "daily-presence-api-openapi.yml",
+    "daily-recordings-api-openapi.yml",
+    "daily-rooms-api-openapi.yml",
+    "daily-transcript-api-openapi.yml",
+    "daily-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "daily-batch-rooms-api-openapi.yml",
+    "daily-dialin-api-openapi.yml",
+    "daily-domain-api-openapi.yml",
+    "daily-domain-dialin-config-api-openapi.yml",
+    "daily-logs-api-openapi.yml",
+    "daily-meeting-tokens-api-openapi.yml",
+    "daily-meetings-api-openapi.yml",
+    "daily-phone-numbers-api-openapi.yml",
+    "daily-presence-api-openapi.yml",
+    "daily-recordings-api-openapi.yml",
+    "daily-rooms-api-openapi.yml",
+    "daily-transcript-api-openapi.yml",
+    "daily-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

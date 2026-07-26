@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.daily.co/changelog/index
+scheme: dated releases (per-SDK semver), monthly roundups numbered 001..079
+current:
+  daily-js: 0.91.0
+  react-native-daily-js: 0.86.0
+  daily-react: 0.26.0
+  daily-python: 0.31.0
+  daily-ios: 0.38.0
+  daily-android: 0.38.0
+  daily_flutter: 0.38.0
+entries:
+- date: '2026-06-24'
+  id: '079'
+  breaking: false
+  highlights:
+  - Automatic client domain failover (daily.co -> dailywebrtc.com/.net) across all client SDKs
+    for connection resilience.
+  - daily-js 0.91.0 and react-native-daily-js 0.86.0 add EU-region transcription and new SIP
+    video dial-out params (fps, width, height, videoBitrate).
+  - Server-side SIP interop improvements — proper 488 Not Acceptable for incompatible codecs
+    and custom SIP header passthrough.
+  url: https://docs.daily.co/changelog/079-2026-06-24
+- date: '2026-05-21'
+  id: '078'
+  breaking: false
+  highlights:
+  - daily-js 0.90.0 fixes a Firefox 149 regression that blocked remote participant media.
+  - New provider and sipCallId fields on all dial-in/dial-out events for telephony observability.
+  - Presence endpoints now include mtgSessionId.
+  url: https://docs.daily.co/changelog/078-2026-05-21
+- date: '2026-04-29'
+  id: '077'
+  breaking: false
+  highlights:
+  - daily-react 0.25.0 adds multiple concurrent recording and live-streaming instances.
+  - daily-python 0.28.0 adds screen-share custom tracks and enables Adaptive Bitrate by default.
+  - SIP dial events add sipCallId/provider fields; Signalwire selectable as a telephony provider.
+  url: https://docs.daily.co/changelog/077-2026-04-29

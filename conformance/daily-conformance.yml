@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/daily-openapi-original.json + https://docs.daily.co docs
+standards:
+- id: oauth2
+  conforms: false
+  evidence: Auth is a static HTTP Bearer API key (securityScheme type http/bearer); no oauth2 flows.
+- id: bearer-token-auth
+  conforms: true
+  evidence: openapi securityScheme bearerAuth (type http, scheme bearer)
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom {error, info} JSON envelope with application/json, not
+    application/problem+json.
+- id: cursor-pagination
+  conforms: true
+  evidence: List endpoints use limit + starting_after/ending_before object-id cursors.
+- id: webhooks
+  conforms: true
+  evidence: /webhooks CRUD endpoints plus a documented event catalog (meeting/participant/
+    recording/transcript/streaming/dialin/dialout/calltransfer/batch-processor).
+- id: openapi-3
+  conforms: true
+  evidence: Publishes OpenAPI 3.0.3 at https://docs.daily.co/openapi.json
+- id: hipaa
+  conforms: true
+  evidence: Daily publishes HIPAA compliance configuration and healthcare guidance.
+  docs: https://docs.daily.co/docs/guides/privacy-and-security/hipaa
+compliance_published:
+- program: HIPAA
+  docs: https://docs.daily.co/docs/guides/privacy-and-security/hipaa

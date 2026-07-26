@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/daily-openapi-original.json + conventions/daily-conventions.yml
+note: Packaged Agent Skills grounded in verified Daily REST API operationIds. No provider-published
+  AGENTS.md/skill files were found; these are generated from the OpenAPI + captured conventions.
+skills:
+- file: daily-create-room-and-token.md
+  name: Create a Daily room and join token
+  api: openapi/daily-openapi-original.json
+  operations: [CreateRoom, CreateMeetingToken, GetRoomConfig, DeleteRoom]
+- file: daily-record-and-retrieve.md
+  name: Record a Daily call and retrieve the file
+  api: openapi/daily-openapi-original.json
+  operations: [RoomRecordingsStart, RoomRecordingsStop, ListRecordings, GetRecordingInfo, GetRecordingLink]
+- file: daily-transcribe-a-call.md
+  name: Transcribe a Daily call
+  api: openapi/daily-openapi-original.json
+  operations: [RoomTranscriptionStart, RoomTranscriptionStop, ListTranscript, GetTranscriptInfo, GetTranscriptLink]

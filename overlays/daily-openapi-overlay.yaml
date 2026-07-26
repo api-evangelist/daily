@@ -1,0 +1,22 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Daily API
+  version: 1.0.0
+extends: openapi/daily-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: daily
+    x-apievangelist-enriched: '2026-07-18'
+    x-api-key-auth: Domain-scoped API key sent as HTTP Bearer token (Authorization header).
+    x-rate-limit: 20 req/sec or 100 req per 5s window on most endpoints; heavier limits on
+      DELETE /rooms and start-media endpoints; 429 with error "rate-limit-error".
+    x-pagination: Cursor-based via limit + starting_after/ending_before (OLDEST sentinel).
+    x-error-envelope: 'Custom JSON {error, info}; not RFC 9457 problem+json.'
+    x-status-page: https://status.daily.co/
+    x-changelog: https://docs.daily.co/changelog/index
+    x-hipaa: https://docs.daily.co/docs/guides/privacy-and-security/hipaa
+- target: $.servers
+  update:
+  - url: https://api.daily.co/v1
+    description: Daily REST API production base URL.

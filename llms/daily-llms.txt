@@ -1,0 +1,621 @@
+# Daily
+
+## Docs
+
+- [July 17, 2020](https://docs.daily.co/changelog/001-2020-07-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 20, 2020](https://docs.daily.co/changelog/002-2020-07-20.md): The latest updates to Daily's real-time audio and video APIs.
+- [August 3, 2020](https://docs.daily.co/changelog/003-2020-08-03.md): The latest updates to Daily's real-time audio and video APIs.
+- [August 11, 2020](https://docs.daily.co/changelog/004-2020-08-11.md): The latest updates to Daily's real-time audio and video APIs.
+- [September 17, 2020](https://docs.daily.co/changelog/005-2020-09-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [October 23, 2020](https://docs.daily.co/changelog/006-2020-10-23.md): The latest updates to Daily's real-time audio and video APIs.
+- [November 23, 2020](https://docs.daily.co/changelog/007-2020-11-23.md): The latest updates to Daily's real-time audio and video APIs.
+- [December 10, 2020](https://docs.daily.co/changelog/008-2020-12-10.md): The latest updates to Daily's real-time audio and video APIs.
+- [January 8, 2021](https://docs.daily.co/changelog/009-2021-01-08.md): The latest updates to Daily's real-time audio and video APIs.
+- [February 22, 2021](https://docs.daily.co/changelog/010-2021-02-22.md): The latest updates to Daily's real-time audio and video APIs.
+- [March 9, 2021](https://docs.daily.co/changelog/011-2021-03-09.md): The latest updates to Daily's real-time audio and video APIs.
+- [April 5, 2021](https://docs.daily.co/changelog/012-2021-04-05.md): The latest updates to Daily's real-time audio and video APIs.
+- [April 19, 2021](https://docs.daily.co/changelog/013-2021-04-19.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 13, 2021](https://docs.daily.co/changelog/014-2021-05-13.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 28, 2021](https://docs.daily.co/changelog/015-2021-05-28.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 7, 2021](https://docs.daily.co/changelog/016-2021-07-07.md): The latest updates to Daily's real-time audio and video APIs.
+- [August 3, 2021](https://docs.daily.co/changelog/017-2021-08-03.md): The latest updates to Daily's real-time audio and video APIs.
+- [August 17, 2021](https://docs.daily.co/changelog/018-2021-08-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [September 22, 2021](https://docs.daily.co/changelog/019-2021-09-22.md): The latest updates to Daily's real-time audio and video APIs.
+- [October 28, 2021](https://docs.daily.co/changelog/020-2021-10-28.md): The latest updates to Daily's real-time audio and video APIs.
+- [January 18, 2022](https://docs.daily.co/changelog/021-2022-01-18.md): The latest updates to Daily's real-time audio and video APIs.
+- [February 15, 2022](https://docs.daily.co/changelog/022-2022-02-15.md): The latest updates to Daily's real-time audio and video APIs.
+- [March 30, 2022](https://docs.daily.co/changelog/023-2022-03-30.md): The latest updates to Daily's real-time audio and video APIs.
+- [April 14, 2022](https://docs.daily.co/changelog/024-2022-04-14.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 17, 2022](https://docs.daily.co/changelog/025-2022-05-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [June 16, 2022](https://docs.daily.co/changelog/026-2022-06-16.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 7, 2022](https://docs.daily.co/changelog/027-2022-07-07.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 29, 2022](https://docs.daily.co/changelog/028-2022-07-29.md): The latest updates to Daily's real-time audio and video APIs.
+- [August 22, 2022](https://docs.daily.co/changelog/029-2022-08-22.md): The latest updates to Daily's real-time audio and video APIs.
+- [September 15, 2022](https://docs.daily.co/changelog/030-2022-09-15.md): The latest updates to Daily's real-time audio and video APIs.
+- [September 26, 2022](https://docs.daily.co/changelog/031-2022-09-26.md): The latest updates to Daily's real-time audio and video APIs.
+- [October 4, 2022](https://docs.daily.co/changelog/032-2022-10-04.md): The latest updates to Daily's real-time audio and video APIs.
+- [October 17, 2022](https://docs.daily.co/changelog/033-2022-10-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [November 14, 2022](https://docs.daily.co/changelog/034-2022-11-14.md): The latest updates to Daily's real-time audio and video APIs.
+- [December 6, 2022](https://docs.daily.co/changelog/035-2022-12-06.md): The latest updates to Daily's real-time audio and video APIs.
+- [December 23, 2022](https://docs.daily.co/changelog/036-2022-12-23.md): The latest updates to Daily's real-time audio and video APIs.
+- [January 18, 2023](https://docs.daily.co/changelog/037-2023-01-18.md): The latest updates to Daily's real-time audio and video APIs.
+- [February 1, 2023](https://docs.daily.co/changelog/038-2023-02-01.md): The latest updates to Daily's real-time audio and video APIs.
+- [February 28, 2023](https://docs.daily.co/changelog/039-2023-02-28.md): The latest updates to Daily's real-time audio and video APIs.
+- [March 15, 2023](https://docs.daily.co/changelog/040-2023-03-15.md): The latest updates to Daily's real-time audio and video APIs.
+- [April 3, 2023](https://docs.daily.co/changelog/041-2023-04-03.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 1, 2023](https://docs.daily.co/changelog/042-2023-05-01.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 17, 2023](https://docs.daily.co/changelog/043-2023-05-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [June 7, 2023](https://docs.daily.co/changelog/044-2023-06-07.md): The latest updates to Daily's real-time audio and video APIs.
+- [June 30, 2023](https://docs.daily.co/changelog/045-2023-06-30.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 25, 2023](https://docs.daily.co/changelog/046-2023-07-25.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 28, 2023](https://docs.daily.co/changelog/047-2023-07-28.md): The latest updates to Daily's real-time audio and video APIs.
+- [August 28, 2023](https://docs.daily.co/changelog/048-2023-08-28.md): The latest updates to Daily's real-time audio and video APIs.
+- [September 15, 2023](https://docs.daily.co/changelog/049-2023-09-15.md): The latest updates to Daily's real-time audio and video APIs.
+- [September 25, 2023](https://docs.daily.co/changelog/050-2023-09-25.md): The latest updates to Daily's real-time audio and video APIs.
+- [October 17, 2023](https://docs.daily.co/changelog/051-2023-10-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [November 9, 2023](https://docs.daily.co/changelog/052-2023-11-09.md): The latest updates to Daily's real-time audio and video APIs.
+- [December 6, 2023](https://docs.daily.co/changelog/053-2023-12-06.md): The latest updates to Daily's real-time audio and video APIs.
+- [December 22, 2023](https://docs.daily.co/changelog/054-2023-12-22.md): The latest updates to Daily's real-time audio and video APIs.
+- [January 25, 2024](https://docs.daily.co/changelog/055-2024-01-25.md): The latest updates to Daily's real-time audio and video APIs.
+- [February 22, 2024](https://docs.daily.co/changelog/056-2024-02-22.md): The latest updates to Daily's real-time audio and video APIs.
+- [March 19, 2024](https://docs.daily.co/changelog/057-2024-03-19.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 1, 2024](https://docs.daily.co/changelog/058-2024-05-01.md): The latest updates to Daily's real-time audio and video APIs.
+- [June 5, 2024](https://docs.daily.co/changelog/059-2024-06-05.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 5, 2024](https://docs.daily.co/changelog/060-2024-07-05.md): The latest updates to Daily's real-time audio and video APIs.
+- [October 17, 2024](https://docs.daily.co/changelog/061-2024-10-17.md): The latest updates to Daily's real-time audio and video APIs.
+- [November 25, 2024](https://docs.daily.co/changelog/062-2024-11-25.md): The latest updates to Daily's real-time audio and video APIs.
+- [January 31, 2025](https://docs.daily.co/changelog/063-2025-01-31.md): The latest updates to Daily's real-time audio and video APIs.
+- [March 30, 2025](https://docs.daily.co/changelog/064-2025-03-30.md): The latest updates to Daily's real-time audio and video APIs.
+- [April 30, 2025](https://docs.daily.co/changelog/065-2025-04-30.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 31, 2025](https://docs.daily.co/changelog/066-2025-05-31.md): The latest updates to Daily's real-time audio and video APIs.
+- [June 29, 2025](https://docs.daily.co/changelog/067-2025-06-29.md): The latest updates to Daily's real-time audio and video APIs.
+- [July 28, 2025](https://docs.daily.co/changelog/068-2025-07-28.md): The latest updates to Daily's real-time audio and video APIs.
+- [August 26, 2025](https://docs.daily.co/changelog/069-2025-08-26.md): The latest updates to Daily's real-time audio and video APIs.
+- [September 23, 2025](https://docs.daily.co/changelog/070-2025-09-23.md): The latest updates to Daily's real-time audio and video APIs.
+- [October 30, 2025](https://docs.daily.co/changelog/071-2025-10-30.md): The latest updates to Daily's real-time audio and video APIs.
+- [November 20, 2025](https://docs.daily.co/changelog/072-2025-11-20.md): The latest updates to Daily's real-time audio and video APIs.
+- [December 19, 2025](https://docs.daily.co/changelog/073-2025-12-19.md): The latest updates to Daily's real-time audio and video APIs.
+- [January 29, 2026](https://docs.daily.co/changelog/074-2026-01-29.md): The latest updates to Daily's real-time audio and video APIs.
+- [February 24, 2026](https://docs.daily.co/changelog/075-2026-02-24.md): The latest updates to Daily's real-time audio and video APIs.
+- [March 29, 2026](https://docs.daily.co/changelog/076-2026-03-29.md): The latest updates to Daily's real-time audio and video APIs.
+- [April 29, 2026](https://docs.daily.co/changelog/077-2026-04-29.md): The latest updates to Daily's real-time audio and video APIs.
+- [May 21, 2026](https://docs.daily.co/changelog/078-2026-05-21.md): The latest updates to Daily's real-time audio and video APIs.
+- [June 24, 2026](https://docs.daily.co/changelog/079-2026-06-24.md): The latest updates to Daily's real-time audio and video APIs.
+- [Changelog](https://docs.daily.co/changelog/index.md): Updates and improvements from the Daily engineering team.
+- [Daily Client SDK for Android](https://docs.daily.co/docs/android/index.md): Build real-time video and audio calling into your native Android applications.
+- [Installing the Daily Client SDK for Android](https://docs.daily.co/docs/android/installation.md): Learn how to get set up with the Daily Client SDK for Android.
+- [Daily Android Mobile SDK Kotlin Quickstart](https://docs.daily.co/docs/android/quickstart.md): Learn how to get started using the Daily Android Mobile SDK with Kotlin to create a video mobile…
+- [Daily Android Mobile SDK Screen Share Quickstart](https://docs.daily.co/docs/android/screen-share.md): Learn how to screen share using the Daily Android Mobile SDK
+- [Call configuration](https://docs.daily.co/docs/daily-js/concepts/call-configuration.md): Understand how DailyCallOptions merges across constructor, load(), preAuth(), startCamera(), and…
+- [Call Modes](https://docs.daily.co/docs/daily-js/concepts/call-modes.md): Choose between iframe-based and call object modes to match your integration requirements.
+- [Events](https://docs.daily.co/docs/daily-js/concepts/events.md): Subscribe to Daily call events using on(), once(), and off() with full TypeScript type narrowing.
+- [Participants](https://docs.daily.co/docs/daily-js/concepts/participants.md): Understand the DailyParticipant object, how to list participants, and how to update them.
+- [Tracks and Media](https://docs.daily.co/docs/daily-js/concepts/tracks.md): Understand DailyTrackState, track states, subscriptions, and how to attach tracks to video elemen…
+- [Custom Tracks](https://docs.daily.co/docs/daily-js/features/custom-tracks.md): Send and receive additional MediaStreamTracks beyond camera and microphone — including canvas-bas…
+- [Dial-in and dial-out](https://docs.daily.co/docs/daily-js/features/dialin-dialout.md): Use daily-js to initiate outbound SIP/PSTN calls, handle inbound callers, send DTMF tones, and tr…
+- [Live Streaming](https://docs.daily.co/docs/daily-js/features/live-streaming.md): Use startLiveStreaming(), updateLiveStreaming(), and stopLiveStreaming() to control live streamin…
+- [Recording](https://docs.daily.co/docs/daily-js/features/recording.md): Use startRecording(), stopRecording(), and updateRecording() to control Daily call recordings fro…
+- [Screen Sharing](https://docs.daily.co/docs/daily-js/features/screen-sharing.md): Start, stop, and configure screen sharing in a Daily call, including sharing a pre-captured Media…
+- [Real-Time Transcription](https://docs.daily.co/docs/daily-js/features/transcription.md): Transcribe speech in Daily calls in real time using Deepgram, with per-participant filtering, pro…
+- [Audio and Video Controls](https://docs.daily.co/docs/daily-js/guides/audio-video.md): Manage local and remote audio/video tracks, switch input and output devices, and monitor audio le…
+- [Custom messages and shared data](https://docs.daily.co/docs/daily-js/guides/custom-messages.md): Send real-time messages between participants, attach state to participants, and maintain room-wid…
+- [Handling device permissions](https://docs.daily.co/docs/daily-js/guides/device-permissions.md): Learn about common device permission errors and best practices for handling camera and microphone…
+- [Working with multiple call instances](https://docs.daily.co/docs/daily-js/guides/multi-instance.md): A guide to using multiple call client instances simultaneously.
+- [Network and call quality](https://docs.daily.co/docs/daily-js/guides/network-quality.md): Monitor network quality and CPU load during a call, and test conditions before a user joins.
+- [Permissions](https://docs.daily.co/docs/daily-js/guides/permissions.md): Control what participants can send, receive, and administer in a Daily call.
+- [Waiting room (knock-to-join)](https://docs.daily.co/docs/daily-js/guides/waiting-room.md): Build a lobby where participants request access and owners admit or deny them in real time.
+- [Installation](https://docs.daily.co/docs/daily-js/installation.md): Install @daily-co/daily-js via a package manager or load it from a CDN.
+- [Introduction](https://docs.daily.co/docs/daily-js/introduction.md): daily-js is the front-end JavaScript SDK for adding real-time video and audio calls to your web a…
+- [Quickstart](https://docs.daily.co/docs/daily-js/quickstart.md): Get a working video call running in under 5 minutes with daily-js.
+- [Active speaker and audio levels](https://docs.daily.co/docs/daily-react/docs/active-speaker.md): Highlight whoever is talking with useActiveSpeakerId and build volume meters with useAudioLevelOb…
+- [Custom messages](https://docs.daily.co/docs/daily-react/docs/app-messages.md): Send and receive arbitrary data between participants in React with useAppMessage, for chat, react…
+- [The call object and provider](https://docs.daily.co/docs/daily-react/docs/call-object-and-provider.md): How the Daily call object is created, shared through DailyProvider, and moved through its lifecyc…
+- [Cameras, mics, and speakers](https://docs.daily.co/docs/daily-react/docs/devices.md): Enumerate, select, and toggle media devices in React with useDevices, and handle permission and d…
+- [Handling events](https://docs.daily.co/docs/daily-react/docs/events.md): Subscribe to daily-js events in React with useDailyEvent and useThrottledDailyEvent, including th…
+- [Introduction](https://docs.daily.co/docs/daily-react/docs/index.md): What Daily React is, when to reach for it, and how it relates to daily-js.
+- [Installation](https://docs.daily.co/docs/daily-react/docs/installation.md): Install Daily React and its peer dependencies, and set up the DailyProvider at the root of your a…
+- [Live streaming](https://docs.daily.co/docs/daily-react/docs/live-streaming.md): Start, stop, and observe RTMP live streams in React with the useLiveStreaming hook.
+- [Network quality and diagnostics](https://docs.daily.co/docs/daily-react/docs/network-quality.md): Monitor network quality, topology, and CPU load in React with useNetwork and useCPULoad, and adap…
+- [Working with participants](https://docs.daily.co/docs/daily-react/docs/participants.md): Read, filter, sort, and react to participant state in Daily React without over-rendering.
+- [Permissions](https://docs.daily.co/docs/daily-react/docs/permissions.md): Control what participants can send, receive, and administer in a Daily call, including knock-to-j…
+- [Quickstart](https://docs.daily.co/docs/daily-react/docs/quickstart.md): Build a working multi-participant video call in React with Daily React, from install to a rendere…
+- [Recording](https://docs.daily.co/docs/daily-react/docs/recording.md): Start, stop, and observe call recordings in React with the useRecording hook.
+- [Rendering media](https://docs.daily.co/docs/daily-react/docs/rendering-media.md): Show participant video with DailyVideo, play audio with DailyAudio, and read track state with use…
+- [Screen sharing](https://docs.daily.co/docs/daily-react/docs/screen-sharing.md): Start, stop, and render screen shares in React with useScreenShare and DailyVideo.
+- [Thinking in Daily React](https://docs.daily.co/docs/daily-react/docs/thinking-in-daily-react.md): The reactive mental model behind Daily React: hooks as selectors, granular re-renders, and events…
+- [Real-Time Transcription](https://docs.daily.co/docs/daily-react/docs/transcription.md): Transcribe speech in Daily calls in real time using Deepgram, with the useTranscription hook for…
+- [Daily Client SDK for Flutter](https://docs.daily.co/docs/flutter/index.md): Build real-time video and audio calling into your Flutter mobile applications.
+- [Installing the Daily Client SDK for Flutter](https://docs.daily.co/docs/flutter/installation.md): Learn how to get set up with the Daily Client SDK for Flutter.
+- [Daily Adaptive Bitrate](https://docs.daily.co/docs/guides/architecture-and-monitoring/adaptive-bitrate.md): Automatically adjust video quality in real time based on network conditions, delivering the best…
+- [Using the Daily Dashboard](https://docs.daily.co/docs/guides/architecture-and-monitoring/experiment-in-the-dashboard.md): A tour of the Daily dashboard — manage rooms, inspect sessions, access API keys, and monitor usag…
+- [Global Mesh Network (Mesh SFU)](https://docs.daily.co/docs/guides/architecture-and-monitoring/global-mesh-network.md): Daily's global infrastructure for delivering real-time video and audio to anyone, anywhere in the…
+- [Video Call Architecture (Quick Intro)](https://docs.daily.co/docs/guides/architecture-and-monitoring/intro-to-video-arch.md): Learn the basics of WebRTC, SFUs, and how Daily routes media between participants.
+- [Daily call quality logging and metrics](https://docs.daily.co/docs/guides/architecture-and-monitoring/logging-and-metrics.md): Learn how to use Daily's call quality logs and metrics to understand and diagnose call quality is…
+- [Build audio-only experiences with Daily](https://docs.daily.co/docs/guides/features/audio-only.md): Learn how to build voice-first and voice-only applications with Daily, including best practices a…
+- [SIP and PSTN dial-in/dial-out](https://docs.daily.co/docs/guides/features/dial-in-dial-out/index.md): Add phone and SIP connectivity to Daily rooms — dial-in with a PIN, pinless dial-in via webhook,…
+- [PSTN dial-in with a PIN code](https://docs.daily.co/docs/guides/features/dial-in-dial-out/pstn-pin-dialin.md): Let participants join a Daily room by dialing a phone number and entering a room-specific PIN cod…
+- [SIP dial-in and dial-out](https://docs.daily.co/docs/guides/features/dial-in-dial-out/sip.md): Configure SIP audio and video dial-in and dial-out for Daily rooms, including multiple SIP endpoi…
+- [SIP Interconnect and Pinless PSTN dial-in](https://docs.daily.co/docs/guides/features/dial-in-dial-out/sip-interconnect-pinless.md): Route incoming phone and SIP calls to Daily rooms via webhook, without requiring callers to enter…
+- [SIP and PSTN call transfers](https://docs.daily.co/docs/guides/features/dial-in-dial-out/transfers.md): Transfer SIP and PSTN calls between Daily rooms or to external destinations using SIP Call Transf…
+- [Streaming HLS with Daily](https://docs.daily.co/docs/guides/features/live-streaming/hls.md): Learn how to configure HTTP Live Streaming (HLS) with Daily, including S3 storage and multi-bitra…
+- [Live streaming with Daily](https://docs.daily.co/docs/guides/features/live-streaming/index.md): Broadcast a real-time Daily video call to any RTMP streaming platform of your choice.
+- [Multi-instance live streaming and recording](https://docs.daily.co/docs/guides/features/live-streaming/multi-instance.md): Run independent live streaming and recording instances in a single Daily room, each with its own…
+- [Custom layouts with VCS](https://docs.daily.co/docs/guides/features/live-streaming/vcs.md): Use Daily's Video Component System to build custom live streaming and cloud recording layouts wit…
+- [Storing Daily call recordings in a custom Amazon S3 bucket](https://docs.daily.co/docs/guides/features/recording/custom-s3-storage.md): Configure Daily to store call recordings directly in your own S3 bucket.
+- [Recording calls with the Daily API](https://docs.daily.co/docs/guides/features/recording/index.md): Learn about cloud, cloud-audio-only, local, and raw-tracks recording options for Daily calls.
+- [Transcription](https://docs.daily.co/docs/guides/features/transcription.md): Daily supports both real-time transcription during calls and post-call transcription of recording…
+- [Setting up your CSP for daily-js](https://docs.daily.co/docs/guides/privacy-and-security/content-security-policy.md): What CSP directives are required to work with `daily-js`.
+- [Controlling who joins a meeting](https://docs.daily.co/docs/guides/privacy-and-security/controlling-who-joins-a-meeting.md): Use room privacy settings, meeting tokens, and knocking to restrict access to your Daily rooms.
+- [Networking Guide](https://docs.daily.co/docs/guides/privacy-and-security/corporate-firewalls-nats-allowed-ip-list.md): Configuring corporate/enterprise networks to support Daily calls.
+- [HIPAA Compliance for healthcare](https://docs.daily.co/docs/guides/privacy-and-security/hipaa.md): Learn how to turn on HIPAA compliance with the Daily API.
+- [Working with Daily meeting tokens](https://docs.daily.co/docs/guides/privacy-and-security/meeting-tokens.md): How to obtain, use, and validate Daily meeting tokens.
+- [Self-signing meeting tokens](https://docs.daily.co/docs/guides/privacy-and-security/self-signing-tokens.md): Generate Daily meeting tokens locally using your API key, without making a round-trip to the Dail…
+- [Best practices to scale large experiences](https://docs.daily.co/docs/guides/scaling-calls/best-practices-to-scale-large-experiences.md): Learn how to use pagination, track subscriptions, and simulcast layer control to optimize perform…
+- [Scaling Daily applications](https://docs.daily.co/docs/guides/scaling-calls/index.md): Guides and best practices for building large-scale call experiences with Daily.
+- [Interactive live streaming and RTMP output](https://docs.daily.co/docs/guides/scaling-calls/interactive-live-streaming-rtmp-output.md): Learn how to build WebRTC-powered calls of up to 100,000 participants, or broadcast to external p…
+- [Large real-time calls](https://docs.daily.co/docs/guides/scaling-calls/large-real-time-calls.md): Learn how to configure Daily rooms for WebRTC-powered calls of up to 1,000 active participants.
+- [Daily Client SDK for iOS](https://docs.daily.co/docs/ios/index.md): Build real-time video and audio calling into your native iOS applications.
+- [Installing the Daily Client SDK for iOS](https://docs.daily.co/docs/ios/installation.md): Learn how to get set up with the Daily Client SDK for iOS.
+- [Daily iOS Mobile SDK Swift Quickstart](https://docs.daily.co/docs/ios/quickstart.md): Learn how to get started using the Daily iOS Mobile SDK with Swift to create a video mobile appli…
+- [Daily iOS Mobile SDK Screen Share Quickstart](https://docs.daily.co/docs/ios/screen-share.md): Learn how to screen share using the Daily iOS Mobile SDK
+- [Customize Daily Prebuilt's UI](https://docs.daily.co/docs/prebuilt/customizing-daily-prebuilt.md): Learn about different ways to customize Daily Prebuilt, a ready-to-use video chat UI.
+- [Customizing Daily Prebuilt calls with color themes](https://docs.daily.co/docs/prebuilt/customizing-daily-prebuilt-calls-with-color-themes.md): Daily Prebuilt includes the ability to customize theme colors for various parts of the video call…
+- [Embed video chat quickly with Daily Prebuilt](https://docs.daily.co/docs/prebuilt/index.md): Use Daily Prebuilt to embed a fully functioning video chat widget into your website or app.
+- [Changing the language in Daily Prebuilt](https://docs.daily.co/docs/prebuilt/language.md): Configure the Daily Prebuilt UI language at the domain, room, token, or call level.
+- [Getting started with the Daily Python SDK](https://docs.daily.co/docs/python/getting-started.md): An overview of daily-python functionality with examples for joining meetings, handling events, an…
+- [Daily Python SDK](https://docs.daily.co/docs/python/index.md): Build server-side video and audio calling into Python applications with the Daily Client SDK for…
+- [Installing the Daily Client SDK for Python](https://docs.daily.co/docs/python/installation.md): Learn how to get set up with the Daily Client SDK for Python.
+- [Introduction](https://docs.daily.co/docs/react-native/index.md): react-native-daily-js is Daily's React Native SDK for adding real-time video and audio calls to y…
+- [Installation](https://docs.daily.co/docs/react-native/installation.md): Install react-native-daily-js and configure your iOS and Android project.
+- [Authentication](https://docs.daily.co/docs/rest-api/authentication.md): How to authenticate with the Daily REST API.
+- [Errors](https://docs.daily.co/docs/rest-api/errors.md): How to handle errors from the Daily REST API.
+- [REST API](https://docs.daily.co/docs/rest-api/index.md): Using our REST API endpoints a developer can manage all things related to Daily rooms, meeting to…
+- [Transcription](https://docs.daily.co/docs/rest-api/transcription.md): A guide to Daily's transcription REST APIs: real-time transcription during calls, post-call proce…
+- [VCS Box component](https://docs.daily.co/docs/vcs/components/box.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS Image component](https://docs.daily.co/docs/vcs/components/image.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS Components](https://docs.daily.co/docs/vcs/components/index.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS Text component](https://docs.daily.co/docs/vcs/components/text.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS Video component](https://docs.daily.co/docs/vcs/components/video.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS WebFrame component](https://docs.daily.co/docs/vcs/components/webframe.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS best practices](https://docs.daily.co/docs/vcs/core-concepts/best-practices.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS SDK: Composition file structure and interface](https://docs.daily.co/docs/vcs/core-concepts/composition.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS SDK: Core concepts](https://docs.daily.co/docs/vcs/core-concepts/index.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS SDK: Input and compositing models](https://docs.daily.co/docs/vcs/core-concepts/input-and-compositing-models.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: Custom React Hooks](https://docs.daily.co/docs/vcs/custom-react-hooks/index.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: useActiveVideo()](https://docs.daily.co/docs/vcs/custom-react-hooks/use-active-video.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: useGrid()](https://docs.daily.co/docs/vcs/custom-react-hooks/use-grid.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: useMediaInput()](https://docs.daily.co/docs/vcs/custom-react-hooks/use-media-input.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: useParams()](https://docs.daily.co/docs/vcs/custom-react-hooks/use-params.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: useVideoPlaybackState()](https://docs.daily.co/docs/vcs/custom-react-hooks/use-video-playback-state.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: useVideoTime()](https://docs.daily.co/docs/vcs/custom-react-hooks/use-video-time.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS: useViewportSize()](https://docs.daily.co/docs/vcs/custom-react-hooks/use-viewport-size.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [Using Daily's Video Component System (VCS) SDK](https://docs.daily.co/docs/vcs/index.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [Daily's Video Component System (VCS) installation guide](https://docs.daily.co/docs/vcs/installation.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [VCS Layout API](https://docs.daily.co/docs/vcs/layout-api/index.md): Full reference documentation to help developers rapidly add calls to any site or app using the Da…
+- [Using session assets in Daily VCS](https://docs.daily.co/docs/vcs/session-assets.md): Developers can use Daily's VCS SDK to build custom video layouts and add graphics to live streame…
+- [Build a JS package](https://docs.daily.co/docs/vcs/tools/build-a-js-package.md): Full reference documentation to help developers rapidly add calls to any site or app using the Da…
+- [VCS tools](https://docs.daily.co/docs/vcs/tools/index.md): Full reference documentation to help developers rapidly add calls to any site or app using the Da…
+- [VCS Simulator](https://docs.daily.co/docs/vcs/tools/simulator.md): Full reference documentation to help developers rapidly add calls to any site or app using the Da…
+- [VCS web renderer](https://docs.daily.co/docs/vcs/tools/vcs-web-renderer.md): Full reference documentation to help developers rapidly add calls to any site or app using the Da…
+- [Daily Call Client](https://docs.daily.co/reference/daily-js/daily-call-client/index.md): The core object for managing a Daily video call in daily-js.
+- [Error events](https://docs.daily.co/reference/daily-js/events/error-events.md): Events for fatal and non-fatal errors — connection failures, device errors, screen share issues,…
+- [Iframe UI events](https://docs.daily.co/reference/daily-js/events/iframe-ui-events.md): Events for Daily Prebuilt UI state changes — fullscreen, picture-in-picture, sidebar, and more.
+- [daily-js events](https://docs.daily.co/reference/daily-js/events/index.md): Complete list of daily-js events — emitted for every state change during a call.
+- [Lifecycle events](https://docs.daily.co/reference/daily-js/events/lifecycle-events.md): Events for the full call lifecycle — loading, joining, leaving, and destruction.
+- [Live streaming events](https://docs.daily.co/reference/daily-js/events/live-streaming-events.md): Events for live streaming lifecycle — start, connection state changes, stop, and errors.
+- [Media events](https://docs.daily.co/reference/daily-js/events/media-events.md): Events for media track lifecycle — when tracks start, stop, and when audio level and face detecti…
+- [Messaging events](https://docs.daily.co/reference/daily-js/events/messaging-events.md): Events for in-call app messages and shared meeting session state.
+- [Network events](https://docs.daily.co/reference/daily-js/events/network-events.md): Events for network quality changes, connection interruptions, CPU load, and prejoin test results.
+- [Participant events](https://docs.daily.co/reference/daily-js/events/participant-events.md): Events for participant state changes — joining, leaving, updates, waiting room, and active speake…
+- [Recording events](https://docs.daily.co/reference/daily-js/events/recording-events.md): Events for recording lifecycle — start, stop, error, upload completion, and raw data delivery.
+- [Settings & device events](https://docs.daily.co/reference/daily-js/events/settings-events.md): Events for camera startup, device availability and selection, and media send/receive settings.
+- [Telephony events (SIP/PSTN)](https://docs.daily.co/reference/daily-js/events/telephony-events.md): Events for SIP and PSTN dial-in and dial-out session lifecycle.
+- [Transcription events](https://docs.daily.co/reference/daily-js/events/transcription-events.md): Events for transcription lifecycle — start, stop, new transcription messages, and errors.
+- [Daily.createCallObject()](https://docs.daily.co/reference/daily-js/factory-methods/create-call-object.md): Creates a headless DailyCall instance for building fully custom call UIs with direct access to me…
+- [Daily.createFrame()](https://docs.daily.co/reference/daily-js/factory-methods/create-frame.md): Creates a DailyCall instance with an embedded Daily Prebuilt iframe appended to the DOM.
+- [Daily.createTransparentFrame()](https://docs.daily.co/reference/daily-js/factory-methods/create-transparent-frame.md): Creates a full-page transparent Daily Prebuilt iframe overlay that ignores pointer events.
+- [Factory methods](https://docs.daily.co/reference/daily-js/factory-methods/index.md): Using our video chat API, you can call factory methods to create the objects necessary to host a…
+- [Daily.wrap()](https://docs.daily.co/reference/daily-js/factory-methods/wrap.md): Creates a DailyCall instance that controls an existing iframe element you provide.
+- [abortTestNetworkConnectivity()](https://docs.daily.co/reference/daily-js/instance-methods/abort-test-network-connectivity.md): Stop an in-progress testNetworkConnectivity() test early.
+- [abortTestWebsocketConnectivity()](https://docs.daily.co/reference/daily-js/instance-methods/abort-test-websocket-connectivity.md): Stop an in-progress testWebsocketConnectivity() test early.
+- [accessState()](https://docs.daily.co/reference/daily-js/instance-methods/access-state.md): Returns the local participant's current meeting access state. Use this to check whether the parti…
+- [activeSpeakerMode()](https://docs.daily.co/reference/daily-js/instance-methods/active-speaker-mode.md): Returns whether Daily Prebuilt is currently in Active Speaker layout mode.
+- [addFakeParticipant()](https://docs.daily.co/reference/daily-js/instance-methods/add-fake-participant.md): Add a fake video participant to a call for testing layout and UI.
+- [addLiveStreamingEndpoints()](https://docs.daily.co/reference/daily-js/instance-methods/add-live-streaming-endpoints.md): Add RTMP destinations to an active live stream.
+- [customIntegrations()](https://docs.daily.co/reference/daily-js/instance-methods/custom-integrations.md): Returns all currently configured custom integrations for a Daily Prebuilt call.
+- [customTrayButtons()](https://docs.daily.co/reference/daily-js/instance-methods/custom-tray-buttons.md): Returns the currently configured custom tray buttons for a Daily Prebuilt call.
+- [cycleCamera()](https://docs.daily.co/reference/daily-js/instance-methods/cycle-camera.md): Switch the local camera to the next available device.
+- [cycleMic()](https://docs.daily.co/reference/daily-js/instance-methods/cycle-mic.md): Switch the local microphone to the next available device.
+- [destroy()](https://docs.daily.co/reference/daily-js/instance-methods/destroy.md): Destroy a Daily call object and release all associated resources.
+- [enumerateDevices()](https://docs.daily.co/reference/daily-js/instance-methods/enumerate-devices.md): Returns a list of available audio and video input/output devices.
+- [exitFullscreen()](https://docs.daily.co/reference/daily-js/instance-methods/exit-fullscreen.md): Exit fullscreen mode in Daily Prebuilt.
+- [getCpuLoadStats()](https://docs.daily.co/reference/daily-js/instance-methods/get-cpu-load-stats.md): Returns current CPU load state and per-frame encoding/decoding statistics.
+- [getDailyLang()](https://docs.daily.co/reference/daily-js/instance-methods/get-daily-lang.md): Returns the current language setting and the resolved language in effect.
+- [getInputDevices()](https://docs.daily.co/reference/daily-js/instance-methods/get-input-devices.md): Returns the camera, microphone, and speaker devices currently selected for the call.
+- [getInputSettings()](https://docs.daily.co/reference/daily-js/instance-methods/get-input-settings.md): Returns the current audio and video input settings, including processor and constraint configurat…
+- [getLocalAudioLevel()](https://docs.daily.co/reference/daily-js/instance-methods/get-local-audio-level.md): Returns the current audio level for the local participant.
+- [getMeetingSession() (Deprecated)](https://docs.daily.co/reference/daily-js/instance-methods/get-meeting-session.md): Deprecated. Use meetingSessionSummary() instead.
+- [getNetworkStats()](https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats.md): Returns current network quality stats and per-interval send/receive metrics.
+- [getNetworkTopology()](https://docs.daily.co/reference/daily-js/instance-methods/get-network-topology.md): Returns the current WebRTC connection topology for the call.
+- [getReceiveSettings()](https://docs.daily.co/reference/daily-js/instance-methods/get-receive-settings.md): Returns the current media receive settings, either for all participants or a specific one.
+- [getRemoteParticipantsAudioLevel()](https://docs.daily.co/reference/daily-js/instance-methods/get-remote-participants-audio-level.md): Returns the current audio level for each remote participant.
+- [getSendSettings()](https://docs.daily.co/reference/daily-js/instance-methods/get-send-settings.md): Returns the current media send settings, or null if none have been set.
+- [getSidebarView()](https://docs.daily.co/reference/daily-js/instance-methods/get-sidebar-view.md): Returns the currently active sidebar tab in Daily Prebuilt.
+- [iframe()](https://docs.daily.co/reference/daily-js/instance-methods/iframe.md): Returns the iframe DOM element wrapping the Daily Prebuilt call.
+- [Instance methods](https://docs.daily.co/reference/daily-js/instance-methods/index.md): Using our video API, instance methods allow developers to customize a WebRTC call.
+- [isDestroyed()](https://docs.daily.co/reference/daily-js/instance-methods/is-destroyed.md): Returns whether the call instance has been destroyed.
+- [isLocalAudioLevelObserverRunning()](https://docs.daily.co/reference/daily-js/instance-methods/is-local-audio-level-observer-running.md): Returns whether the local audio level observer is currently active.
+- [isRemoteParticipantsAudioLevelObserverRunning()](https://docs.daily.co/reference/daily-js/instance-methods/is-remote-participants-audio-level-observer-running.md): Returns whether the remote participants audio level observer is currently active.
+- [join()](https://docs.daily.co/reference/daily-js/instance-methods/join.md): Join a Daily room and begin sending and receiving media.
+- [leave()](https://docs.daily.co/reference/daily-js/instance-methods/leave.md): Leave the current Daily call.
+- [load()](https://docs.daily.co/reference/daily-js/instance-methods/load.md): Pre-loads the Daily JavaScript bundle to reduce join latency.
+- [localAudio()](https://docs.daily.co/reference/daily-js/instance-methods/local-audio.md): Returns whether the local microphone is on.
+- [localScreenAudio()](https://docs.daily.co/reference/daily-js/instance-methods/local-screen-audio.md): Returns whether the local screen share audio track is on.
+- [localScreenVideo()](https://docs.daily.co/reference/daily-js/instance-methods/local-screen-video.md): Returns whether the local screen share video track is on.
+- [localVideo()](https://docs.daily.co/reference/daily-js/instance-methods/local-video.md): Returns whether the local camera is on.
+- [meetingSessionState()](https://docs.daily.co/reference/daily-js/instance-methods/meeting-session-state.md): Returns the current meeting session state, including shared data and network topology.
+- [meetingSessionSummary()](https://docs.daily.co/reference/daily-js/instance-methods/meeting-session-summary.md): Returns a summary of the current or most recently ended meeting session.
+- [meetingState()](https://docs.daily.co/reference/daily-js/instance-methods/meeting-state.md): Returns the current meeting lifecycle state.
+- [off()](https://docs.daily.co/reference/daily-js/instance-methods/off.md): Removes an event listener from a Daily call event.
+- [on()](https://docs.daily.co/reference/daily-js/instance-methods/on.md): Subscribes to a Daily call event.
+- [once()](https://docs.daily.co/reference/daily-js/instance-methods/once.md): Subscribes to a Daily call event, firing only once.
+- [participantCounts()](https://docs.daily.co/reference/daily-js/instance-methods/participant-counts.md): Returns the total number of present and hidden participants currently in the call.
+- [participants()](https://docs.daily.co/reference/daily-js/instance-methods/participants.md): Returns an object containing all current participants in the call, keyed by participant ID.
+- [preAuth()](https://docs.daily.co/reference/daily-js/instance-methods/pre-auth.md): Pre-authenticates a participant with the server before joining a call.
+- [removeLiveStreamingEndpoints()](https://docs.daily.co/reference/daily-js/instance-methods/remove-live-streaming-endpoints.md): Removes one or more RTMP endpoints from an active live stream.
+- [requestAccess()](https://docs.daily.co/reference/daily-js/instance-methods/request-access.md): Requests full access to a call from the lobby.
+- [requestFullscreen()](https://docs.daily.co/reference/daily-js/instance-methods/request-fullscreen.md): Expands the Daily Prebuilt iframe to fullscreen.
+- [room()](https://docs.daily.co/reference/daily-js/instance-methods/room.md): Returns configuration information about the current room.
+- [sendAppMessage()](https://docs.daily.co/reference/daily-js/instance-methods/send-app-message.md): Sends a message to one or more participants in the call.
+- [sendDTMF()](https://docs.daily.co/reference/daily-js/instance-methods/send-dtmf.md): Sends DTMF tones during a dial-out call.
+- [setActiveSpeakerMode()](https://docs.daily.co/reference/daily-js/instance-methods/set-active-speaker-mode.md): Enables or disables Active Speaker mode in Daily Prebuilt.
+- [setBandwidth()](https://docs.daily.co/reference/daily-js/instance-methods/set-bandwidth.md): Sets a cap on upstream camera video bandwidth.
+- [setCustomIntegrations()](https://docs.daily.co/reference/daily-js/instance-methods/set-custom-integrations.md): Sets or updates the custom integrations embedded in Daily Prebuilt.
+- [setDailyLang()](https://docs.daily.co/reference/daily-js/instance-methods/set-daily-lang.md): Sets the language for the call.
+- [setIceConfig()](https://docs.daily.co/reference/daily-js/instance-methods/set-ice-config.md): Configures custom TURN servers for a Daily call.
+- [setInputDevicesAsync()](https://docs.daily.co/reference/daily-js/instance-methods/set-input-devices-async.md): Switches the local audio or video input to a specific device or custom track.
+- [setLocalAudio()](https://docs.daily.co/reference/daily-js/instance-methods/set-local-audio.md): Mutes or unmutes the local microphone.
+- [setLocalVideo()](https://docs.daily.co/reference/daily-js/instance-methods/set-local-video.md): Enables or disables the local camera.
+- [setMeetingSessionData()](https://docs.daily.co/reference/daily-js/instance-methods/set-meeting-session-data.md): Sets arbitrary shared data on the current meeting session, synced to all participants.
+- [setNetworkTopology()](https://docs.daily.co/reference/daily-js/instance-methods/set-network-topology.md): Forces the network topology for the current call.
+- [setOutputDeviceAsync()](https://docs.daily.co/reference/daily-js/instance-methods/set-output-device-async.md): Sets the audio output (speaker) device for the call.
+- [setPlayNewParticipantSound()](https://docs.daily.co/reference/daily-js/instance-methods/set-play-new-participant-sound.md): Enables or disables the join sound in Prebuilt when new participants enter the call.
+- [setProxyUrl()](https://docs.daily.co/reference/daily-js/instance-methods/set-proxy-url.md): Sets or clears the proxy URL for routing Daily connections through a custom proxy server.
+- [setShowLocalVideo()](https://docs.daily.co/reference/daily-js/instance-methods/set-show-local-video.md): Shows or hides the local participant's self-view in Daily Prebuilt.
+- [setShowNamesMode()](https://docs.daily.co/reference/daily-js/instance-methods/set-show-names-mode.md): Controls whether participant names are shown over video tiles in Daily Prebuilt.
+- [setShowParticipantsBar()](https://docs.daily.co/reference/daily-js/instance-methods/set-show-participants-bar.md): Shows or hides the participant bar in Daily Prebuilt.
+- [setSidebarView()](https://docs.daily.co/reference/daily-js/instance-methods/set-sidebar-view.md): Opens the Daily Prebuilt sidebar to a specific panel, or closes it.
+- [setSubscribeToTracksAutomatically()](https://docs.daily.co/reference/daily-js/instance-methods/set-subscribe-to-tracks-automatically.md): Enables or disables automatic subscription to all participant tracks.
+- [setTheme()](https://docs.daily.co/reference/daily-js/instance-methods/set-theme.md): Sets the color theme for Daily Prebuilt.
+- [setUserData()](https://docs.daily.co/reference/daily-js/instance-methods/set-user-data.md): Sets arbitrary custom data on the local participant, visible to all other participants.
+- [setUserName()](https://docs.daily.co/reference/daily-js/instance-methods/set-user-name.md): Sets the local participant's display name, visible to all other participants.
+- [showLocalVideo()](https://docs.daily.co/reference/daily-js/instance-methods/show-local-video.md): Returns whether the local participant's self-view is currently visible in Daily Prebuilt.
+- [showParticipantsBar()](https://docs.daily.co/reference/daily-js/instance-methods/show-participants-bar.md): Returns whether the participant bar is currently visible in Daily Prebuilt.
+- [sipCallTransfer()](https://docs.daily.co/reference/daily-js/instance-methods/sip-call-transfer.md): Transfers a SIP or PSTN participant to another Daily room or external endpoint, keeping Daily in…
+- [sipRefer()](https://docs.daily.co/reference/daily-js/instance-methods/sip-refer.md): Hands off a SIP call to an external endpoint and removes Daily from the media path.
+- [startCamera()](https://docs.daily.co/reference/daily-js/instance-methods/start-camera.md): Acquires camera and microphone access before joining a call.
+- [startCustomIntegrations()](https://docs.daily.co/reference/daily-js/instance-methods/start-custom-integrations.md): Starts one or more custom integrations in Daily Prebuilt.
+- [startCustomTrack()](https://docs.daily.co/reference/daily-js/instance-methods/start-custom-track.md): Sends a custom MediaStreamTrack to all other participants in the call.
+- [startDialOut()](https://docs.daily.co/reference/daily-js/instance-methods/start-dial-out.md): Initiates an outbound SIP or PSTN call from a Daily room.
+- [startLiveStreaming()](https://docs.daily.co/reference/daily-js/instance-methods/start-live-streaming.md): Starts an RTMP or HLS live stream from a Daily call.
+- [startLocalAudioLevelObserver()](https://docs.daily.co/reference/daily-js/instance-methods/start-local-audio-level-observer.md): Starts polling the local microphone audio level at a specified interval.
+- [startRecording()](https://docs.daily.co/reference/daily-js/instance-methods/start-recording.md): Starts a recording of a Daily call.
+- [startRemoteParticipantsAudioLevelObserver()](https://docs.daily.co/reference/daily-js/instance-methods/start-remote-participants-audio-level-observer.md): Starts polling the audio levels of all remote participants in the call.
+- [startScreenShare()](https://docs.daily.co/reference/daily-js/instance-methods/start-screen-share.md): Starts a screen share from the local participant.
+- [startTranscription()](https://docs.daily.co/reference/daily-js/instance-methods/start-transcription.md): Starts live transcription of a Daily call.
+- [stopCustomIntegrations()](https://docs.daily.co/reference/daily-js/instance-methods/stop-custom-integrations.md): Stops one or more running custom integrations in Prebuilt.
+- [stopCustomTrack()](https://docs.daily.co/reference/daily-js/instance-methods/stop-custom-track.md): Stops sending a custom media track to other participants.
+- [stopDialOut()](https://docs.daily.co/reference/daily-js/instance-methods/stop-dial-out.md): Stops an active SIP or PSTN dial-out session.
+- [stopLiveStreaming()](https://docs.daily.co/reference/daily-js/instance-methods/stop-live-streaming.md): Stops an active live stream from a Daily call.
+- [stopLocalAudioLevelObserver()](https://docs.daily.co/reference/daily-js/instance-methods/stop-local-audio-level-observer.md): Stops polling the local participant audio level.
+- [stopRecording()](https://docs.daily.co/reference/daily-js/instance-methods/stop-recording.md): Stops an active recording of a Daily call.
+- [stopRemoteParticipantsAudioLevelObserver()](https://docs.daily.co/reference/daily-js/instance-methods/stop-remote-participants-audio-level-observer.md): Stops polling the audio levels of remote participants.
+- [stopScreenShare()](https://docs.daily.co/reference/daily-js/instance-methods/stop-screen-share.md): Stops the local participant screen share.
+- [stopTestCallQuality()](https://docs.daily.co/reference/daily-js/instance-methods/stop-test-call-quality.md): Stops an in-progress testCallQuality() test early.
+- [stopTestConnectionQuality()](https://docs.daily.co/reference/daily-js/instance-methods/stop-test-connection-quality.md): Stops an in-progress testConnectionQuality() test early.
+- [stopTestPeerToPeerCallQuality()](https://docs.daily.co/reference/daily-js/instance-methods/stop-test-peer-to-peer-call-quality.md): Stops an in-progress testPeerToPeerCallQuality() test early.
+- [stopTranscription()](https://docs.daily.co/reference/daily-js/instance-methods/stop-transcription.md): Stops an active transcription session in a Daily call.
+- [testCallQuality()](https://docs.daily.co/reference/daily-js/instance-methods/test-call-quality.md): Runs a pre-call network quality test and returns connection quality results.
+- [testConnectionQuality()](https://docs.daily.co/reference/daily-js/instance-methods/test-connection-quality.md): Deprecated. Tests WebRTC connection quality using a video track before joining a call.
+- [testNetworkConnectivity()](https://docs.daily.co/reference/daily-js/instance-methods/test-network-connectivity.md): Tests whether a stable WebRTC connection can be established with Daily TURN servers.
+- [testPeerToPeerCallQuality()](https://docs.daily.co/reference/daily-js/instance-methods/test-peer-to-peer-call-quality.md): Assesses WebRTC connection quality using a local video track before joining a call.
+- [testWebsocketConnectivity()](https://docs.daily.co/reference/daily-js/instance-methods/test-websocket-connectivity.md): Tests whether WebSocket connections can be established with Daily signaling servers across AWS re…
+- [theme()](https://docs.daily.co/reference/daily-js/instance-methods/theme.md): Returns the current color theme for Daily Prebuilt.
+- [updateCustomTrayButtons()](https://docs.daily.co/reference/daily-js/instance-methods/update-custom-tray-buttons.md): Sets or updates custom buttons in the Daily Prebuilt tray.
+- [updateInputSettings()](https://docs.daily.co/reference/daily-js/instance-methods/update-input-settings.md): Updates local camera and microphone settings, including background effects and noise cancellation.
+- [updateLiveStreaming()](https://docs.daily.co/reference/daily-js/instance-methods/update-live-streaming.md): Updates the layout of an active live stream.
+- [updateParticipant()](https://docs.daily.co/reference/daily-js/instance-methods/update-participant.md): Modifies a participant in a Daily call — muting, ejecting, updating permissions, or controlling t…
+- [updateParticipants()](https://docs.daily.co/reference/daily-js/instance-methods/update-participants.md): Modifies multiple participants at once in a Daily call.
+- [updateReceiveSettings()](https://docs.daily.co/reference/daily-js/instance-methods/update-receive-settings.md): Updates which simulcast quality layer to receive for each remote participant's video tracks.
+- [updateRecording()](https://docs.daily.co/reference/daily-js/instance-methods/update-recording.md): Updates the layout of an active cloud recording.
+- [updateScreenShare()](https://docs.daily.co/reference/daily-js/instance-methods/update-screen-share.md): Enables or disables the screen share video or audio track without stopping the screen share.
+- [updateSendSettings()](https://docs.daily.co/reference/daily-js/instance-methods/update-send-settings.md): Updates how the local client publishes camera, custom video, and screen share tracks.
+- [updateTranscription()](https://docs.daily.co/reference/daily-js/instance-methods/update-transcription.md): Updates the set of participants being transcribed for an active transcription.
+- [updateWaitingParticipant()](https://docs.daily.co/reference/daily-js/instance-methods/update-waiting-participant.md): Grants or denies access to a participant waiting to join the meeting.
+- [updateWaitingParticipants()](https://docs.daily.co/reference/daily-js/instance-methods/update-waiting-participants.md): Grants or denies access to multiple waiting participants at once.
+- [waitingParticipants()](https://docs.daily.co/reference/daily-js/instance-methods/waiting-participants.md): Returns the set of participants currently waiting for access to the meeting.
+- [Daily.getCallInstance()](https://docs.daily.co/reference/daily-js/static-methods/get-call-instance.md): Returns a valid DailyCall instance by call client ID, or the current instance if no ID is provide…
+- [Static methods](https://docs.daily.co/reference/daily-js/static-methods/index.md): Using our video API, static methods allow developers to get information about the environment sur…
+- [supportedBrowser()](https://docs.daily.co/reference/daily-js/static-methods/supported-browser.md): Returns information about the current browser and its Daily feature support.
+- [DailyCallOptions](https://docs.daily.co/reference/daily-js/types/daily-call-options.md): Configuration options accepted by Daily factory methods and join().
+- [DailyParticipant](https://docs.daily.co/reference/daily-js/types/daily-participant.md): The object representing a participant in a Daily call, returned by participants() and emitted on…
+- [DailyParticipantPermissions](https://docs.daily.co/reference/daily-js/types/daily-participant-permissions.md): The send, receive, and admin permissions for a participant in a Daily call.
+- [DailyStreamingLayoutConfig](https://docs.daily.co/reference/daily-js/types/daily-streaming-layout-config.md): Layout configuration for cloud recordings and live streams. A discriminated union keyed on the pr…
+- [DailyStreamingOptions](https://docs.daily.co/reference/daily-js/types/daily-streaming-options.md): Output quality, lifetime, and layout options shared by cloud recording and live streaming.
+- [DailyTrackState](https://docs.daily.co/reference/daily-js/types/daily-track-state.md): The state of a single media track for a participant, including subscription status, playback stat…
+- [Types](https://docs.daily.co/reference/daily-js/types/index.md): TypeScript type definitions for the core objects used throughout the daily-js API.
+- [Daily Audio](https://docs.daily.co/reference/daily-react/daily-audio.md): The DailyAudio component manages audio for a Daily call in your React app.
+- [Daily Audio Track](https://docs.daily.co/reference/daily-react/daily-audio-track.md): The DailyAudioTrack sets up an audio tag for a specific audio track, identified by a sessionId an…
+- [Daily Provider](https://docs.daily.co/reference/daily-react/daily-provider.md): The DailyProvider gives every component in your application access to the Daily call object.
+- [Daily Video](https://docs.daily.co/reference/daily-react/daily-video.md): The DailyVideo component renders a video tag for a given participant's sessionId and track type.
+- [useActiveParticipant](https://docs.daily.co/reference/daily-react/use-active-participant.md): Returns an object for the participant id mentioned in the most recent active-speaker-change event.
+- [useActiveSpeakerId](https://docs.daily.co/reference/daily-react/use-active-speaker-id.md): Returns the participant's session_id mentioned in the most recent 'active-speaker-change' event.
+- [useAppMessage](https://docs.daily.co/reference/daily-react/use-app-message.md): Convenience hook for the daily-js sendAppMessage() method.
+- [useAudioLevel](https://docs.daily.co/reference/daily-react/use-audio-level.md): useAudioLevel is deprecated.
+- [useAudioLevelObserver](https://docs.daily.co/reference/daily-react/use-audio-level-observer.md): The useAudioLevelObserver provides a way to get the local participant's audio levels.
+- [useCallFrame](https://docs.daily.co/reference/daily-react/use-call-frame.md): This hook manages a call frame instance in order to embed Daily Prebuilt.
+- [useCallObject](https://docs.daily.co/reference/daily-react/use-call-object.md): This hook manages a call object instance.
+- [useCPULoad](https://docs.daily.co/reference/daily-react/use-cpu-load.md): Returns current information about the CPU status.
+- [useDaily](https://docs.daily.co/reference/daily-react/use-daily.md): Returns the current call object instance.
+- [useDailyError](https://docs.daily.co/reference/daily-react/use-daily-error.md): useDailyError returns a stateful representation of the most recent error and nonfatal-error event…
+- [useDailyEvent](https://docs.daily.co/reference/daily-react/use-daily-event.md): Registers daily-js event listeners.
+- [useDevices](https://docs.daily.co/reference/daily-react/use-devices.md): Returns information about a participant's media devices and their states, along with helper funct…
+- [useDialin](https://docs.daily.co/reference/daily-react/use-dialin.md): useDialin tracks the readiness of a room to receive PSTN/SIP calls and the state of incoming dial…
+- [useDialOut](https://docs.daily.co/reference/daily-react/use-dialout.md): useDialOut tracks the state of PSTN/SIP dial-out sessions and wraps the daily-js dial-out, DTMF a…
+- [useInputSettings](https://docs.daily.co/reference/daily-react/use-input-settings.md): Convenience hook around getInputSettings() and updateInputSettings().
+- [useLiveStreaming](https://docs.daily.co/reference/daily-react/use-live-streaming.md): Returns information about a live stream, along with helper functions that wrap daily-js live stre…
+- [useLiveStreamingInstances](https://docs.daily.co/reference/daily-react/use-live-streaming-instances.md): useLiveStreamingInstances returns an array of all live streaming instance states.
+- [useLocalParticipant](https://docs.daily.co/reference/daily-react/use-local-participant.md): Returns a local participant object.
+- [useLocalSessionId](https://docs.daily.co/reference/daily-react/use-local-session-id.md): useLocalSessionId is a convenience hook to access the local participant's session_id.
+- [useMediaTrack](https://docs.daily.co/reference/daily-react/use-media-track.md): Given a participant session_id and type of track, returns the corresponding track and its state.
+- [useMeetingSessionState](https://docs.daily.co/reference/daily-react/use-meeting-session-state.md): Returns the current meeting session state as returned by meetingSessionState().
+- [useMeetingSessionSummary](https://docs.daily.co/reference/daily-react/use-meeting-session-summary.md): Returns the current meeting session summary, including the session id once the call has started.
+- [useMeetingState](https://docs.daily.co/reference/daily-react/use-meeting-state.md): useMeetingState is a convenience hook for the Daily meetingState() method.
+- [useNetwork](https://docs.daily.co/reference/daily-react/use-network.md): Returns current information about network quality and topology.
+- [useParticipant](https://docs.daily.co/reference/daily-react/use-participant.md): useParticipant returns a participant object for a given participant session_id.
+- [useParticipantCounts](https://docs.daily.co/reference/daily-react/use-participant-counts.md): useParticipantCounts is a convenience hook around the participantCounts() method.
+- [useParticipantIds](https://docs.daily.co/reference/daily-react/use-participant-ids.md): useParticipantIds returns a list of participant ids based on optional parameters.
+- [useParticipantProperty](https://docs.daily.co/reference/daily-react/use-participant-property.md): useParticipantProperty returns the requested property belonging to any given session_id.
+- [usePermissions](https://docs.daily.co/reference/daily-react/use-permissions.md): usePermissions is a convenience hook to access the local participant's permissions.
+- [useReceiveSettings](https://docs.daily.co/reference/daily-react/use-receive-settings.md): Convenience hook around getReceiveSettings() and updateReceiveSettings().
+- [useRecording](https://docs.daily.co/reference/daily-react/use-recording.md): useRecording returns the state and information of a recording in progress, along with helper func…
+- [useRecordingInstances](https://docs.daily.co/reference/daily-react/use-recording-instances.md): useRecordingInstances returns an array of all recording instance states.
+- [useRoom](https://docs.daily.co/reference/daily-react/use-room.md): useRoom is a convenience hook for the Daily room() method.
+- [useRoomExp](https://docs.daily.co/reference/daily-react/use-room-exp.md): Returns the automatic ejection date for the local participant, based on room or token configurati…
+- [useScreenShare](https://docs.daily.co/reference/daily-react/use-screen-share.md): Returns a list of running screen shares and their states, along with helper methods that wrap dai…
+- [useSendSettings](https://docs.daily.co/reference/daily-react/use-send-settings.md): useSendSettings is a convenience hook around getSendSettings() and updateSendSettings().
+- [useThrottledDailyEvent](https://docs.daily.co/reference/daily-react/use-throttled-daily-event.md): Registers daily-js event listeners.
+- [useTranscription](https://docs.daily.co/reference/daily-react/use-transcription.md): Returns information about a meeting's current transcription state, along with helper functions th…
+- [useWaitingParticipants](https://docs.daily.co/reference/daily-react/use-waiting-participants.md): Returns an object containing an array of all participants waiting for access to the call, along w…
+- [Daily.createCallObject()](https://docs.daily.co/reference/react-native/daily-call-client/create-call-object.md): Creates a headless DailyCall instance for building fully custom call UIs with direct access to me…
+- [Daily Call Client](https://docs.daily.co/reference/react-native/daily-call-client/index.md): The core object for managing a Daily video call in react-native-daily-js.
+- [Error events](https://docs.daily.co/reference/react-native/events/error-events.md): Events for fatal and non-fatal errors — connection failures, device errors, screen share issues,…
+- [react-native-daily-js events](https://docs.daily.co/reference/react-native/events/index.md): Complete list of react-native-daily-js events — emitted for every state change during a call.
+- [Lifecycle events](https://docs.daily.co/reference/react-native/events/lifecycle-events.md): Events for the full call lifecycle — loading, joining, leaving, and destruction.
+- [Live streaming events](https://docs.daily.co/reference/react-native/events/live-streaming-events.md): Events for live streaming lifecycle — start, connection state changes, stop, and errors.
+- [Media events](https://docs.daily.co/reference/react-native/events/media-events.md): Events for media track lifecycle — when tracks start, stop, and when audio level and face detecti…
+- [Messaging events](https://docs.daily.co/reference/react-native/events/messaging-events.md): Events for in-call app messages and shared meeting session state.
+- [Network events](https://docs.daily.co/reference/react-native/events/network-events.md): Events for network quality changes, connection interruptions, CPU load, and prejoin test results.
+- [Participant events](https://docs.daily.co/reference/react-native/events/participant-events.md): Events for participant state changes — joining, leaving, updates, waiting room, and active speake…
+- [Recording events](https://docs.daily.co/reference/react-native/events/recording-events.md): Events for recording lifecycle — start, stop, error, upload completion, and raw data delivery.
+- [Settings & device events](https://docs.daily.co/reference/react-native/events/settings-events.md): Events for camera startup, device availability and selection, and media send/receive settings.
+- [Telephony events (SIP/PSTN)](https://docs.daily.co/reference/react-native/events/telephony-events.md): Events for SIP and PSTN dial-in and dial-out session lifecycle.
+- [Transcription events](https://docs.daily.co/reference/react-native/events/transcription-events.md): Events for transcription lifecycle — start, stop, new transcription messages, and errors.
+- [abortTestNetworkConnectivity()](https://docs.daily.co/reference/react-native/instance-methods/abort-test-network-connectivity.md): Stop an in-progress testNetworkConnectivity() test early.
+- [abortTestWebsocketConnectivity()](https://docs.daily.co/reference/react-native/instance-methods/abort-test-websocket-connectivity.md): Stop an in-progress testWebsocketConnectivity() test early.
+- [accessState()](https://docs.daily.co/reference/react-native/instance-methods/access-state.md): Returns the local participant's current meeting access state. Use this to check whether the parti…
+- [addLiveStreamingEndpoints()](https://docs.daily.co/reference/react-native/instance-methods/add-live-streaming-endpoints.md): Add RTMP destinations to an active live stream.
+- [cycleCamera()](https://docs.daily.co/reference/react-native/instance-methods/cycle-camera.md): Switch the local camera to the next available device.
+- [destroy()](https://docs.daily.co/reference/react-native/instance-methods/destroy.md): Destroy a Daily call object and release all associated resources.
+- [enumerateDevices()](https://docs.daily.co/reference/react-native/instance-methods/enumerate-devices.md): Returns a list of available audio and video input/output devices.
+- [getCameraFacingMode()](https://docs.daily.co/reference/react-native/instance-methods/get-camera-facing-mode.md): Returns the facing mode of the currently active camera on a mobile device.
+- [getCpuLoadStats()](https://docs.daily.co/reference/react-native/instance-methods/get-cpu-load-stats.md): Returns current CPU load state and per-frame encoding/decoding statistics.
+- [getInputDevices()](https://docs.daily.co/reference/react-native/instance-methods/get-input-devices.md): Returns the camera, microphone, and speaker devices currently selected for the call.
+- [getLocalAudioLevel()](https://docs.daily.co/reference/react-native/instance-methods/get-local-audio-level.md): Returns the current audio level for the local participant.
+- [getNetworkStats()](https://docs.daily.co/reference/react-native/instance-methods/get-network-stats.md): Returns current network quality stats and per-interval send/receive metrics.
+- [getReceiveSettings()](https://docs.daily.co/reference/react-native/instance-methods/get-receive-settings.md): Returns the current media receive settings, either for all participants or a specific one.
+- [getRemoteParticipantsAudioLevel()](https://docs.daily.co/reference/react-native/instance-methods/get-remote-participants-audio-level.md): Returns the current audio level for each remote participant.
+- [getSendSettings()](https://docs.daily.co/reference/react-native/instance-methods/get-send-settings.md): Returns the current media send settings, or null if none have been set.
+- [Instance methods](https://docs.daily.co/reference/react-native/instance-methods/index.md): Using our video API, instance methods allow developers to customize a WebRTC call.
+- [isDestroyed()](https://docs.daily.co/reference/react-native/instance-methods/is-destroyed.md): Returns whether the call instance has been destroyed.
+- [isLocalAudioLevelObserverRunning()](https://docs.daily.co/reference/react-native/instance-methods/is-local-audio-level-observer-running.md): Returns whether the local audio level observer is currently active.
+- [isRemoteParticipantsAudioLevelObserverRunning()](https://docs.daily.co/reference/react-native/instance-methods/is-remote-participants-audio-level-observer-running.md): Returns whether the remote participants audio level observer is currently active.
+- [join()](https://docs.daily.co/reference/react-native/instance-methods/join.md): Join a Daily room and begin sending and receiving media.
+- [leave()](https://docs.daily.co/reference/react-native/instance-methods/leave.md): Leave the current Daily call.
+- [load()](https://docs.daily.co/reference/react-native/instance-methods/load.md): Pre-loads the Daily JavaScript bundle to reduce join latency.
+- [localAudio()](https://docs.daily.co/reference/react-native/instance-methods/local-audio.md): Returns whether the local microphone is on.
+- [localScreenAudio()](https://docs.daily.co/reference/react-native/instance-methods/local-screen-audio.md): Returns whether the local screen share audio track is on.
+- [localScreenVideo()](https://docs.daily.co/reference/react-native/instance-methods/local-screen-video.md): Returns whether the local screen share video track is on.
+- [localVideo()](https://docs.daily.co/reference/react-native/instance-methods/local-video.md): Returns whether the local camera is on.
+- [meetingSessionState()](https://docs.daily.co/reference/react-native/instance-methods/meeting-session-state.md): Returns the current meeting session state, including shared data and network topology.
+- [meetingSessionSummary()](https://docs.daily.co/reference/react-native/instance-methods/meeting-session-summary.md): Returns a summary of the current or most recently ended meeting session.
+- [meetingState()](https://docs.daily.co/reference/react-native/instance-methods/meeting-state.md): Returns the current meeting lifecycle state.
+- [nativeInCallAudioMode()](https://docs.daily.co/reference/react-native/instance-methods/native-in-call-audio-mode.md): Returns the current native audio mode used during a call on mobile.
+- [off()](https://docs.daily.co/reference/react-native/instance-methods/off.md): Removes an event listener from a Daily call event.
+- [on()](https://docs.daily.co/reference/react-native/instance-methods/on.md): Subscribes to a Daily call event.
+- [once()](https://docs.daily.co/reference/react-native/instance-methods/once.md): Subscribes to a Daily call event, firing only once.
+- [participantCounts()](https://docs.daily.co/reference/react-native/instance-methods/participant-counts.md): Returns the total number of present and hidden participants currently in the call.
+- [participants()](https://docs.daily.co/reference/react-native/instance-methods/participants.md): Returns an object containing all current participants in the call, keyed by participant ID.
+- [preAuth()](https://docs.daily.co/reference/react-native/instance-methods/pre-auth.md): Pre-authenticates a participant with the server before joining a call.
+- [removeLiveStreamingEndpoints()](https://docs.daily.co/reference/react-native/instance-methods/remove-live-streaming-endpoints.md): Removes one or more RTMP endpoints from an active live stream.
+- [requestAccess()](https://docs.daily.co/reference/react-native/instance-methods/request-access.md): Requests full access to a call from the lobby.
+- [room()](https://docs.daily.co/reference/react-native/instance-methods/room.md): Returns configuration information about the current room.
+- [sendAppMessage()](https://docs.daily.co/reference/react-native/instance-methods/send-app-message.md): Sends a message to one or more participants in the call.
+- [sendDTMF()](https://docs.daily.co/reference/react-native/instance-methods/send-dtmf.md): Sends DTMF tones during a dial-out call.
+- [setAudioDevice()](https://docs.daily.co/reference/react-native/instance-methods/set-audio-device.md): Switch to a specific audio input device on a mobile device by device ID.
+- [setCamera()](https://docs.daily.co/reference/react-native/instance-methods/set-camera.md): Switch to a specific camera on a mobile device by device ID.
+- [setIceConfig()](https://docs.daily.co/reference/react-native/instance-methods/set-ice-config.md): Configures custom TURN servers for a Daily call.
+- [setLocalAudio()](https://docs.daily.co/reference/react-native/instance-methods/set-local-audio.md): Mutes or unmutes the local microphone.
+- [setLocalVideo()](https://docs.daily.co/reference/react-native/instance-methods/set-local-video.md): Enables or disables the local camera.
+- [setMeetingSessionData()](https://docs.daily.co/reference/react-native/instance-methods/set-meeting-session-data.md): Sets arbitrary shared data on the current meeting session, synced to all participants.
+- [setNativeInCallAudioMode()](https://docs.daily.co/reference/react-native/instance-methods/set-native-in-call-audio-mode.md): Set the native audio routing mode for a call on mobile — speakerphone or earpiece.
+- [setProxyUrl()](https://docs.daily.co/reference/react-native/instance-methods/set-proxy-url.md): Sets or clears the proxy URL for routing Daily connections through a custom proxy server.
+- [setSubscribeToTracksAutomatically()](https://docs.daily.co/reference/react-native/instance-methods/set-subscribe-to-tracks-automatically.md): Enables or disables automatic subscription to all participant tracks.
+- [setUserData()](https://docs.daily.co/reference/react-native/instance-methods/set-user-data.md): Sets arbitrary custom data on the local participant, visible to all other participants.
+- [setUserName()](https://docs.daily.co/reference/react-native/instance-methods/set-user-name.md): Sets the local participant's display name, visible to all other participants.
+- [sipCallTransfer()](https://docs.daily.co/reference/react-native/instance-methods/sip-call-transfer.md): Transfers a SIP or PSTN participant to another Daily room or external endpoint, keeping Daily in…
+- [sipRefer()](https://docs.daily.co/reference/react-native/instance-methods/sip-refer.md): Hands off a SIP call to an external endpoint and removes Daily from the media path.
+- [startCamera()](https://docs.daily.co/reference/react-native/instance-methods/start-camera.md): Acquires camera and microphone access before joining a call.
+- [startDialOut()](https://docs.daily.co/reference/react-native/instance-methods/start-dial-out.md): Initiates an outbound SIP or PSTN call from a Daily room.
+- [startLiveStreaming()](https://docs.daily.co/reference/react-native/instance-methods/start-live-streaming.md): Starts an RTMP or HLS live stream from a Daily call.
+- [startLocalAudioLevelObserver()](https://docs.daily.co/reference/react-native/instance-methods/start-local-audio-level-observer.md): Starts polling the local microphone audio level at a specified interval.
+- [startRecording()](https://docs.daily.co/reference/react-native/instance-methods/start-recording.md): Starts a recording of a Daily call.
+- [startRemoteParticipantsAudioLevelObserver()](https://docs.daily.co/reference/react-native/instance-methods/start-remote-participants-audio-level-observer.md): Starts polling the audio levels of all remote participants in the call.
+- [startScreenShare()](https://docs.daily.co/reference/react-native/instance-methods/start-screen-share.md): Starts a screen share from the local participant.
+- [startTranscription()](https://docs.daily.co/reference/react-native/instance-methods/start-transcription.md): Starts live transcription of a Daily call.
+- [stopDialOut()](https://docs.daily.co/reference/react-native/instance-methods/stop-dial-out.md): Stops an active SIP or PSTN dial-out session.
+- [stopLiveStreaming()](https://docs.daily.co/reference/react-native/instance-methods/stop-live-streaming.md): Stops an active live stream from a Daily call.
+- [stopLocalAudioLevelObserver()](https://docs.daily.co/reference/react-native/instance-methods/stop-local-audio-level-observer.md): Stops polling the local participant audio level.
+- [stopRecording()](https://docs.daily.co/reference/react-native/instance-methods/stop-recording.md): Stops an active recording of a Daily call.
+- [stopRemoteParticipantsAudioLevelObserver()](https://docs.daily.co/reference/react-native/instance-methods/stop-remote-participants-audio-level-observer.md): Stops polling the audio levels of remote participants.
+- [stopScreenShare()](https://docs.daily.co/reference/react-native/instance-methods/stop-screen-share.md): Stops the local participant screen share.
+- [stopTestPeerToPeerCallQuality()](https://docs.daily.co/reference/react-native/instance-methods/stop-test-peer-to-peer-call-quality.md): Stops an in-progress testPeerToPeerCallQuality() test early.
+- [stopTranscription()](https://docs.daily.co/reference/react-native/instance-methods/stop-transcription.md): Stops an active transcription session in a Daily call.
+- [testNetworkConnectivity()](https://docs.daily.co/reference/react-native/instance-methods/test-network-connectivity.md): Tests whether a stable WebRTC connection can be established with Daily TURN servers.
+- [testPeerToPeerCallQuality()](https://docs.daily.co/reference/react-native/instance-methods/test-peer-to-peer-call-quality.md): Assesses WebRTC connection quality using a local video track before joining a call.
+- [testWebsocketConnectivity()](https://docs.daily.co/reference/react-native/instance-methods/test-websocket-connectivity.md): Tests whether WebSocket connections can be established with Daily signaling servers across AWS re…
+- [updateInputSettings()](https://docs.daily.co/reference/react-native/instance-methods/update-input-settings.md): Updates local camera and microphone settings, including background effects and noise cancellation.
+- [updateLiveStreaming()](https://docs.daily.co/reference/react-native/instance-methods/update-live-streaming.md): Updates the layout of an active live stream.
+- [updateParticipant()](https://docs.daily.co/reference/react-native/instance-methods/update-participant.md): Modifies a participant in a Daily call — muting, ejecting, updating permissions, or controlling t…
+- [updateParticipants()](https://docs.daily.co/reference/react-native/instance-methods/update-participants.md): Modifies multiple participants at once in a Daily call.
+- [updateReceiveSettings()](https://docs.daily.co/reference/react-native/instance-methods/update-receive-settings.md): Updates which simulcast quality layer to receive for each remote participant's video tracks.
+- [updateRecording()](https://docs.daily.co/reference/react-native/instance-methods/update-recording.md): Updates the layout of an active cloud recording.
+- [updateScreenShare()](https://docs.daily.co/reference/react-native/instance-methods/update-screen-share.md): Enables or disables the screen share video or audio track without stopping the screen share.
+- [updateSendSettings()](https://docs.daily.co/reference/react-native/instance-methods/update-send-settings.md): Updates how the local client publishes camera, custom video, and screen share tracks.
+- [updateTranscription()](https://docs.daily.co/reference/react-native/instance-methods/update-transcription.md): Updates the set of participants being transcribed for an active transcription.
+- [updateWaitingParticipant()](https://docs.daily.co/reference/react-native/instance-methods/update-waiting-participant.md): Grants or denies access to a participant waiting to join the meeting.
+- [updateWaitingParticipants()](https://docs.daily.co/reference/react-native/instance-methods/update-waiting-participants.md): Grants or denies access to multiple waiting participants at once.
+- [waitingParticipants()](https://docs.daily.co/reference/react-native/instance-methods/waiting-participants.md): Returns the set of participants currently waiting for access to the meeting.
+- [Daily.getCallInstance()](https://docs.daily.co/reference/react-native/static-methods/get-call-instance.md): Returns a valid DailyCall instance by call client ID, or the current instance if no ID is provide…
+- [Static methods](https://docs.daily.co/reference/react-native/static-methods/index.md): Using our video API, static methods allow developers to get information about the environment sur…
+- [supportedBrowser()](https://docs.daily.co/reference/react-native/static-methods/supported-browser.md): Returns information about the current browser and its Daily feature support.
+- [DailyCallOptions](https://docs.daily.co/reference/react-native/types/daily-call-options.md): Configuration options accepted by Daily factory methods and join().
+- [DailyParticipant](https://docs.daily.co/reference/react-native/types/daily-participant.md): The object representing a participant in a Daily call, returned by participants() and emitted on…
+- [DailyParticipantPermissions](https://docs.daily.co/reference/react-native/types/daily-participant-permissions.md): The send, receive, and admin permissions for a participant in a Daily call.
+- [DailyStreamingLayoutConfig](https://docs.daily.co/reference/react-native/types/daily-streaming-layout-config.md): Layout configuration for cloud recordings and live streams. A discriminated union keyed on the pr…
+- [DailyStreamingOptions](https://docs.daily.co/reference/react-native/types/daily-streaming-options.md): Output quality, lifetime, and layout options shared by cloud recording and live streaming.
+- [DailyTrackState](https://docs.daily.co/reference/react-native/types/daily-track-state.md): The state of a single media track for a participant, including subscription status, playback stat…
+- [Types](https://docs.daily.co/reference/react-native/types/index.md): TypeScript type definitions for the core objects used throughout the react-native-daily-js API.
+- [Batch Processor API](https://docs.daily.co/reference/rest-api/batch-processor/index.md): Post-processing of your call media.
+- [Delete job](https://docs.daily.co/reference/rest-api/batch-processor/reference/delete-job.md): Delete a post-processing job from the batch processor and delete created objects
+- [Get job](https://docs.daily.co/reference/rest-api/batch-processor/reference/get-job.md): Get a post-processing job from the batch processor
+- [Access-Link](https://docs.daily.co/reference/rest-api/batch-processor/reference/get-job-access-link.md): Get access-link to download batch processing outputs
+- [List jobs](https://docs.daily.co/reference/rest-api/batch-processor/reference/list-jobs.md): List all post-processing jobs
+- [Submit job](https://docs.daily.co/reference/rest-api/batch-processor/reference/submit-job.md): Submit a post-processing job to the batch processor
+- [Batch Room Create](https://docs.daily.co/reference/rest-api/batch/create-rooms.md): Create rooms in bulk
+- [Batch Room Delete](https://docs.daily.co/reference/rest-api/batch/delete-rooms.md): Delete rooms in bulk
+- [Create Domain Dial Config Info](https://docs.daily.co/reference/rest-api/dial-in/create-config.md): create a new pinless_dialin or pin_dialin config
+- [Delete Domain Dialin Config](https://docs.daily.co/reference/rest-api/dial-in/delete-config.md): Delete a given pinless_dialin or pin_dialin config
+- [Get Domain Dialin Config Info](https://docs.daily.co/reference/rest-api/dial-in/get-config.md): Get info about an existing pinless_dialin or pin_dialin config
+- [Dial-In](https://docs.daily.co/reference/rest-api/dial-in/index.md): Using our REST API, the /rooms/:name/dialin endpoints lets a developer connect a SIP and PSTN dia…
+- [List Domain Dialin Configs](https://docs.daily.co/reference/rest-api/dial-in/list-configs.md): List all the pinless_dialin and pin_dialin configs for the domain, with pagination
+- [Pinless Call Update](https://docs.daily.co/reference/rest-api/dial-in/pinless-update.md): Direct a SIP or PSTN call on hold to a specified SIP URI associated to a Daily Room.
+- [Update Domain Dial Config Info](https://docs.daily.co/reference/rest-api/dial-in/update-config.md): update an existing pinless_dialin or pin_dialin config
+- [Get Domain Config](https://docs.daily.co/reference/rest-api/domain/get-domain-config.md): Get top-level configuration of your domain
+- [Overview](https://docs.daily.co/reference/rest-api/domain/index.md)
+- [Set Domain Config](https://docs.daily.co/reference/rest-api/domain/set-domain-config.md): Set top-level configuration options for your domain
+- [Pinless_dialin and pin_dialin - overview](https://docs.daily.co/reference/rest-api/domainDialinConfig/index.md): Using our REST API, the /domain-dialin-config endpoints let a developer create, update, list, and…
+- [Logs - overview](https://docs.daily.co/reference/rest-api/logs/index.md): Using our REST API, the /logs endpoints let a developer get data about call quality and end user…
+- [List API Logs](https://docs.daily.co/reference/rest-api/logs/list-api-logs.md)
+- [List Logs](https://docs.daily.co/reference/rest-api/logs/list-logs.md)
+- [Create Meeting Token](https://docs.daily.co/reference/rest-api/meeting-tokens/create-meeting-token.md): Create a meeting token
+- [Meeting tokens - Overview](https://docs.daily.co/reference/rest-api/meeting-tokens/index.md): Using our REST API, the /meeting-tokens endpoints let a developer manage access to Daily audio an…
+- [Validate Meeting Token](https://docs.daily.co/reference/rest-api/meeting-tokens/validate-meeting-token.md): Validate meeting tokens
+- [Get Individual Meeting Info](https://docs.daily.co/reference/rest-api/meetings/get-meeting.md): retrieve info about a particular meeting
+- [Get Meeting Participants](https://docs.daily.co/reference/rest-api/meetings/get-participants.md): retrieve info about the participants in a particular meeting
+- [Meetings](https://docs.daily.co/reference/rest-api/meetings/index.md): Using our REST API, the /meetings endpoint lets a developer get a list of meeting sessions.
+- [Get Meeting Info](https://docs.daily.co/reference/rest-api/meetings/list-meetings.md): retrieve meeting analytics
+- [Buy Phone Number](https://docs.daily.co/reference/rest-api/phone-numbers/buy-number.md): This will buy a phone number. In the POST request you can either provide the phone number you wan…
+- [phone-numbers](https://docs.daily.co/reference/rest-api/phone-numbers/index.md): Using the phone-numbers endpoint, the developer can buy, delete, list their phone number
+- [List Available Numbers](https://docs.daily.co/reference/rest-api/phone-numbers/list-available.md): Search for available phone numbers to purchase
+- [Purchased Phone Numbers](https://docs.daily.co/reference/rest-api/phone-numbers/list-purchased.md): List the purchased phone numbers for this domain
+- [Release Phone Number](https://docs.daily.co/reference/rest-api/phone-numbers/release-number.md): Release a purchased number. The number is referenced by its id. A number cannot be deleted within…
+- [Get Presence](https://docs.daily.co/reference/rest-api/presence/get-presence.md)
+- [Presence - overview](https://docs.daily.co/reference/rest-api/presence/index.md): Using our REST API, the /presence endpoint lets a developer see real-time presence data for their…
+- [Delete Recording](https://docs.daily.co/reference/rest-api/recordings/delete-recording.md): Delete a recording
+- [Get Recording Info](https://docs.daily.co/reference/rest-api/recordings/get-recording.md): Get info about a recording
+- [Get Recording Link](https://docs.daily.co/reference/rest-api/recordings/get-recording-link.md): Generate an access link for a recording
+- [Recordings - overview](https://docs.daily.co/reference/rest-api/recordings/index.md): Using our REST API, the /recordings endpoints let a developer manage, create, and download record…
+- [List Recordings](https://docs.daily.co/reference/rest-api/recordings/list-recordings.md): List recordings
+- [Room SIP Call Transfer](https://docs.daily.co/reference/rest-api/rooms/call-transfer/sip-call-transfer.md): transfer sip/pstn call
+- [Room SIP Refer](https://docs.daily.co/reference/rest-api/rooms/call-transfer/sip-refer.md): refer a sip call to other sip endpoint
+- [Create Room](https://docs.daily.co/reference/rest-api/rooms/create-room.md): Create a room
+- [Delete Room](https://docs.daily.co/reference/rest-api/rooms/delete-room.md): Delete a room
+- [Room Dial Out Send DTMF](https://docs.daily.co/reference/rest-api/rooms/dial-out/send-dtmf.md): send DTMF digits on the dialout
+- [Room Dial Out Start](https://docs.daily.co/reference/rest-api/rooms/dial-out/start.md): Start a dial-out in a room
+- [Room Dial Out Stop](https://docs.daily.co/reference/rest-api/rooms/dial-out/stop.md): Stop a dial out in a room
+- [Get Room Config](https://docs.daily.co/reference/rest-api/rooms/get-room.md): Get info about a room
+- [Get Room Presence](https://docs.daily.co/reference/rest-api/rooms/get-room-presence.md): Get a presence snapshot for a room
+- [Rooms](https://docs.daily.co/reference/rest-api/rooms/index.md): Using our REST API, the /rooms endpoints let a developer manage their Daily audio and video rooms.
+- [List Rooms](https://docs.daily.co/reference/rest-api/rooms/list-rooms.md): List rooms
+- [Room Livestreaming Start](https://docs.daily.co/reference/rest-api/rooms/live-streaming/start.md): Start a live stream in a room
+- [Room Livestreaming Stop](https://docs.daily.co/reference/rest-api/rooms/live-streaming/stop.md): Stop a live stream in a room
+- [Room Livestreaming Update](https://docs.daily.co/reference/rest-api/rooms/live-streaming/update.md): Update a live stream in a room
+- [Room Recordings Start](https://docs.daily.co/reference/rest-api/rooms/recordings/start.md): Start a recording in a room
+- [Room Recordings Stop](https://docs.daily.co/reference/rest-api/rooms/recordings/stop.md): Stop a recording in a room
+- [Room Recordings Update](https://docs.daily.co/reference/rest-api/rooms/recordings/update.md): Update a recording in a room
+- [Eject](https://docs.daily.co/reference/rest-api/rooms/session/eject.md): Ejects participants from a room
+- [Get Room Presence](https://docs.daily.co/reference/rest-api/rooms/session/get-presence.md): Get a presence snapshot for a room
+- [Get Session Data](https://docs.daily.co/reference/rest-api/rooms/session/get-session-data.md): Gets meeting session data
+- [Send App Message](https://docs.daily.co/reference/rest-api/rooms/session/send-app-message.md): Send a message to participants in a room
+- [Set Session Data](https://docs.daily.co/reference/rest-api/rooms/session/set-session-data.md): Sets meeting session data
+- [Update Permissions](https://docs.daily.co/reference/rest-api/rooms/session/update-permissions.md): Modifies permissions for one or more participants in a room
+- [Room Transcription Start](https://docs.daily.co/reference/rest-api/rooms/transcription/start.md): Start a transcription in a room
+- [Room Transcription Stop](https://docs.daily.co/reference/rest-api/rooms/transcription/stop.md): Stop a transcription in a room
+- [Room Transcription Update](https://docs.daily.co/reference/rest-api/rooms/transcription/update.md): Update the set of participants being transcribed
+- [Set Room Config](https://docs.daily.co/reference/rest-api/rooms/update-room.md): Set a room's privacy and config properties
+- [Delete Transcript](https://docs.daily.co/reference/rest-api/transcripts/delete-transcript.md): Delete a transcript
+- [Get Transcript Info](https://docs.daily.co/reference/rest-api/transcripts/get-transcript.md): Get info about a Transcript
+- [Get Transcript Link](https://docs.daily.co/reference/rest-api/transcripts/get-transcript-link.md): Generate an access link for a transcript
+- [Transcripts - overview](https://docs.daily.co/reference/rest-api/transcripts/index.md): Using our REST API, the /transcript endpoints let you list, retrieve, download, and delete transc…
+- [List Transcript](https://docs.daily.co/reference/rest-api/transcripts/list-transcripts.md): List transcripts
+- [Create Webhook](https://docs.daily.co/reference/rest-api/webhooks/create-webhook.md): Create a webhook
+- [Delete Webhook](https://docs.daily.co/reference/rest-api/webhooks/delete-webhook.md): Delete a webhook
+- [Batch Processor Job Error](https://docs.daily.co/reference/rest-api/webhooks/events/batch-processor-error.md): The batch processor job error webhook event
+- [Batch Processor Job Finished](https://docs.daily.co/reference/rest-api/webhooks/events/batch-processor-job-finished.md): The batch processor job finished webhook event
+- [Calltransfer Answered](https://docs.daily.co/reference/rest-api/webhooks/events/calltransfer-answered.md): The calltransfer-answered webhook
+- [Calltransfer Completed](https://docs.daily.co/reference/rest-api/webhooks/events/calltransfer-completed.md): The calltransfer-completed webhook
+- [Calltransfer Initiated](https://docs.daily.co/reference/rest-api/webhooks/events/calltransfer-initiated.md): The Calltransfer-initiated webhook
+- [Calltransfer Triggered](https://docs.daily.co/reference/rest-api/webhooks/events/calltransfer-triggered.md): The Calltransfer Triggered webhook
+- [Dial-in Connected](https://docs.daily.co/reference/rest-api/webhooks/events/dialin-connected.md): The dial-in connected webhook
+- [Dial-in error](https://docs.daily.co/reference/rest-api/webhooks/events/dialin-error.md): The dial-in has an error
+- [Dial-in Ready](https://docs.daily.co/reference/rest-api/webhooks/events/dialin-ready.md): The dial-in ready webhook
+- [Dial-in stopped](https://docs.daily.co/reference/rest-api/webhooks/events/dialin-stopped.md): The dial-in stopped webhook
+- [Dial-in warning](https://docs.daily.co/reference/rest-api/webhooks/events/dialin-warning.md): The dial-in has a warning
+- [Dial-out Answered](https://docs.daily.co/reference/rest-api/webhooks/events/dialout-answered.md): The dial-out answered webhook
+- [Dial-out Connected](https://docs.daily.co/reference/rest-api/webhooks/events/dialout-connected.md): The dial-out connected webhook
+- [Dial-out error](https://docs.daily.co/reference/rest-api/webhooks/events/dialout-error.md): The dial-out has an error
+- [Dial-out stopped](https://docs.daily.co/reference/rest-api/webhooks/events/dialout-stopped.md): The dial-out is stopped
+- [Dial-out warning](https://docs.daily.co/reference/rest-api/webhooks/events/dialout-warning.md): The dial-out session has warning
+- [Webhook Events](https://docs.daily.co/reference/rest-api/webhooks/events/index.md): Daily Webhooks allow you to subscribe to a set of events in an asynchronous way
+- [Meeting Ended](https://docs.daily.co/reference/rest-api/webhooks/events/meeting-ended.md): The meeting ended webhook event
+- [Meeting Started](https://docs.daily.co/reference/rest-api/webhooks/events/meeting-started.md): The meeting started webhook event
+- [Participant Joined](https://docs.daily.co/reference/rest-api/webhooks/events/participant-joined.md): The participant joined webhook event
+- [Participant Left](https://docs.daily.co/reference/rest-api/webhooks/events/participant-left.md): The participant left webhook event
+- [Recording Error](https://docs.daily.co/reference/rest-api/webhooks/events/recording-error.md): The recording error event
+- [Recording Ready to Download](https://docs.daily.co/reference/rest-api/webhooks/events/recording-ready-to-download.md): The recording ready to download webhook event
+- [Recording Started](https://docs.daily.co/reference/rest-api/webhooks/events/recording-started.md): The recording started webhook event
+- [Streaming Ended](https://docs.daily.co/reference/rest-api/webhooks/events/streaming-ended.md): The streaming ended webhook event
+- [Streaming Error](https://docs.daily.co/reference/rest-api/webhooks/events/streaming-error.md): The streaming error webhook event
+- [Streaming Started](https://docs.daily.co/reference/rest-api/webhooks/events/streaming-started.md): The streaming started webhook event
+- [Streaming Updated](https://docs.daily.co/reference/rest-api/webhooks/events/streaming-updated.md): The streaming updated webhook event
+- [Transcript Error](https://docs.daily.co/reference/rest-api/webhooks/events/transcript-error.md): The transcript error event
+- [Transcript Ready to Download](https://docs.daily.co/reference/rest-api/webhooks/events/transcript-ready-to-download.md): The transcript ready to download webhook event
+- [Transcript Started](https://docs.daily.co/reference/rest-api/webhooks/events/transcript-started.md): The transcript started webhook event
+- [Waiting Participant Joined](https://docs.daily.co/reference/rest-api/webhooks/events/waiting-participant-joined.md): The waiting participant joined webhook event
+- [Waiting Participant Left](https://docs.daily.co/reference/rest-api/webhooks/events/waiting-participant-left.md): The waiting participant left webhook event
+- [Get Webhook Config](https://docs.daily.co/reference/rest-api/webhooks/get-webhook.md): Get info about a webhook
+- [Webhooks](https://docs.daily.co/reference/rest-api/webhooks/index.md): Using our REST API, the /webhooks endpoints lets a developer manage a webhook and events.
+- [Get Webhooks](https://docs.daily.co/reference/rest-api/webhooks/list-webhooks.md): Get Webhooks
+- [Update Webhook Config](https://docs.daily.co/reference/rest-api/webhooks/update-webhook.md): Update webhook config
+
+## OpenAPI Specs
+
+- [openapi](https://docs.daily.co/openapi.json)
+
+## Optional
+
+- [Android](https://reference-android.daily.co/)
+- [iOS](https://reference-ios.daily.co/)
+- [Flutter](https://pub.dev/packages/daily_flutter)
+- [Python](https://reference-python.daily.co/)

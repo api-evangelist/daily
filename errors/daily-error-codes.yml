@@ -1,0 +1,49 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.daily.co/docs/rest-api/errors
+format: custom-json
+envelope:
+  fields:
+    error: Stable string identifying the error type; use for programmatic handling.
+    info: Human-readable description with additional context; may change, debug only.
+  example: '{"error":"invalid-request-error","info":"bad Authorization header format"}'
+http_status_codes:
+- status: 200
+  meaning: OK — request succeeded.
+- status: 400
+  meaning: Bad Request — the operation could not be performed as requested.
+- status: 401
+  meaning: Unauthorized — the API key was not valid.
+- status: 403
+  meaning: Forbidden — the API key is valid but the resource is not accessible.
+- status: 404
+  meaning: Not Found — the requested resource does not exist.
+- status: 422
+  meaning: Unprocessable Entity — validation failed (per OpenAPI responses).
+- status: 429
+  meaning: Too Many Requests — rate limit exceeded. Back off and retry.
+- status: 5xx
+  meaning: Server Error — something unexpected happened on Daily's side.
+error_types:
+- code: authentication-error
+  http_status: 401
+  description: The API key is not valid.
+- code: authorization-header-error
+  http_status: 400
+  description: The Authorization header is missing or malformed.
+- code: forbidden-error
+  http_status: 403
+  description: The API key is valid but the resource is forbidden.
+- code: json-parsing-error
+  http_status: 400
+  description: The request body could not be parsed as JSON.
+- code: invalid-request-error
+  http_status: 400
+  description: The request could not be completed — commonly missing required parameters or
+    bad parameter values (see the info field).
+- code: rate-limit-error
+  http_status: 429
+  description: Too many requests in too short a window. Retry with exponential backoff.
+- code: server-error
+  http_status: 500
+  description: An unexpected error occurred on Daily's side.

@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of Daily hosts
+note: No /.well-known/ discovery documents are published. API auth is a static HTTP Bearer
+  API key (no OAuth/OIDC discovery), and no security.txt or api-catalog is served. Recorded
+  for auditability; no WellKnown/SecurityTxt pointer is emitted because nothing is present.
+hosts:
+- host: https://api.daily.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+- host: https://www.daily.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://docs.daily.co
+  documents:
+  - path: /.well-known/ai-plugin.json
+    status: 404

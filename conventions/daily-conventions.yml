@@ -1,0 +1,48 @@
+generated: '2026-07-18'
+method: searched
+source:
+- https://docs.daily.co/docs/rest-api/authentication
+- https://docs.daily.co/docs/rest-api/errors
+- openapi/daily-openapi-original.json
+authentication:
+  style: bearer-api-key
+  header: 'Authorization: Bearer DAILY_API_KEY'
+  scope: Each API key is scoped to a single Daily domain.
+  note: Never expose the key in client-side code. HTTPS is required for all requests.
+  ref: authentication/daily-authentication.yml
+idempotency:
+  supported: false
+  note: The Daily REST API does not document an Idempotency-Key header or idempotent-retry
+    contract; retries are handled with exponential backoff on 429 responses only.
+pagination:
+  style: cursor
+  params:
+    limit: Number of objects to return. Max and default 100.
+    starting_after: Object ID cursor; returns objects created after this ID (next page).
+    ending_before: Object ID cursor; returns objects created before this ID (previous page).
+      Pass special value OLDEST to start from the oldest objects.
+  default_sort: reverse chronological (newest first)
+  response_fields:
+  - total_count
+  - data
+error_envelope:
+  format: custom-json
+  fields:
+    error: Stable string identifying the error type (use for programmatic handling).
+    info: Human-readable description; may change, treat as debug only.
+  example: '{"error":"invalid-request-error","info":"bad Authorization header format"}'
+  ref: errors/daily-error-codes.yml
+rate_limiting:
+  signal: HTTP 429 with error "rate-limit-error"
+  most_endpoints: 20 req/sec, or 100 req per 5-second window
+  heavier_endpoints: DELETE /rooms/:name and GET /recordings ~2 req/sec (50 per 30s)
+  start_media_endpoints: start recording/live-streaming/PSTN/SIP ~1 req/sec (5 per 5s)
+  guidance: Retry 429 with exponential backoff; contact support for higher limits.
+versioning:
+  scheme: uri-path
+  current: v1
+  ref: lifecycle/daily-lifecycle.yml
+request_tracing:
+  request_id_header: null
+  note: No documented per-request correlation id header on the REST API; telephony webhook
+    events carry sipCallId/provider fields for call correlation.

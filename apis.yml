@@ -267,7 +267,7 @@ common:
 - type: LLMsTxt
   url: llms/daily-llms.txt
 - type: OpenAPI
-  url: openapi/daily-openapi-original.json
+  url: openapi/_original/daily-openapi-original.json
 - type: Packages
   url: packages/daily-packages.yml
 - type: SDKs

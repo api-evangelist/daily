@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "batch/rooms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/batch/rooms",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/batch/rooms",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create rooms in bulk"
+        },
+        {
+          "info": {
+            "name": "/batch/rooms",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.daily.co/v1/batch/rooms",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete rooms in bulk"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

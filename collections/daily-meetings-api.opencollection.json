@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms meetings API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "meetings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/meetings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/meetings",
+            "params": [
+              {
+                "name": "room",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeframe_start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeframe_end",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ongoing",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "no_participants",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "retrieve meeting analytics"
+        },
+        {
+          "info": {
+            "name": "/meetings/:meeting",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/meetings/:meeting",
+            "params": [
+              {
+                "name": "meeting",
+                "value": "",
+                "type": "path",
+                "description": "the ID of the meeting session"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "retrieve info about a particular meeting"
+        },
+        {
+          "info": {
+            "name": "/meetings/:meeting/participants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/meetings/:meeting/participants",
+            "params": [
+              {
+                "name": "meeting",
+                "value": "",
+                "type": "path",
+                "description": "the ID of the meeting session"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "the largest number of participant records to return"
+              },
+              {
+                "name": "joined_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to participants who joined after the given participant, identified by `participant_id`"
+              },
+              {
+                "name": "joined_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to participants who joined before the given participant, identified by `participant_id`"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "retrieve info about the participants in a particular meeting"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

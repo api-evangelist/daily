@@ -1,0 +1,277 @@
+{
+  "item": [
+    {
+      "id": "632dee94-9550-4c7a-8bb4-535eb9f71208",
+      "name": "domain",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "95c12777-a8bc-4220-a64a-71a7fa69edbb",
+          "name": "Get domain configuration",
+          "request": {
+            "name": "Get domain configuration",
+            "description": {
+              "content": "Get top-level configuration of your domain",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4df73800-dacd-4ec7-af0e-273c720631cd",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"domain_name\": \"api-test-1\",\n  \"domain_id\": \"30f866c3-9123-452a-8723-ff58322d09c5\",\n  \"config\": {\n    \"redirect_on_meeting_exit\": \"\",\n    \"hide_daily_branding\": false,\n    \"hipaa\": false,\n    \"intercom_auto_record\": false,\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88bf5570-750d-442a-a41b-513abe4d403f",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "287ea478-409d-4a97-ba19-1d04fb712919",
+          "name": "Set domain configuration",
+          "request": {
+            "name": "Set domain configuration",
+            "description": {
+              "content": "Set top-level configuration options for your domain",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"enable_advanced_chat\": false,\n    \"enable_people_ui\": true,\n    \"enable_cpu_warning_notifications\": true,\n    \"enable_pip_ui\": false,\n    \"enable_emoji_reactions\": false,\n    \"enable_hand_raising\": false,\n    \"enable_prejoin_ui\": true,\n    \"enable_breakout_rooms\": false,\n    \"enable_live_captions_ui\": false,\n    \"enable_network_ui\": false,\n    \"enable_noise_cancellation_ui\": true,\n    \"enable_video_processing_ui\": true,\n    \"hide_daily_branding\": false,\n    \"redirect_on_meeting_exit\": \"<string>\",\n    \"hipaa\": false,\n    \"intercom_auto_record\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"NULL\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"enable_terse_logging\": false,\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"<string>\",\n      \"bucket_region\": \"<string>\",\n      \"assume_role_arn\": \"<string>\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"<string>\",\n      \"bucket_region\": \"<string>\",\n      \"assume_role_arn\": \"<string>\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"batch_processor_bucket\": \"<object>\",\n    \"enable_opus_fec\": \"<boolean>\",\n    \"pinless_dialin\": [\n      {\n        \"phone_number\": \"<string>\",\n        \"room_creation_api\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"sip_uri\": \"<string>\",\n        \"hold_music_url\": \"<string>\",\n        \"timeout_config\": {\n          \"message\": \"<string>\"\n        }\n      },\n      {\n        \"phone_number\": \"<string>\",\n        \"room_creation_api\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"sip_uri\": \"<string>\",\n        \"hold_music_url\": \"<string>\",\n        \"timeout_config\": {\n          \"message\": \"<string>\"\n        }\n      }\n    ],\n    \"pin_dialin\": [\n      {\n        \"phone_number\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"ivr_greeting\": {\n          \"message\": \"<string>\"\n        }\n      },\n      {\n        \"phone_number\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"ivr_greeting\": {\n          \"message\": \"<string>\"\n        }\n      }\n    ],\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d88249cc-da9a-44bc-b09f-5420d105f837",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"enable_advanced_chat\": false,\n    \"enable_people_ui\": true,\n    \"enable_cpu_warning_notifications\": true,\n    \"enable_pip_ui\": false,\n    \"enable_emoji_reactions\": false,\n    \"enable_hand_raising\": false,\n    \"enable_prejoin_ui\": true,\n    \"enable_breakout_rooms\": false,\n    \"enable_live_captions_ui\": false,\n    \"enable_network_ui\": false,\n    \"enable_noise_cancellation_ui\": true,\n    \"enable_video_processing_ui\": true,\n    \"hide_daily_branding\": false,\n    \"redirect_on_meeting_exit\": \"<string>\",\n    \"hipaa\": false,\n    \"intercom_auto_record\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"NULL\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"enable_terse_logging\": false,\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"batch_processor_bucket\": \"<object>\",\n    \"enable_opus_fec\": \"<boolean>\",\n    \"pinless_dialin\": [\n      {\n        \"phone_number\": \"<string>\",\n        \"room_creation_api\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"sip_uri\": \"<string>\",\n        \"hold_music_url\": \"<string>\",\n        \"timeout_config\": {\n          \"message\": \"<string>\"\n        }\n      },\n      {\n        \"phone_number\": \"<string>\",\n        \"room_creation_api\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"sip_uri\": \"<string>\",\n        \"hold_music_url\": \"<string>\",\n        \"timeout_config\": {\n          \"message\": \"<string>\"\n        }\n      }\n    ],\n    \"pin_dialin\": [\n      {\n        \"phone_number\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"ivr_greeting\": {\n          \"message\": \"<string>\"\n        }\n      },\n      {\n        \"phone_number\": \"<string>\",\n        \"name_prefix\": \"<string>\",\n        \"ivr_greeting\": {\n          \"message\": \"<string>\"\n        }\n      }\n    ],\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"domain_name\": \"your-domain\",\n  \"config\": {\n    \"hide_daily_branding\": false,\n    \"hipaa\": false,\n    \"intercom_auto_record\": false,\n    \"lang\": \"es\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dc1b3040-9394-477f-b985-f0291ec33d59",
+    "name": "Daily batch/rooms domain API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

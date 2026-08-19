@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms logs API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "logs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/logs",
+            "params": [
+              {
+                "name": "includeLogs",
+                "value": "",
+                "type": "query",
+                "description": "If true, you get a \"logs\" array in the results"
+              },
+              {
+                "name": "includeMetrics",
+                "value": "",
+                "type": "query",
+                "description": "If true, results have \"metrics\" array"
+              },
+              {
+                "name": "userSessionId",
+                "value": "",
+                "type": "query",
+                "description": "Filters by this user ID (aka \"participant ID\"). Required if `mtgSessionId` is not present in the request"
+              },
+              {
+                "name": "mtgSessionId",
+                "value": "",
+                "type": "query",
+                "description": "Filters by this Session ID. Required if `userSessionId` is not present in the request"
+              },
+              {
+                "name": "logLevel",
+                "value": "",
+                "type": "query",
+                "description": "Filters by the given log level name"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "ASC or DESC, case insensitive"
+              },
+              {
+                "name": "startTime",
+                "value": "",
+                "type": "query",
+                "description": "A JS timestamp (ms since epoch in UTC)"
+              },
+              {
+                "name": "endTime",
+                "value": "",
+                "type": "query",
+                "description": "A JS timestamp (ms since epoch), defaults to the current time"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit the number of logs and/or metrics returned"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip before returning results"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "/logs"
+        },
+        {
+          "info": {
+            "name": "/logs/api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/logs/api",
+            "params": [
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "Given the log ID, will return all records after that ID. See [pagination docs](../../rest-api#pagination)"
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "Given the log ID, will return all records before that ID. See [pagination docs](../../rest-api#pagination)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit the number of logs and/or metrics returned"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "The source of the given logs, either `\"api\"` or `\"webhook\"`"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "Either the webhook server URL, or the API endpoint that was logged"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "/logs/api"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,173 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms domain-dialin-config API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "domain-dialin-config",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/domain-dialin-config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/domain-dialin-config",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "phone_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "phone_numbers",
+                "value": "",
+                "type": "query",
+                "description": "a comma separated list of phone numbers to filter by. The filter will match any phone number that contains the provided numbers as a substring (partial match)."
+              },
+              {
+                "name": "sip_username",
+                "value": "",
+                "type": "query",
+                "description": "The sip username associated with this dialin config (only the username part of the sip uri)"
+              },
+              {
+                "name": "name_prefix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of dialin config. It can be pinless_dialin or pin_dialin."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all the pinless_dialin and pin_dialin configs for the domain, with pagination"
+        },
+        {
+          "info": {
+            "name": "create new config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/domain-dialin-config",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "create a new pinless_dialin or pin_dialin config"
+        },
+        {
+          "info": {
+            "name": "domain-dialin-config/:id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/domain-dialin-config/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get info about an existing pinless_dialin or pin_dialin config"
+        },
+        {
+          "info": {
+            "name": "domain-dialin-config/:id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.daily.co/v1/domain-dialin-config/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "update an existing pinless_dialin or pin_dialin config"
+        },
+        {
+          "info": {
+            "name": "domain-dialin-config/:id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.daily.co/v1/domain-dialin-config/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a given pinless_dialin or pin_dialin config"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

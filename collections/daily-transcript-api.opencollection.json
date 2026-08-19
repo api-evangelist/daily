@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms transcript API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "transcript",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/transcript",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/transcript",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "roomId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mtgSessionId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List transcripts"
+        },
+        {
+          "info": {
+            "name": "transcript/:transcriptId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/transcript/:transcriptId",
+            "params": [
+              {
+                "name": "transcriptId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get info about a Transcript"
+        },
+        {
+          "info": {
+            "name": "transcript/:id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.daily.co/v1/transcript/:transcriptId",
+            "params": [
+              {
+                "name": "transcriptId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a transcript"
+        },
+        {
+          "info": {
+            "name": "transcript/:id/access-link",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/transcript/:transcriptId/access-link",
+            "params": [
+              {
+                "name": "transcriptId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Generate an access link for a transcript"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

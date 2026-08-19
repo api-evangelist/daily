@@ -1,0 +1,671 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/ rooms API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "rooms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/rooms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/rooms",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Sets the number of rooms listed"
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "Returns room objects created before a provided room  id"
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "Returns room objects created after a provided room id"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List rooms"
+        },
+        {
+          "info": {
+            "name": "/rooms",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/rooms/:room_name",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get info about a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Set a room's privacy and config properties"
+        },
+        {
+          "info": {
+            "name": "rooms/:name",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.daily.co/v1/rooms/:room_name",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/presence",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/rooms/:room_name/presence",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path",
+                "description": "The name of the room"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Sets the number of participants returned."
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "Returns presence for the user with the given userId, if available. The userId is specified via a [meeting token](/products/rest-api/meeting-tokens/config#user_id)."
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "query",
+                "description": "Returns presence for the user with the given name, if available."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get a presence snapshot for a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/send-app-message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/send-app-message",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Send a message to participants in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/get-session-data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/rooms/:room_name/get-session-data",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Gets meeting session data"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/set-session-data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/set-session-data",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Sets meeting session data"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/eject",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/eject",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Ejects participants from a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/update-permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/update-permissions",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Modifies permissions for one or more participants in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/recordings/start",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/recordings/start",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Start a recording in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/recordings/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/recordings/update",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update a recording in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/recordings/stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/recordings/stop",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Stop a recording in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/live-streaming/start",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/live-streaming/start",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Start a live stream in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/live-streaming/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/live-streaming/update",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update a live stream in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/live-streaming/stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/live-streaming/stop",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Stop a live stream in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/transcription/start",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/transcription/start",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Start a transcription in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/transcription/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/transcription/update",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update the set of participants being transcribed"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/transcription/stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/transcription/stop",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Stop a transcription in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/dialOut/start",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/dialOut/start",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Start a dial-out in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/dialOut/sendDTMF",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/dialOut/sendDTMF",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "send DTMF digits on the dialout"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/dialOut/stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/dialOut/stop",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Stop a dial out in a room"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/sipCallTransfer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/sipCallTransfer",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "transfer sip/pstn call"
+        },
+        {
+          "info": {
+            "name": "rooms/:name/sipRefer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/rooms/:room_name/sipRefer",
+            "params": [
+              {
+                "name": "room_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "refer a sip call to other sip endpoint"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

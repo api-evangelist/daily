@@ -1,0 +1,637 @@
+{
+  "item": [
+    {
+      "id": "91364eef-79e1-4c5e-9a37-f42a35db780d",
+      "name": "meetings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "68b672d7-0c62-428c-9c1b-694e9bf049fb",
+          "name": "/meetings",
+          "request": {
+            "name": "/meetings",
+            "description": {
+              "content": "retrieve meeting analytics",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "meetings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "room",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeframe_start",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeframe_end",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ongoing",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "no_participants",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cfe765cd-e776-4464-af0d-21118ecbcb1c",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "room",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "timeframe_start",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "timeframe_end",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ongoing",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "no_participants",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_count\": 42,\n  \"data\": [\n    {\n      \"id\": \"aaaaaaaa-0000-0000-0000-000000000001\",\n      \"room\": \"my-room\",\n      \"start_time\": 1774363859,\n      \"duration\": 600,\n      \"ongoing\": false,\n      \"max_participants\": 1,\n      \"participants\": [\n        {\n          \"user_id\": null,\n          \"participant_id\": \"bbbbbbbb-0000-0000-0000-000000000001\",\n          \"user_name\": \"Alice\",\n          \"join_time\": 1774363859,\n          \"duration\": 600\n        }\n      ]\n    },\n    {\n      \"id\": \"aaaaaaaa-0000-0000-0000-000000000002\",\n      \"room\": \"my-room\",\n      \"start_time\": 1774283912,\n      \"duration\": 187,\n      \"ongoing\": false,\n      \"max_participants\": 2,\n      \"participants\": [\n        {\n          \"user_id\": null,\n          \"participant_id\": \"bbbbbbbb-0000-0000-0000-000000000002\",\n          \"user_name\": \"Alice\",\n          \"join_time\": 1774283925,\n          \"duration\": 174\n        },\n        {\n          \"user_id\": null,\n          \"participant_id\": \"bbbbbbbb-0000-0000-0000-000000000003\",\n          \"user_name\": \"Bob\",\n          \"join_time\": 1774283912,\n          \"duration\": 179\n        }\n      ]\n    },\n    {\n      \"id\": \"aaaaaaaa-0000-0000-0000-000000000003\",\n      \"room\": \"my-room\",\n      \"start_time\": 1773860661,\n      \"duration\": 304,\n      \"ongoing\": false,\n      \"max_participants\": 2,\n      \"participants\": [\n        {\n          \"user_id\": \"cccccccc-0000-0000-0000-000000000001\",\n          \"participant_id\": \"cccccccc-0000-0000-0000-000000000001\",\n          \"user_name\": \"Pipecat Bot\",\n          \"join_time\": 1773860661,\n          \"duration\": 296\n        },\n        {\n          \"user_id\": null,\n          \"participant_id\": \"bbbbbbbb-0000-0000-0000-000000000004\",\n          \"user_name\": null,\n          \"join_time\": 1773860662,\n          \"duration\": 303\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18fd8d62-5b30-4a66-85f6-1412a838ca8f",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "room",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "timeframe_start",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "timeframe_end",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ongoing",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "no_participants",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96041de7-f79d-4f99-bff4-73a03eb5e737",
+          "name": "/meetings/:meeting",
+          "request": {
+            "name": "/meetings/:meeting",
+            "description": {
+              "content": "retrieve info about a particular meeting",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "meetings",
+                ":meeting"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "meeting",
+                  "description": "(Required) the ID of the meeting session"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d4a23db0-dafc-4de0-a531-3b78ca35b4b0",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings",
+                    ":meeting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "meeting",
+                      "description": "(Required) the ID of the meeting session"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n  \"room\": \"room-name\",\n  \"start_time\": 1672606399,\n  \"duration\": 2055,\n  \"ongoing\": false,\n  \"max_participants\": 5\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1afada4c-c411-4315-b372-53cd495e550f",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings",
+                    ":meeting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "meeting",
+                      "description": "(Required) the ID of the meeting session"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1225f01-8977-4ded-99f6-80ed5a94637a",
+          "name": "/meetings/:meeting/participants",
+          "request": {
+            "name": "/meetings/:meeting/participants",
+            "description": {
+              "content": "retrieve info about the participants in a particular meeting",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "meetings",
+                ":meeting",
+                "participants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "the largest number of participant records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "joined_after",
+                  "value": "<string>",
+                  "description": "limit to participants who joined after the given participant, identified by `participant_id`"
+                },
+                {
+                  "disabled": false,
+                  "key": "joined_before",
+                  "value": "<string>",
+                  "description": "limit to participants who joined before the given participant, identified by `participant_id`"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "meeting",
+                  "description": "(Required) the ID of the meeting session"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8934da5d-84bb-4b9a-8550-12b6e9ccd6e0",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings",
+                    ":meeting",
+                    "participants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "joined_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "joined_before",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "meeting",
+                      "description": "(Required) the ID of the meeting session"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"user_id\": \"4q47OTmqa/w=\",\n      \"participant_id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n      \"user_name\": \"Lindsey\",\n      \"join_time\": 1672786813,\n      \"duration\": 150\n    },\n    {\n      \"user_id\": \"pbZ+ismP7dk=\",\n      \"participant_id\": \"b3d56359-14d7-46af-ac8b-18f8c991f5f6\",\n      \"user_name\": \"Moishe\",\n      \"join_time\": 1672786797,\n      \"duration\": 165\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "293589de-a637-4762-9909-0003a138cada",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings",
+                    ":meeting",
+                    "participants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "joined_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "joined_before",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "meeting",
+                      "description": "(Required) the ID of the meeting session"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "abe40960-a9fe-41a4-8877-74c609015b8a",
+    "name": "Daily batch/rooms meetings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

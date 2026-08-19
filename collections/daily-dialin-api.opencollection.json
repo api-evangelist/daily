@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms dialin API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "dialin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/dialin/pinlessCallUpdate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/dialin/pinlessCallUpdate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Direct a SIP or PSTN call on hold to a specified SIP URI associated to a Daily Room."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

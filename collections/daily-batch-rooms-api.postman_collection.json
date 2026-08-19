@@ -1,0 +1,334 @@
+{
+  "item": [
+    {
+      "id": "61376fca-181a-40b1-a5d1-1522418ef83f",
+      "name": "batch/rooms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1eb446ab-04e5-4c88-a913-d5e48f5d4366",
+          "name": "/batch/rooms",
+          "request": {
+            "name": "/batch/rooms",
+            "description": {
+              "content": "Create rooms in bulk",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "batch",
+                "rooms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rooms\": [\n    {\n      \"name\": \"<string>\",\n      \"privacy\": \"<string>\",\n      \"properties\": {\n        \"nbf\": \"<integer>\",\n        \"exp\": \"<integer>\",\n        \"max_participants\": 200,\n        \"enable_people_ui\": \"<boolean>\",\n        \"enable_cpu_warning_notifications\": \"<boolean>\",\n        \"enable_pip_ui\": \"<boolean>\",\n        \"enable_emoji_reactions\": \"<boolean>\",\n        \"enable_hand_raising\": \"<boolean>\",\n        \"enable_prejoin_ui\": \"<boolean>\",\n        \"enable_live_captions_ui\": \"<boolean>\",\n        \"enable_network_ui\": \"<boolean>\",\n        \"enable_noise_cancellation_ui\": \"<boolean>\",\n        \"enable_breakout_rooms\": \"<boolean>\",\n        \"enable_knocking\": \"<boolean>\",\n        \"enable_screenshare\": true,\n        \"enable_video_processing_ui\": true,\n        \"enable_chat\": false,\n        \"enable_shared_chat_history\": true,\n        \"start_video_off\": false,\n        \"start_audio_off\": false,\n        \"enable_recording\": \"<string>\",\n        \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n        \"eject_at_room_exp\": false,\n        \"eject_after_elapsed\": \"<integer>\",\n        \"enable_advanced_chat\": false,\n        \"enable_hidden_participants\": false,\n        \"enable_mesh_sfu\": \"<boolean>\",\n        \"sfu_switchover\": 0.5,\n        \"enable_adaptive_simulcast\": true,\n        \"enable_multiparty_adaptive_simulcast\": false,\n        \"enforce_unique_user_ids\": false,\n        \"experimental_optimize_large_calls\": \"<boolean>\",\n        \"lang\": \"en\",\n        \"meeting_join_hook\": \"<string>\",\n        \"geo\": \"NULL\",\n        \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n        \"disable_rtmp_geo_fallback\": false,\n        \"recordings_bucket\": {\n          \"bucket_name\": \"<string>\",\n          \"bucket_region\": \"<string>\",\n          \"assume_role_arn\": \"<string>\",\n          \"allow_api_access\": \"<boolean>\",\n          \"allow_streaming_from_bucket\": \"<boolean>\"\n        },\n        \"enable_terse_logging\": false,\n        \"auto_transcription_settings\": \"<object>\",\n        \"enable_transcription_storage\": false,\n        \"transcription_bucket\": {\n          \"bucket_name\": \"<string>\",\n          \"bucket_region\": \"<string>\",\n          \"assume_role_arn\": \"<string>\",\n          \"allow_api_access\": \"<boolean>\"\n        },\n        \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n        \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n        \"enable_dialout\": false,\n        \"dialout_config\": {\n          \"allow_room_start\": false,\n          \"dialout_geo\": \"<string>\",\n          \"max_idle_timeout_sec\": 0\n        },\n        \"streaming_endpoints\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"hls_config['storage']['path']\": \"<string>\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"hls_config['storage']['path']\": \"<string>\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          }\n        ],\n        \"permissions\": {\n          \"hasPresence\": \"<boolean>\",\n          \"canSend\": \"<boolean>\",\n          \"canReceive\": \"<object>\",\n          \"canAdmin\": \"<boolean>\"\n        },\n        \"sip\": {\n          \"display_name\": \"<string>\",\n          \"sip_mode\": \"<string>\",\n          \"video\": false,\n          \"num_endpoints\": 1,\n          \"force_digit_only_username\": false,\n          \"codecs\": {\n            \"audio\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"video\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"provider\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"privacy\": \"<string>\",\n      \"properties\": {\n        \"nbf\": \"<integer>\",\n        \"exp\": \"<integer>\",\n        \"max_participants\": 200,\n        \"enable_people_ui\": \"<boolean>\",\n        \"enable_cpu_warning_notifications\": \"<boolean>\",\n        \"enable_pip_ui\": \"<boolean>\",\n        \"enable_emoji_reactions\": \"<boolean>\",\n        \"enable_hand_raising\": \"<boolean>\",\n        \"enable_prejoin_ui\": \"<boolean>\",\n        \"enable_live_captions_ui\": \"<boolean>\",\n        \"enable_network_ui\": \"<boolean>\",\n        \"enable_noise_cancellation_ui\": \"<boolean>\",\n        \"enable_breakout_rooms\": \"<boolean>\",\n        \"enable_knocking\": \"<boolean>\",\n        \"enable_screenshare\": true,\n        \"enable_video_processing_ui\": true,\n        \"enable_chat\": false,\n        \"enable_shared_chat_history\": true,\n        \"start_video_off\": false,\n        \"start_audio_off\": false,\n        \"enable_recording\": \"<string>\",\n        \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n        \"eject_at_room_exp\": false,\n        \"eject_after_elapsed\": \"<integer>\",\n        \"enable_advanced_chat\": false,\n        \"enable_hidden_participants\": false,\n        \"enable_mesh_sfu\": \"<boolean>\",\n        \"sfu_switchover\": 0.5,\n        \"enable_adaptive_simulcast\": true,\n        \"enable_multiparty_adaptive_simulcast\": false,\n        \"enforce_unique_user_ids\": false,\n        \"experimental_optimize_large_calls\": \"<boolean>\",\n        \"lang\": \"en\",\n        \"meeting_join_hook\": \"<string>\",\n        \"geo\": \"NULL\",\n        \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n        \"disable_rtmp_geo_fallback\": false,\n        \"recordings_bucket\": {\n          \"bucket_name\": \"<string>\",\n          \"bucket_region\": \"<string>\",\n          \"assume_role_arn\": \"<string>\",\n          \"allow_api_access\": \"<boolean>\",\n          \"allow_streaming_from_bucket\": \"<boolean>\"\n        },\n        \"enable_terse_logging\": false,\n        \"auto_transcription_settings\": \"<object>\",\n        \"enable_transcription_storage\": false,\n        \"transcription_bucket\": {\n          \"bucket_name\": \"<string>\",\n          \"bucket_region\": \"<string>\",\n          \"assume_role_arn\": \"<string>\",\n          \"allow_api_access\": \"<boolean>\"\n        },\n        \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n        \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n        \"enable_dialout\": false,\n        \"dialout_config\": {\n          \"allow_room_start\": false,\n          \"dialout_geo\": \"<string>\",\n          \"max_idle_timeout_sec\": 0\n        },\n        \"streaming_endpoints\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"hls_config['storage']['path']\": \"<string>\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"hls_config['storage']['path']\": \"<string>\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          }\n        ],\n        \"permissions\": {\n          \"hasPresence\": \"<boolean>\",\n          \"canSend\": \"<boolean>\",\n          \"canReceive\": \"<object>\",\n          \"canAdmin\": \"<boolean>\"\n        },\n        \"sip\": {\n          \"display_name\": \"<string>\",\n          \"sip_mode\": \"<string>\",\n          \"video\": false,\n          \"num_endpoints\": 1,\n          \"force_digit_only_username\": false,\n          \"codecs\": {\n            \"audio\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"video\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"provider\": \"<string>\"\n        }\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "80b0f20e-6ee9-4588-a27b-b63a7fbb9ccd",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"rooms\": [\n    {\n      \"name\": \"<string>\",\n      \"privacy\": \"<string>\",\n      \"properties\": {\n        \"nbf\": \"<integer>\",\n        \"exp\": \"<integer>\",\n        \"max_participants\": 200,\n        \"enable_people_ui\": \"<boolean>\",\n        \"enable_cpu_warning_notifications\": \"<boolean>\",\n        \"enable_pip_ui\": \"<boolean>\",\n        \"enable_emoji_reactions\": \"<boolean>\",\n        \"enable_hand_raising\": \"<boolean>\",\n        \"enable_prejoin_ui\": \"<boolean>\",\n        \"enable_live_captions_ui\": \"<boolean>\",\n        \"enable_network_ui\": \"<boolean>\",\n        \"enable_noise_cancellation_ui\": \"<boolean>\",\n        \"enable_breakout_rooms\": \"<boolean>\",\n        \"enable_knocking\": \"<boolean>\",\n        \"enable_screenshare\": true,\n        \"enable_video_processing_ui\": true,\n        \"enable_chat\": false,\n        \"enable_shared_chat_history\": true,\n        \"start_video_off\": false,\n        \"start_audio_off\": false,\n        \"enable_recording\": \"<string>\",\n        \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n        \"eject_at_room_exp\": false,\n        \"eject_after_elapsed\": \"<integer>\",\n        \"enable_advanced_chat\": false,\n        \"enable_hidden_participants\": false,\n        \"enable_mesh_sfu\": \"<boolean>\",\n        \"sfu_switchover\": 0.5,\n        \"enable_adaptive_simulcast\": true,\n        \"enable_multiparty_adaptive_simulcast\": false,\n        \"enforce_unique_user_ids\": false,\n        \"experimental_optimize_large_calls\": \"<boolean>\",\n        \"lang\": \"en\",\n        \"meeting_join_hook\": \"<string>\",\n        \"geo\": \"NULL\",\n        \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n        \"disable_rtmp_geo_fallback\": false,\n        \"recordings_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\",\n          \"allow_streaming_from_bucket\": \"<boolean>\"\n        },\n        \"enable_terse_logging\": false,\n        \"auto_transcription_settings\": {\n          \"language\": \"de\"\n        },\n        \"enable_transcription_storage\": false,\n        \"transcription_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\"\n        },\n        \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n        \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n        \"enable_dialout\": false,\n        \"dialout_config\": {\n          \"allow_room_start\": false,\n          \"dialout_geo\": \"ap-south-1\",\n          \"max_idle_timeout_sec\": 0\n        },\n        \"streaming_endpoints\": [\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          }\n        ],\n        \"permissions\": {\n          \"hasPresence\": \"<boolean>\",\n          \"canSend\": \"<boolean>\",\n          \"canReceive\": \"<object>\",\n          \"canAdmin\": \"<boolean>\"\n        },\n        \"sip\": {\n          \"display_name\": \"<string>\",\n          \"sip_mode\": \"<string>\",\n          \"video\": false,\n          \"num_endpoints\": 1,\n          \"force_digit_only_username\": false,\n          \"codecs\": {\n            \"audio\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"video\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"provider\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"privacy\": \"<string>\",\n      \"properties\": {\n        \"nbf\": \"<integer>\",\n        \"exp\": \"<integer>\",\n        \"max_participants\": 200,\n        \"enable_people_ui\": \"<boolean>\",\n        \"enable_cpu_warning_notifications\": \"<boolean>\",\n        \"enable_pip_ui\": \"<boolean>\",\n        \"enable_emoji_reactions\": \"<boolean>\",\n        \"enable_hand_raising\": \"<boolean>\",\n        \"enable_prejoin_ui\": \"<boolean>\",\n        \"enable_live_captions_ui\": \"<boolean>\",\n        \"enable_network_ui\": \"<boolean>\",\n        \"enable_noise_cancellation_ui\": \"<boolean>\",\n        \"enable_breakout_rooms\": \"<boolean>\",\n        \"enable_knocking\": \"<boolean>\",\n        \"enable_screenshare\": true,\n        \"enable_video_processing_ui\": true,\n        \"enable_chat\": false,\n        \"enable_shared_chat_history\": true,\n        \"start_video_off\": false,\n        \"start_audio_off\": false,\n        \"enable_recording\": \"<string>\",\n        \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n        \"eject_at_room_exp\": false,\n        \"eject_after_elapsed\": \"<integer>\",\n        \"enable_advanced_chat\": false,\n        \"enable_hidden_participants\": false,\n        \"enable_mesh_sfu\": \"<boolean>\",\n        \"sfu_switchover\": 0.5,\n        \"enable_adaptive_simulcast\": true,\n        \"enable_multiparty_adaptive_simulcast\": false,\n        \"enforce_unique_user_ids\": false,\n        \"experimental_optimize_large_calls\": \"<boolean>\",\n        \"lang\": \"en\",\n        \"meeting_join_hook\": \"<string>\",\n        \"geo\": \"NULL\",\n        \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n        \"disable_rtmp_geo_fallback\": false,\n        \"recordings_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\",\n          \"allow_streaming_from_bucket\": \"<boolean>\"\n        },\n        \"enable_terse_logging\": false,\n        \"auto_transcription_settings\": {\n          \"language\": \"de\"\n        },\n        \"enable_transcription_storage\": false,\n        \"transcription_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\"\n        },\n        \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n        \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n        \"enable_dialout\": false,\n        \"dialout_config\": {\n          \"allow_room_start\": false,\n          \"dialout_geo\": \"ap-south-1\",\n          \"max_idle_timeout_sec\": 0\n        },\n        \"streaming_endpoints\": [\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          }\n        ],\n        \"permissions\": {\n          \"hasPresence\": \"<boolean>\",\n          \"canSend\": \"<boolean>\",\n          \"canReceive\": \"<object>\",\n          \"canAdmin\": \"<boolean>\"\n        },\n        \"sip\": {\n          \"display_name\": \"<string>\",\n          \"sip_mode\": \"<string>\",\n          \"video\": false,\n          \"num_endpoints\": 1,\n          \"force_digit_only_username\": false,\n          \"codecs\": {\n            \"audio\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"video\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"provider\": \"<string>\"\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n    \"name\": \"w2pp2cf4kltgFACPKXmX\",\n    \"api_created\": false,\n    \"privacy\": \"public\",\n    \"url\": \"https://api-demo.daily.co/w2pp2cf4kltgFACPKXmX\",\n    \"created_at\": \"2019-01-26T09:01:22.000Z\",\n    \"config\": {\n      \"nbf\": 9087,\n      \"exp\": 1396,\n      \"max_participants\": 200,\n      \"enable_people_ui\": false,\n      \"enable_cpu_warning_notifications\": true,\n      \"enable_pip_ui\": false,\n      \"enable_emoji_reactions\": false,\n      \"enable_hand_raising\": false,\n      \"enable_prejoin_ui\": true,\n      \"enable_live_captions_ui\": true,\n      \"enable_network_ui\": false,\n      \"enable_noise_cancellation_ui\": true,\n      \"enable_breakout_rooms\": false,\n      \"enable_knocking\": true,\n      \"enable_screenshare\": true,\n      \"enable_video_processing_ui\": true,\n      \"enable_chat\": false,\n      \"enable_shared_chat_history\": true,\n      \"start_video_off\": false,\n      \"start_audio_off\": false,\n      \"enable_recording\": \"cloud-audio-only\",\n      \"enable_raw_tracks_transcoded_audio\": \"wav-48k-stereo\",\n      \"eject_at_room_exp\": false,\n      \"eject_after_elapsed\": 3344,\n      \"enable_advanced_chat\": false,\n      \"enable_hidden_participants\": false,\n      \"enable_mesh_sfu\": \"<boolean>\",\n      \"sfu_switchover\": 0.5,\n      \"enable_adaptive_simulcast\": true,\n      \"enable_multiparty_adaptive_simulcast\": false,\n      \"enforce_unique_user_ids\": false,\n      \"experimental_optimize_large_calls\": true,\n      \"lang\": \"en\",\n      \"meeting_join_hook\": \"string\",\n      \"geo\": \"NULL\",\n      \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n      \"disable_rtmp_geo_fallback\": false,\n      \"recordings_bucket\": {\n        \"bucket_name\": \"my-daily-recording\",\n        \"bucket_region\": \"ap-south-1\",\n        \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n        \"allow_api_access\": \"<boolean>\",\n        \"allow_streaming_from_bucket\": \"<boolean>\"\n      },\n      \"enable_terse_logging\": false,\n      \"auto_transcription_settings\": {\n        \"language\": \"de\"\n      },\n      \"enable_transcription_storage\": false,\n      \"transcription_bucket\": {\n        \"bucket_name\": \"my-daily-recording\",\n        \"bucket_region\": \"ap-south-1\",\n        \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n        \"allow_api_access\": \"<boolean>\"\n      },\n      \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n      \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n      \"enable_dialout\": false,\n      \"dialout_config\": {\n        \"allow_room_start\": false,\n        \"dialout_geo\": \"ap-south-1\",\n        \"max_idle_timeout_sec\": 0\n      },\n      \"streaming_endpoints\": [\n        {\n          \"name\": \"rtmp_ivs\",\n          \"type\": \"hls\",\n          \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n          \"hls_config['storage']['path_template']\": \"string\",\n          \"hls_config['save_hls_recording']\": true,\n          \"hls_config['variants']\": [\n            {\n              \"width\": 6446.744671416031,\n              \"height\": 693.2435170378482,\n              \"fps\": 7960.286664497535,\n              \"bitrate\": 4050.5620024785494,\n              \"iframe_only\": false\n            },\n            {\n              \"width\": 5484.782042308172,\n              \"height\": 1217.1894781224134,\n              \"fps\": 4464.72359708659,\n              \"bitrate\": 1624.2532404436326,\n              \"iframe_only\": false\n            }\n          ]\n        },\n        {\n          \"name\": \"rtmp_ivs\",\n          \"type\": \"hls\",\n          \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n          \"hls_config['storage']['path_template']\": \"string\",\n          \"hls_config['save_hls_recording']\": false,\n          \"hls_config['variants']\": [\n            {\n              \"width\": 5308.3931897664,\n              \"height\": 1380.3554859106225,\n              \"fps\": 4686.705857290712,\n              \"bitrate\": 1288.9881518724355,\n              \"iframe_only\": false\n            },\n            {\n              \"width\": 896.7839726122895,\n              \"height\": 4132.343092948737,\n              \"fps\": 329.3637065631849,\n              \"bitrate\": 6972.5180504079535,\n              \"iframe_only\": false\n            }\n          ]\n        }\n      ],\n      \"permissions\": {\n        \"hasPresence\": \"<boolean>\",\n        \"canSend\": \"<boolean>\",\n        \"canReceive\": \"<object>\",\n        \"canAdmin\": \"<boolean>\"\n      },\n      \"sip_uri\": {\n        \"endpoint\": \"string\",\n        \"extra_endpoints\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    }\n  },\n  {\n    \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n    \"name\": \"w2pp2cf4kltgFACPKXmX\",\n    \"api_created\": false,\n    \"privacy\": \"public\",\n    \"url\": \"https://api-demo.daily.co/w2pp2cf4kltgFACPKXmX\",\n    \"created_at\": \"2019-01-26T09:01:22.000Z\",\n    \"config\": {\n      \"nbf\": 3287,\n      \"exp\": 1848,\n      \"max_participants\": 200,\n      \"enable_people_ui\": true,\n      \"enable_cpu_warning_notifications\": true,\n      \"enable_pip_ui\": false,\n      \"enable_emoji_reactions\": true,\n      \"enable_hand_raising\": true,\n      \"enable_prejoin_ui\": false,\n      \"enable_live_captions_ui\": false,\n      \"enable_network_ui\": true,\n      \"enable_noise_cancellation_ui\": false,\n      \"enable_breakout_rooms\": true,\n      \"enable_knocking\": true,\n      \"enable_screenshare\": true,\n      \"enable_video_processing_ui\": true,\n      \"enable_chat\": false,\n      \"enable_shared_chat_history\": true,\n      \"start_video_off\": false,\n      \"start_audio_off\": false,\n      \"enable_recording\": \"cloud-audio-only\",\n      \"enable_raw_tracks_transcoded_audio\": \"wav-44k1-stereo\",\n      \"eject_at_room_exp\": false,\n      \"eject_after_elapsed\": 3992,\n      \"enable_advanced_chat\": false,\n      \"enable_hidden_participants\": false,\n      \"enable_mesh_sfu\": \"<boolean>\",\n      \"sfu_switchover\": 0.5,\n      \"enable_adaptive_simulcast\": true,\n      \"enable_multiparty_adaptive_simulcast\": false,\n      \"enforce_unique_user_ids\": false,\n      \"experimental_optimize_large_calls\": false,\n      \"lang\": \"en\",\n      \"meeting_join_hook\": \"string\",\n      \"geo\": \"NULL\",\n      \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n      \"disable_rtmp_geo_fallback\": false,\n      \"recordings_bucket\": {\n        \"bucket_name\": \"my-daily-recording\",\n        \"bucket_region\": \"ap-south-1\",\n        \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n        \"allow_api_access\": \"<boolean>\",\n        \"allow_streaming_from_bucket\": \"<boolean>\"\n      },\n      \"enable_terse_logging\": false,\n      \"auto_transcription_settings\": {\n        \"language\": \"de\"\n      },\n      \"enable_transcription_storage\": false,\n      \"transcription_bucket\": {\n        \"bucket_name\": \"my-daily-recording\",\n        \"bucket_region\": \"ap-south-1\",\n        \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n        \"allow_api_access\": \"<boolean>\"\n      },\n      \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n      \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n      \"enable_dialout\": false,\n      \"dialout_config\": {\n        \"allow_room_start\": false,\n        \"dialout_geo\": \"ap-south-1\",\n        \"max_idle_timeout_sec\": 0\n      },\n      \"streaming_endpoints\": [\n        {\n          \"name\": \"rtmp_ivs\",\n          \"type\": \"hls\",\n          \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n          \"hls_config['storage']['path_template']\": \"string\",\n          \"hls_config['save_hls_recording']\": true,\n          \"hls_config['variants']\": [\n            {\n              \"width\": 5451.274949849996,\n              \"height\": 8745.898568304641,\n              \"fps\": 2805.7430550816275,\n              \"bitrate\": 5702.55113981153,\n              \"iframe_only\": false\n            },\n            {\n              \"width\": 5500.350067961782,\n              \"height\": 6794.438608348666,\n              \"fps\": 7010.499581170832,\n              \"bitrate\": 8789.52175985133,\n              \"iframe_only\": true\n            }\n          ]\n        },\n        {\n          \"name\": \"rtmp_ivs\",\n          \"type\": \"hls\",\n          \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n          \"hls_config['storage']['path_template']\": \"string\",\n          \"hls_config['save_hls_recording']\": false,\n          \"hls_config['variants']\": [\n            {\n              \"width\": 2666.3647264174815,\n              \"height\": 9528.745646829913,\n              \"fps\": 8497.85449897744,\n              \"bitrate\": 1661.310708450715,\n              \"iframe_only\": false\n            },\n            {\n              \"width\": 6877.24447536469,\n              \"height\": 7926.861230207073,\n              \"fps\": 3338.3198572942997,\n              \"bitrate\": 4386.641777402045,\n              \"iframe_only\": true\n            }\n          ]\n        }\n      ],\n      \"permissions\": {\n        \"hasPresence\": \"<boolean>\",\n        \"canSend\": \"<boolean>\",\n        \"canReceive\": \"<object>\",\n        \"canAdmin\": \"<boolean>\"\n      },\n      \"sip_uri\": {\n        \"endpoint\": \"string\",\n        \"extra_endpoints\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "685e98fe-ef2e-4e0a-8b59-25c782ccfeb7",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"rooms\": [\n    {\n      \"name\": \"<string>\",\n      \"privacy\": \"<string>\",\n      \"properties\": {\n        \"nbf\": \"<integer>\",\n        \"exp\": \"<integer>\",\n        \"max_participants\": 200,\n        \"enable_people_ui\": \"<boolean>\",\n        \"enable_cpu_warning_notifications\": \"<boolean>\",\n        \"enable_pip_ui\": \"<boolean>\",\n        \"enable_emoji_reactions\": \"<boolean>\",\n        \"enable_hand_raising\": \"<boolean>\",\n        \"enable_prejoin_ui\": \"<boolean>\",\n        \"enable_live_captions_ui\": \"<boolean>\",\n        \"enable_network_ui\": \"<boolean>\",\n        \"enable_noise_cancellation_ui\": \"<boolean>\",\n        \"enable_breakout_rooms\": \"<boolean>\",\n        \"enable_knocking\": \"<boolean>\",\n        \"enable_screenshare\": true,\n        \"enable_video_processing_ui\": true,\n        \"enable_chat\": false,\n        \"enable_shared_chat_history\": true,\n        \"start_video_off\": false,\n        \"start_audio_off\": false,\n        \"enable_recording\": \"<string>\",\n        \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n        \"eject_at_room_exp\": false,\n        \"eject_after_elapsed\": \"<integer>\",\n        \"enable_advanced_chat\": false,\n        \"enable_hidden_participants\": false,\n        \"enable_mesh_sfu\": \"<boolean>\",\n        \"sfu_switchover\": 0.5,\n        \"enable_adaptive_simulcast\": true,\n        \"enable_multiparty_adaptive_simulcast\": false,\n        \"enforce_unique_user_ids\": false,\n        \"experimental_optimize_large_calls\": \"<boolean>\",\n        \"lang\": \"en\",\n        \"meeting_join_hook\": \"<string>\",\n        \"geo\": \"NULL\",\n        \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n        \"disable_rtmp_geo_fallback\": false,\n        \"recordings_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\",\n          \"allow_streaming_from_bucket\": \"<boolean>\"\n        },\n        \"enable_terse_logging\": false,\n        \"auto_transcription_settings\": {\n          \"language\": \"de\"\n        },\n        \"enable_transcription_storage\": false,\n        \"transcription_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\"\n        },\n        \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n        \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n        \"enable_dialout\": false,\n        \"dialout_config\": {\n          \"allow_room_start\": false,\n          \"dialout_geo\": \"ap-south-1\",\n          \"max_idle_timeout_sec\": 0\n        },\n        \"streaming_endpoints\": [\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          }\n        ],\n        \"permissions\": {\n          \"hasPresence\": \"<boolean>\",\n          \"canSend\": \"<boolean>\",\n          \"canReceive\": \"<object>\",\n          \"canAdmin\": \"<boolean>\"\n        },\n        \"sip\": {\n          \"display_name\": \"<string>\",\n          \"sip_mode\": \"<string>\",\n          \"video\": false,\n          \"num_endpoints\": 1,\n          \"force_digit_only_username\": false,\n          \"codecs\": {\n            \"audio\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"video\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"provider\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"privacy\": \"<string>\",\n      \"properties\": {\n        \"nbf\": \"<integer>\",\n        \"exp\": \"<integer>\",\n        \"max_participants\": 200,\n        \"enable_people_ui\": \"<boolean>\",\n        \"enable_cpu_warning_notifications\": \"<boolean>\",\n        \"enable_pip_ui\": \"<boolean>\",\n        \"enable_emoji_reactions\": \"<boolean>\",\n        \"enable_hand_raising\": \"<boolean>\",\n        \"enable_prejoin_ui\": \"<boolean>\",\n        \"enable_live_captions_ui\": \"<boolean>\",\n        \"enable_network_ui\": \"<boolean>\",\n        \"enable_noise_cancellation_ui\": \"<boolean>\",\n        \"enable_breakout_rooms\": \"<boolean>\",\n        \"enable_knocking\": \"<boolean>\",\n        \"enable_screenshare\": true,\n        \"enable_video_processing_ui\": true,\n        \"enable_chat\": false,\n        \"enable_shared_chat_history\": true,\n        \"start_video_off\": false,\n        \"start_audio_off\": false,\n        \"enable_recording\": \"<string>\",\n        \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n        \"eject_at_room_exp\": false,\n        \"eject_after_elapsed\": \"<integer>\",\n        \"enable_advanced_chat\": false,\n        \"enable_hidden_participants\": false,\n        \"enable_mesh_sfu\": \"<boolean>\",\n        \"sfu_switchover\": 0.5,\n        \"enable_adaptive_simulcast\": true,\n        \"enable_multiparty_adaptive_simulcast\": false,\n        \"enforce_unique_user_ids\": false,\n        \"experimental_optimize_large_calls\": \"<boolean>\",\n        \"lang\": \"en\",\n        \"meeting_join_hook\": \"<string>\",\n        \"geo\": \"NULL\",\n        \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n        \"disable_rtmp_geo_fallback\": false,\n        \"recordings_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\",\n          \"allow_streaming_from_bucket\": \"<boolean>\"\n        },\n        \"enable_terse_logging\": false,\n        \"auto_transcription_settings\": {\n          \"language\": \"de\"\n        },\n        \"enable_transcription_storage\": false,\n        \"transcription_bucket\": {\n          \"bucket_name\": \"my-daily-recording\",\n          \"bucket_region\": \"ap-south-1\",\n          \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n          \"allow_api_access\": \"<boolean>\"\n        },\n        \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n        \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n        \"enable_dialout\": false,\n        \"dialout_config\": {\n          \"allow_room_start\": false,\n          \"dialout_geo\": \"ap-south-1\",\n          \"max_idle_timeout_sec\": 0\n        },\n        \"streaming_endpoints\": [\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"rtmp_ivs\",\n            \"type\": \"hls\",\n            \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n            \"hls_config['storage']['path_template']\": \"<string>\",\n            \"hls_config['save_hls_recording']\": \"<boolean>\",\n            \"hls_config['variants']\": [\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              },\n              {\n                \"width\": \"<number>\",\n                \"height\": \"<number>\",\n                \"fps\": \"<number>\",\n                \"bitrate\": \"<number>\",\n                \"iframe_only\": \"<boolean>\"\n              }\n            ]\n          }\n        ],\n        \"permissions\": {\n          \"hasPresence\": \"<boolean>\",\n          \"canSend\": \"<boolean>\",\n          \"canReceive\": \"<object>\",\n          \"canAdmin\": \"<boolean>\"\n        },\n        \"sip\": {\n          \"display_name\": \"<string>\",\n          \"sip_mode\": \"<string>\",\n          \"video\": false,\n          \"num_endpoints\": 1,\n          \"force_digit_only_username\": false,\n          \"codecs\": {\n            \"audio\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"video\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"provider\": \"<string>\"\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bdc6ec7c-f51c-4375-a1e7-c03ff00006fc",
+          "name": "/batch/rooms",
+          "request": {
+            "name": "/batch/rooms",
+            "description": {
+              "content": "Delete rooms in bulk",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "batch",
+                "rooms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b6b7566f-b9f4-4b61-9c04-417620775bed",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deleted_count\": 3360\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6b4e4a7-3b95-48a1-8927-0e1674d84ef3",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aa06c3ed-40cd-4712-86c7-02b09c67641c",
+    "name": "Daily batch/rooms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

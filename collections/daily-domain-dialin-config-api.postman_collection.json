@@ -1,0 +1,935 @@
+{
+  "item": [
+    {
+      "id": "3a0c0bf1-c670-463f-a677-eb2343167d6a",
+      "name": "domain-dialin-config",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "391d5a40-efcd-4170-9955-b191c18d8b5e",
+          "name": "/domain-dialin-config",
+          "request": {
+            "name": "/domain-dialin-config",
+            "description": {
+              "content": "List all the pinless_dialin and pin_dialin configs for the domain, with pagination",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "domain-dialin-config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone_numbers",
+                  "value": "<string>",
+                  "description": "a comma separated list of phone numbers to filter by. The filter will match any phone number that contains the provided numbers as a substring (partial match)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sip_username",
+                  "value": "<string>",
+                  "description": "The sip username associated with this dialin config (only the username part of the sip uri)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name_prefix",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "The type of dialin config. It can be pinless_dialin or pin_dialin."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "26e952f5-9dbc-49cf-b955-bc69d7064427",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone_numbers",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sip_username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name_prefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_count\": 2,\n  \"data\": [\n    {\n      \"id\": \"bfd0c52b-3a2a-4269-80ce-cae9eef55536\",\n      \"type\": \"pinless_dialin\",\n      \"config\": {\n        \"sip_uri\": \"user--1739943585193@daily-<domainId>-stage-pinless-sip.dapp.signalwire.com\",\n        \"name_prefix\": \"new-api\"\n      }\n    },\n    {\n      \"id\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n      \"type\": \"pin_dialin\",\n      \"config\": {\n        \"sip_uri\": null,\n        \"name_prefix\": \"new-api-pin\",\n        \"phone_number\": \"+12555599999\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4414a274-3c8e-451a-9b57-118c0b27cd85",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone_numbers",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sip_username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name_prefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5846875e-d92b-42b9-bfee-d557b529eabd",
+          "name": "create new config",
+          "request": {
+            "name": "create new config",
+            "description": {
+              "content": "create a new pinless_dialin or pin_dialin config",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "domain-dialin-config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"phone_number\": \"<string>\",\n  \"name_prefix\": \"<string>\",\n  \"hmac\": \"<string>\",\n  \"room_creation_api\": \"<string>\",\n  \"hold_music_url\": \"<string>\",\n  \"timeout_config\": {\n    \"message\": \"<string>\"\n  },\n  \"ivr_greeting\": {\n    \"message\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f83e8da1-e9cf-4ebf-bbfd-c0426f710e0d",
+              "name": "The final dialin config for the id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"phone_number\": \"+12555599999\",\n  \"name_prefix\": \"my-identifier-prefix\",\n  \"hmac\": \"9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=\",\n  \"room_creation_api\": \"https://mydomain.com/api/create-room\",\n  \"hold_music_url\": \"https://mydomain.com/hold-music.mp3\",\n  \"timeout_config\": {\n    \"message\": \"No Agents are available right now, please try again later\"\n  },\n  \"ivr_greeting\": {\n    \"message\": \"Please enter the dialin code for the meeting, it is in the meeting invite\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"type\": \"pinless_dialin\",\n  \"config\": {\n    \"type\": \"<string>\",\n    \"phone_number\": \"+12555599999\",\n    \"name_prefix\": \"my-identifier-prefix\",\n    \"hmac\": \"9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=\",\n    \"room_creation_api\": \"https://mydomain.com/api/create-room\",\n    \"hold_music_url\": \"https://mydomain.com/hold-music.mp3\",\n    \"timeout_config\": {\n      \"message\": \"No Agents are available right now, please try again later\"\n    },\n    \"ivr_greeting\": {\n      \"message\": \"Please enter the dialin code for the meeting, it is in the meeting invite\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14f10b03-0273-4f85-9542-8353c7980a75",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"phone_number\": \"+12555599999\",\n  \"name_prefix\": \"my-identifier-prefix\",\n  \"hmac\": \"9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=\",\n  \"room_creation_api\": \"https://mydomain.com/api/create-room\",\n  \"hold_music_url\": \"https://mydomain.com/hold-music.mp3\",\n  \"timeout_config\": {\n    \"message\": \"No Agents are available right now, please try again later\"\n  },\n  \"ivr_greeting\": {\n    \"message\": \"Please enter the dialin code for the meeting, it is in the meeting invite\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"Failed to configure pin dialin: 12096181843 not associated with domain: your-domain\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90916011-c054-4ea4-ad52-f61f0bdc88d5",
+          "name": "domain-dialin-config/:id",
+          "request": {
+            "name": "domain-dialin-config/:id",
+            "description": {
+              "content": "Get info about an existing pinless_dialin or pin_dialin config",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "domain-dialin-config",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "700cde2c-a8c3-47b3-813e-a844ec649fa6",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"type\": \"pinless_dialin\",\n  \"config\": {\n    \"type\": \"<string>\",\n    \"phone_number\": \"+12555599999\",\n    \"name_prefix\": \"my-identifier-prefix\",\n    \"hmac\": \"9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=\",\n    \"room_creation_api\": \"https://mydomain.com/api/create-room\",\n    \"hold_music_url\": \"https://mydomain.com/hold-music.mp3\",\n    \"timeout_config\": {\n      \"message\": \"No Agents are available right now, please try again later\"\n    },\n    \"ivr_greeting\": {\n      \"message\": \"Please enter the dialin code for the meeting, it is in the meeting invite\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "363ef8b7-35be-4e2f-9a09-d9dd35e28a1a",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90dca982-6295-43da-88d8-5063617c35bd",
+          "name": "domain-dialin-config/:id",
+          "request": {
+            "name": "domain-dialin-config/:id",
+            "description": {
+              "content": "update an existing pinless_dialin or pin_dialin config",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "domain-dialin-config",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone_number\": \"<string>\",\n  \"name_prefix\": \"<string>\",\n  \"hmac\": \"<string>\",\n  \"room_creation_api\": \"<string>\",\n  \"hold_music_url\": \"<string>\",\n  \"timeout_config\": {\n    \"message\": \"<string>\"\n  },\n  \"ivr_greeting\": {\n    \"message\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e0c99c65-af48-44ae-ada7-7a30173cafe8",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone_number\": \"+12555599999\",\n  \"name_prefix\": \"my-identifier-prefix\",\n  \"hmac\": \"9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=\",\n  \"room_creation_api\": \"https://mydomain.com/api/create-room\",\n  \"hold_music_url\": \"https://mydomain.com/hold-music.mp3\",\n  \"timeout_config\": {\n    \"message\": \"No Agents are available right now, please try again later\"\n  },\n  \"ivr_greeting\": {\n    \"message\": \"Please enter the dialin code for the meeting, it is in the meeting invite\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"type\": \"pinless_dialin\",\n  \"config\": {\n    \"type\": \"<string>\",\n    \"phone_number\": \"+12555599999\",\n    \"name_prefix\": \"my-identifier-prefix\",\n    \"hmac\": \"9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=\",\n    \"room_creation_api\": \"https://mydomain.com/api/create-room\",\n    \"hold_music_url\": \"https://mydomain.com/hold-music.mp3\",\n    \"timeout_config\": {\n      \"message\": \"No Agents are available right now, please try again later\"\n    },\n    \"ivr_greeting\": {\n      \"message\": \"Please enter the dialin code for the meeting, it is in the meeting invite\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "067cd334-e669-4091-af4a-14885fe01943",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone_number\": \"+12555599999\",\n  \"name_prefix\": \"my-identifier-prefix\",\n  \"hmac\": \"9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=\",\n  \"room_creation_api\": \"https://mydomain.com/api/create-room\",\n  \"hold_music_url\": \"https://mydomain.com/hold-music.mp3\",\n  \"timeout_config\": {\n    \"message\": \"No Agents are available right now, please try again later\"\n  },\n  \"ivr_greeting\": {\n    \"message\": \"Please enter the dialin code for the meeting, it is in the meeting invite\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f5f0a1b-356d-4588-b087-0fd6d4406065",
+          "name": "domain-dialin-config/:id",
+          "request": {
+            "name": "domain-dialin-config/:id",
+            "description": {
+              "content": "Delete a given pinless_dialin or pin_dialin config",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "domain-dialin-config",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f59ca088-8105-475a-a04c-d3c41b4d31cf",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ok\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d3bd254-80d4-4b96-9bac-bd1c0b4b9b9c",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "domain-dialin-config",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "acffb6ee-31e5-4d1f-916e-3dcf4dc91528",
+    "name": "Daily batch/rooms domain-dialin-config API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

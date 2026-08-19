@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms meeting-tokens API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "meeting-tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "meeting-tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/meeting-tokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a meeting token"
+        },
+        {
+          "info": {
+            "name": "meeting-tokens/:meeting_token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/meeting-tokens/:meeting_token",
+            "params": [
+              {
+                "name": "meeting_token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ignoreNbf",
+                "value": "",
+                "type": "query",
+                "description": "Ignore the `nbf` in a JWT, if given"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Validate meeting tokens"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

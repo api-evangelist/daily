@@ -1,0 +1,124 @@
+{
+  "item": [
+    {
+      "id": "412c3859-eb03-446c-b78f-08cfab6fd948",
+      "name": "presence",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "98218257-4b1e-4f4f-a866-e21ef29c42c6",
+          "name": "/presence",
+          "request": {
+            "name": "/presence",
+            "description": {},
+            "url": {
+              "path": [
+                "presence"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "42a9cda3-7c1d-4191-9e60-1933aeb11ab5",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "presence"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"my-room\": [\n    {\n      \"room\": \"my-room\",\n      \"id\": \"aaaaaaaa-0000-0000-0000-000000000001\",\n      \"userId\": null,\n      \"userName\": \"Alice\",\n      \"mtgSessionId\": \"16e9701a-93e0-4933-83c9-223e7c40d552\",\n      \"joinTime\": \"2026-03-27T16:37:22.000Z\",\n      \"duration\": 22\n    },\n    {\n      \"room\": \"my-room\",\n      \"id\": \"aaaaaaaa-0000-0000-0000-000000000002\",\n      \"userId\": null,\n      \"userName\": \"Bob\",\n      \"mtgSessionId\": \"16e9701a-93e0-4933-83c9-223e7c40d552\",\n      \"joinTime\": \"2026-03-27T16:37:25.000Z\",\n      \"duration\": 19\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3e40a92e-30fa-407e-beaf-6bc08019d110",
+    "name": "Daily batch/rooms presence API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

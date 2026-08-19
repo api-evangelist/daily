@@ -1,0 +1,512 @@
+{
+  "item": [
+    {
+      "id": "a75aedcd-0233-4d73-8d89-37861df64007",
+      "name": "logs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f688be75-dc50-4727-9ed4-25cd53f201e9",
+          "name": "/logs",
+          "request": {
+            "name": "/logs",
+            "description": {},
+            "url": {
+              "path": [
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeLogs",
+                  "value": "true",
+                  "description": "If true, you get a \"logs\" array in the results"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeMetrics",
+                  "value": "false",
+                  "description": "If true, results have \"metrics\" array"
+                },
+                {
+                  "disabled": false,
+                  "key": "userSessionId",
+                  "value": "<string>",
+                  "description": "Filters by this user ID (aka \"participant ID\"). Required if `mtgSessionId` is not present in the request"
+                },
+                {
+                  "disabled": false,
+                  "key": "mtgSessionId",
+                  "value": "<string>",
+                  "description": "Filters by this Session ID. Required if `userSessionId` is not present in the request"
+                },
+                {
+                  "disabled": false,
+                  "key": "logLevel",
+                  "value": "<string>",
+                  "description": "Filters by the given log level name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "DESC",
+                  "description": "ASC or DESC, case insensitive"
+                },
+                {
+                  "disabled": false,
+                  "key": "startTime",
+                  "value": "<integer>",
+                  "description": "A JS timestamp (ms since epoch in UTC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "endTime",
+                  "value": "<integer>",
+                  "description": "A JS timestamp (ms since epoch), defaults to the current time"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Limit the number of logs and/or metrics returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip before returning results"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2d5b762c-cb4a-4f00-92ce-3ff4e532b62b",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeLogs",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeMetrics",
+                      "value": "false"
+                    },
+                    {
+                      "key": "userSessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mtgSessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "logLevel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"logs\": [\n    {\n      \"time\": \"2026-03-23T16:32:55.473000000Z\",\n      \"clientTime\": \"2026-03-23T16:32:55.324000000Z\",\n      \"message\": \"disconnect on pagehide\",\n      \"mtgSessionId\": \"008c1f0f-6fc5-4e5f-b872-1b9623cb1e7a\",\n      \"userSessionId\": \"7a51a4b2-92cf-4ad2-b53b-9d01cc985a38\",\n      \"peerId\": null,\n      \"domainName\": \"your-domain\",\n      \"level\": 2,\n      \"code\": 7991\n    },\n    {\n      \"time\": \"2026-03-23T16:32:55.473000000Z\",\n      \"clientTime\": \"2026-03-23T16:32:55.324000000Z\",\n      \"message\": \"leaving session\",\n      \"mtgSessionId\": \"008c1f0f-6fc5-4e5f-b872-1b9623cb1e7a\",\n      \"userSessionId\": \"7a51a4b2-92cf-4ad2-b53b-9d01cc985a38\",\n      \"peerId\": null,\n      \"domainName\": \"your-domain\",\n      \"level\": 1,\n      \"code\": 8000\n    },\n    {\n      \"time\": \"2026-03-23T16:32:55.473000000Z\",\n      \"clientTime\": \"2026-03-23T16:32:54.338000000Z\",\n      \"message\": \"participant left\",\n      \"mtgSessionId\": \"008c1f0f-6fc5-4e5f-b872-1b9623cb1e7a\",\n      \"userSessionId\": \"7a51a4b2-92cf-4ad2-b53b-9d01cc985a38\",\n      \"peerId\": \"6436dbcb-f60a-48c4-90ca-4588f60f6fbc\",\n      \"domainName\": \"your-domain\",\n      \"level\": 1,\n      \"code\": 8020\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "319c5f5c-31f6-4d38-95f4-d86cd41e18ed",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeLogs",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeMetrics",
+                      "value": "false"
+                    },
+                    {
+                      "key": "userSessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mtgSessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "logLevel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"mtgSessionId or userSessionId is required\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3edc9d39-aedd-4076-811a-5fe1f49d8969",
+          "name": "/logs/api",
+          "request": {
+            "name": "/logs/api",
+            "description": {},
+            "url": {
+              "path": [
+                "logs",
+                "api"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "Given the log ID, will return all records after that ID. See [pagination docs](../../rest-api#pagination)"
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "Given the log ID, will return all records before that ID. See [pagination docs](../../rest-api#pagination)"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Limit the number of logs and/or metrics returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "source",
+                  "value": "api",
+                  "description": "The source of the given logs, either `\"api\"` or `\"webhook\"`"
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "Either the webhook server URL, or the API endpoint that was logged"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7c27f87c-d5a8-4663-ba24-06c8e8534bae",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs",
+                    "api"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "source",
+                      "value": "api"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"aaaaaaaa-0000-0000-0000-000000000001\",\n    \"userId\": \"bbbbbbbb-0000-0000-0000-000000000001\",\n    \"domainId\": \"cccccccc-0000-0000-0000-000000000001\",\n    \"source\": \"api\",\n    \"ip\": \"203.0.113.10\",\n    \"method\": \"GET\",\n    \"url\": \"/v1/rooms\",\n    \"status\": 200,\n    \"createdAt\": \"2024-03-15T18:42:00.000Z\",\n    \"request\": null,\n    \"response\": \"{\\\"total_count\\\":3,\\\"data\\\":[{\\\"id\\\":\\\"room-1\\\",\\\"name\\\":\\\"hello\\\"},{\\\"id\\\":\\\"room-2\\\",\\\"name\\\":\\\"world\\\"},{\\\"id\\\":\\\"room-3\\\",\\\"name\\\":\\\"test\\\"}]}\"\n  },\n  {\n    \"id\": \"aaaaaaaa-0000-0000-0000-000000000002\",\n    \"userId\": \"bbbbbbbb-0000-0000-0000-000000000001\",\n    \"domainId\": \"cccccccc-0000-0000-0000-000000000001\",\n    \"source\": \"api\",\n    \"ip\": \"203.0.113.10\",\n    \"method\": \"POST\",\n    \"url\": \"/v1/rooms\",\n    \"status\": 200,\n    \"createdAt\": \"2024-03-15T18:41:30.000Z\",\n    \"request\": \"{\\\"name\\\":\\\"my-room\\\",\\\"properties\\\":{\\\"exp\\\":1710527690}}\",\n    \"response\": \"{\\\"id\\\":\\\"aaaaaaaa-0000-0000-0000-000000000099\\\",\\\"name\\\":\\\"my-room\\\",\\\"api_created\\\":true}\"\n  },\n  {\n    \"id\": \"aaaaaaaa-0000-0000-0000-000000000003\",\n    \"userId\": \"bbbbbbbb-0000-0000-0000-000000000001\",\n    \"domainId\": \"cccccccc-0000-0000-0000-000000000001\",\n    \"source\": \"api\",\n    \"ip\": \"203.0.113.10\",\n    \"method\": \"POST\",\n    \"url\": \"/v1/meeting-tokens\",\n    \"status\": 400,\n    \"createdAt\": \"2024-03-15T18:41:00.000Z\",\n    \"request\": \"{\\\"properties\\\":{\\\"room_name\\\":\\\"nonexistent-room\\\"}}\",\n    \"response\": \"{\\\"error\\\":\\\"invalid-request-error\\\",\\\"info\\\":\\\"room not found\\\"}\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca0896da-0c0b-4b40-9a49-ec5cbdab0834",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs",
+                    "api"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "source",
+                      "value": "api"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"info\": \"\\\"source\\\" must be one of [webhook, api] [Received source=\\\"api\\\"]\\n\",\n  \"error\": \"invalid-request-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7d744f51-cdc8-41b1-932b-7b32d00e436e",
+    "name": "Daily batch/rooms logs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

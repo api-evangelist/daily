@@ -1,0 +1,4473 @@
+{
+  "item": [
+    {
+      "id": "37e204cb-45fb-471e-94c9-c093e215fae5",
+      "name": "rooms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ffbf2b24-d574-4779-bf33-1ab1fdd18467",
+          "name": "/rooms",
+          "request": {
+            "name": "/rooms",
+            "description": {
+              "content": "List rooms",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Sets the number of rooms listed"
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "Returns room objects created before a provided room  id"
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "Returns room objects created after a provided room id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4c185018-8338-4bbd-aad3-ec01598b4998",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_count\": 2,\n  \"data\": [\n    {\n      \"id\": \"5e3cf703-5547-47d6-a371-37b1f0b4427f\",\n      \"name\": \"w2pp2cf4kltgFACPKXmX\",\n      \"api_created\": false,\n      \"privacy\": \"public\",\n      \"url\": \"https://api-demo.daily.co/w2pp2cf4kltgFACPKXmX\",\n      \"created_at\": \"2019-01-26T09:01:22.000Z\",\n      \"config\": {\n        \"start_video_off\": true\n      }\n    },\n    {\n      \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n      \"name\": \"hello\",\n      \"api_created\": false,\n      \"privacy\": \"public\",\n      \"url\": \"https://your-domain.daily.co/hello\",\n      \"created_at\": \"2019-01-25T23:49:42.000Z\",\n      \"config\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6ae24c8-6faf-4c96-b203-8c1166fc6b34",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1152d20a-8d6f-49cb-9940-39d9ee85baa4",
+          "name": "/rooms",
+          "request": {
+            "name": "/rooms",
+            "description": {
+              "content": "Create a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"privacy\": \"<string>\",\n  \"properties\": {\n    \"nbf\": \"<integer>\",\n    \"exp\": \"<integer>\",\n    \"max_participants\": 200,\n    \"enable_people_ui\": \"<boolean>\",\n    \"enable_cpu_warning_notifications\": \"<boolean>\",\n    \"enable_pip_ui\": \"<boolean>\",\n    \"enable_emoji_reactions\": \"<boolean>\",\n    \"enable_hand_raising\": \"<boolean>\",\n    \"enable_prejoin_ui\": \"<boolean>\",\n    \"enable_live_captions_ui\": \"<boolean>\",\n    \"enable_network_ui\": \"<boolean>\",\n    \"enable_noise_cancellation_ui\": \"<boolean>\",\n    \"enable_breakout_rooms\": \"<boolean>\",\n    \"enable_knocking\": \"<boolean>\",\n    \"enable_screenshare\": true,\n    \"enable_video_processing_ui\": true,\n    \"enable_chat\": false,\n    \"enable_shared_chat_history\": true,\n    \"start_video_off\": false,\n    \"start_audio_off\": false,\n    \"enable_recording\": \"<string>\",\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n    \"eject_at_room_exp\": false,\n    \"eject_after_elapsed\": \"<integer>\",\n    \"enable_advanced_chat\": false,\n    \"enable_hidden_participants\": false,\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"experimental_optimize_large_calls\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"<string>\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"<string>\",\n      \"bucket_region\": \"<string>\",\n      \"assume_role_arn\": \"<string>\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"enable_terse_logging\": false,\n    \"auto_transcription_settings\": \"<object>\",\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"<string>\",\n      \"bucket_region\": \"<string>\",\n      \"assume_role_arn\": \"<string>\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_dialout\": false,\n    \"dialout_config\": {\n      \"allow_room_start\": false,\n      \"dialout_geo\": \"<string>\",\n      \"max_idle_timeout_sec\": 0\n    },\n    \"streaming_endpoints\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"hls_config['storage']['path']\": \"<string>\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"hls_config['storage']['path']\": \"<string>\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"sip\": {\n      \"display_name\": \"<string>\",\n      \"sip_mode\": \"<string>\",\n      \"video\": false,\n      \"num_endpoints\": 1,\n      \"force_digit_only_username\": false,\n      \"codecs\": {\n        \"audio\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"video\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"provider\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f1f7202c-8864-4e88-80e8-24ce5f5bffee",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"privacy\": \"<string>\",\n  \"properties\": {\n    \"nbf\": \"<integer>\",\n    \"exp\": \"<integer>\",\n    \"max_participants\": 200,\n    \"enable_people_ui\": \"<boolean>\",\n    \"enable_cpu_warning_notifications\": \"<boolean>\",\n    \"enable_pip_ui\": \"<boolean>\",\n    \"enable_emoji_reactions\": \"<boolean>\",\n    \"enable_hand_raising\": \"<boolean>\",\n    \"enable_prejoin_ui\": \"<boolean>\",\n    \"enable_live_captions_ui\": \"<boolean>\",\n    \"enable_network_ui\": \"<boolean>\",\n    \"enable_noise_cancellation_ui\": \"<boolean>\",\n    \"enable_breakout_rooms\": \"<boolean>\",\n    \"enable_knocking\": \"<boolean>\",\n    \"enable_screenshare\": true,\n    \"enable_video_processing_ui\": true,\n    \"enable_chat\": false,\n    \"enable_shared_chat_history\": true,\n    \"start_video_off\": false,\n    \"start_audio_off\": false,\n    \"enable_recording\": \"<string>\",\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n    \"eject_at_room_exp\": false,\n    \"eject_after_elapsed\": \"<integer>\",\n    \"enable_advanced_chat\": false,\n    \"enable_hidden_participants\": false,\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"experimental_optimize_large_calls\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"<string>\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"enable_terse_logging\": false,\n    \"auto_transcription_settings\": {\n      \"language\": \"de\"\n    },\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_dialout\": false,\n    \"dialout_config\": {\n      \"allow_room_start\": false,\n      \"dialout_geo\": \"ap-south-1\",\n      \"max_idle_timeout_sec\": 0\n    },\n    \"streaming_endpoints\": [\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"sip\": {\n      \"display_name\": \"<string>\",\n      \"sip_mode\": \"<string>\",\n      \"video\": false,\n      \"num_endpoints\": 1,\n      \"force_digit_only_username\": false,\n      \"codecs\": {\n        \"audio\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"video\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"provider\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n  \"name\": \"w2pp2cf4kltgFACPKXmX\",\n  \"api_created\": true,\n  \"privacy\": \"public\",\n  \"url\": \"https://api-demo.daily.co/w2pp2cf4kltgFACPKXmX\",\n  \"created_at\": \"2019-01-26T09:01:22.000Z\",\n  \"config\": {\n    \"start_video_off\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e7ec47e-3a9d-4fe4-abad-a8ed9af9ba97",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"privacy\": \"<string>\",\n  \"properties\": {\n    \"nbf\": \"<integer>\",\n    \"exp\": \"<integer>\",\n    \"max_participants\": 200,\n    \"enable_people_ui\": \"<boolean>\",\n    \"enable_cpu_warning_notifications\": \"<boolean>\",\n    \"enable_pip_ui\": \"<boolean>\",\n    \"enable_emoji_reactions\": \"<boolean>\",\n    \"enable_hand_raising\": \"<boolean>\",\n    \"enable_prejoin_ui\": \"<boolean>\",\n    \"enable_live_captions_ui\": \"<boolean>\",\n    \"enable_network_ui\": \"<boolean>\",\n    \"enable_noise_cancellation_ui\": \"<boolean>\",\n    \"enable_breakout_rooms\": \"<boolean>\",\n    \"enable_knocking\": \"<boolean>\",\n    \"enable_screenshare\": true,\n    \"enable_video_processing_ui\": true,\n    \"enable_chat\": false,\n    \"enable_shared_chat_history\": true,\n    \"start_video_off\": false,\n    \"start_audio_off\": false,\n    \"enable_recording\": \"<string>\",\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n    \"eject_at_room_exp\": false,\n    \"eject_after_elapsed\": \"<integer>\",\n    \"enable_advanced_chat\": false,\n    \"enable_hidden_participants\": false,\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"experimental_optimize_large_calls\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"<string>\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"enable_terse_logging\": false,\n    \"auto_transcription_settings\": {\n      \"language\": \"de\"\n    },\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_dialout\": false,\n    \"dialout_config\": {\n      \"allow_room_start\": false,\n      \"dialout_geo\": \"ap-south-1\",\n      \"max_idle_timeout_sec\": 0\n    },\n    \"streaming_endpoints\": [\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"sip\": {\n      \"display_name\": \"<string>\",\n      \"sip_mode\": \"<string>\",\n      \"video\": false,\n      \"num_endpoints\": 1,\n      \"force_digit_only_username\": false,\n      \"codecs\": {\n        \"audio\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"video\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"provider\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1267a0b-966b-4a3d-a823-a4829ab8e263",
+          "name": "rooms/:name",
+          "request": {
+            "name": "rooms/:name",
+            "description": {
+              "content": "Get info about a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9d90e8b4-3ca0-4457-8ee1-558e4e5543c1",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n  \"name\": \"w2pp2cf4kltgFACPKXmX\",\n  \"api_created\": false,\n  \"privacy\": \"public\",\n  \"url\": \"https://api-demo.daily.co/w2pp2cf4kltgFACPKXmX\",\n  \"created_at\": \"2019-01-26T09:01:22.000Z\",\n  \"config\": {\n    \"start_video_off\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "925da987-d840-4cfc-934b-7b72f7ce1571",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a441ad22-49e7-4906-af82-55a8a9fabee8",
+          "name": "rooms/:name",
+          "request": {
+            "name": "rooms/:name",
+            "description": {
+              "content": "Set a room's privacy and config properties",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"privacy\": \"<string>\",\n  \"properties\": {\n    \"nbf\": \"<integer>\",\n    \"exp\": \"<integer>\",\n    \"max_participants\": 200,\n    \"enable_people_ui\": \"<boolean>\",\n    \"enable_cpu_warning_notifications\": \"<boolean>\",\n    \"enable_pip_ui\": \"<boolean>\",\n    \"enable_emoji_reactions\": \"<boolean>\",\n    \"enable_hand_raising\": \"<boolean>\",\n    \"enable_prejoin_ui\": \"<boolean>\",\n    \"enable_live_captions_ui\": \"<boolean>\",\n    \"enable_network_ui\": \"<boolean>\",\n    \"enable_noise_cancellation_ui\": \"<boolean>\",\n    \"enable_breakout_rooms\": \"<boolean>\",\n    \"enable_knocking\": \"<boolean>\",\n    \"enable_screenshare\": true,\n    \"enable_video_processing_ui\": true,\n    \"enable_chat\": false,\n    \"enable_shared_chat_history\": true,\n    \"start_video_off\": false,\n    \"start_audio_off\": false,\n    \"enable_recording\": \"<string>\",\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n    \"eject_at_room_exp\": false,\n    \"eject_after_elapsed\": \"<integer>\",\n    \"enable_advanced_chat\": false,\n    \"enable_hidden_participants\": false,\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"experimental_optimize_large_calls\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"<string>\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"<string>\",\n      \"bucket_region\": \"<string>\",\n      \"assume_role_arn\": \"<string>\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"enable_terse_logging\": false,\n    \"auto_transcription_settings\": \"<object>\",\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"<string>\",\n      \"bucket_region\": \"<string>\",\n      \"assume_role_arn\": \"<string>\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_dialout\": false,\n    \"dialout_config\": {\n      \"allow_room_start\": false,\n      \"dialout_geo\": \"<string>\",\n      \"max_idle_timeout_sec\": 0\n    },\n    \"streaming_endpoints\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"hls_config['storage']['path']\": \"<string>\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"hls_config['storage']['path']\": \"<string>\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"sip\": {\n      \"display_name\": \"<string>\",\n      \"sip_mode\": \"<string>\",\n      \"video\": false,\n      \"num_endpoints\": 1,\n      \"force_digit_only_username\": false,\n      \"codecs\": {\n        \"audio\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"video\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"provider\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7310f9f5-904a-4c75-a563-8a1f37e52bee",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"privacy\": \"<string>\",\n  \"properties\": {\n    \"nbf\": \"<integer>\",\n    \"exp\": \"<integer>\",\n    \"max_participants\": 200,\n    \"enable_people_ui\": \"<boolean>\",\n    \"enable_cpu_warning_notifications\": \"<boolean>\",\n    \"enable_pip_ui\": \"<boolean>\",\n    \"enable_emoji_reactions\": \"<boolean>\",\n    \"enable_hand_raising\": \"<boolean>\",\n    \"enable_prejoin_ui\": \"<boolean>\",\n    \"enable_live_captions_ui\": \"<boolean>\",\n    \"enable_network_ui\": \"<boolean>\",\n    \"enable_noise_cancellation_ui\": \"<boolean>\",\n    \"enable_breakout_rooms\": \"<boolean>\",\n    \"enable_knocking\": \"<boolean>\",\n    \"enable_screenshare\": true,\n    \"enable_video_processing_ui\": true,\n    \"enable_chat\": false,\n    \"enable_shared_chat_history\": true,\n    \"start_video_off\": false,\n    \"start_audio_off\": false,\n    \"enable_recording\": \"<string>\",\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n    \"eject_at_room_exp\": false,\n    \"eject_after_elapsed\": \"<integer>\",\n    \"enable_advanced_chat\": false,\n    \"enable_hidden_participants\": false,\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"experimental_optimize_large_calls\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"<string>\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"enable_terse_logging\": false,\n    \"auto_transcription_settings\": {\n      \"language\": \"de\"\n    },\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_dialout\": false,\n    \"dialout_config\": {\n      \"allow_room_start\": false,\n      \"dialout_geo\": \"ap-south-1\",\n      \"max_idle_timeout_sec\": 0\n    },\n    \"streaming_endpoints\": [\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"sip\": {\n      \"display_name\": \"<string>\",\n      \"sip_mode\": \"<string>\",\n      \"video\": false,\n      \"num_endpoints\": 1,\n      \"force_digit_only_username\": false,\n      \"codecs\": {\n        \"audio\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"video\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"provider\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n  \"name\": \"w2pp2cf4kltgFACPKXmX\",\n  \"api_created\": false,\n  \"privacy\": \"public\",\n  \"url\": \"https://api-demo.daily.co/w2pp2cf4kltgFACPKXmX\",\n  \"created_at\": \"2019-01-26T09:01:22.000Z\",\n  \"config\": {\n    \"start_video_off\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1364fcc9-a047-460a-b115-b6d72529885a",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"privacy\": \"<string>\",\n  \"properties\": {\n    \"nbf\": \"<integer>\",\n    \"exp\": \"<integer>\",\n    \"max_participants\": 200,\n    \"enable_people_ui\": \"<boolean>\",\n    \"enable_cpu_warning_notifications\": \"<boolean>\",\n    \"enable_pip_ui\": \"<boolean>\",\n    \"enable_emoji_reactions\": \"<boolean>\",\n    \"enable_hand_raising\": \"<boolean>\",\n    \"enable_prejoin_ui\": \"<boolean>\",\n    \"enable_live_captions_ui\": \"<boolean>\",\n    \"enable_network_ui\": \"<boolean>\",\n    \"enable_noise_cancellation_ui\": \"<boolean>\",\n    \"enable_breakout_rooms\": \"<boolean>\",\n    \"enable_knocking\": \"<boolean>\",\n    \"enable_screenshare\": true,\n    \"enable_video_processing_ui\": true,\n    \"enable_chat\": false,\n    \"enable_shared_chat_history\": true,\n    \"start_video_off\": false,\n    \"start_audio_off\": false,\n    \"enable_recording\": \"<string>\",\n    \"enable_raw_tracks_transcoded_audio\": \"<string>\",\n    \"eject_at_room_exp\": false,\n    \"eject_after_elapsed\": \"<integer>\",\n    \"enable_advanced_chat\": false,\n    \"enable_hidden_participants\": false,\n    \"enable_mesh_sfu\": \"<boolean>\",\n    \"sfu_switchover\": 0.5,\n    \"enable_adaptive_simulcast\": true,\n    \"enable_multiparty_adaptive_simulcast\": false,\n    \"enforce_unique_user_ids\": false,\n    \"experimental_optimize_large_calls\": \"<boolean>\",\n    \"lang\": \"en\",\n    \"meeting_join_hook\": \"<string>\",\n    \"geo\": \"NULL\",\n    \"rtmp_geo\": \"The closest available region to the SFU region used by the meeting.\",\n    \"disable_rtmp_geo_fallback\": false,\n    \"recordings_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\",\n      \"allow_streaming_from_bucket\": \"<boolean>\"\n    },\n    \"enable_terse_logging\": false,\n    \"auto_transcription_settings\": {\n      \"language\": \"de\"\n    },\n    \"enable_transcription_storage\": false,\n    \"transcription_bucket\": {\n      \"bucket_name\": \"my-daily-recording\",\n      \"bucket_region\": \"ap-south-1\",\n      \"assume_role_arn\": \"arn:aws:iam::555555555555:role/DailyS3AccessRole\",\n      \"allow_api_access\": \"<boolean>\"\n    },\n    \"recordings_template\": \"{domain_name}/{room_name}/{epoch_time}.\",\n    \"transcription_template\": \"{domain_name}/{room_name}/{epoch_time}.vtt.\",\n    \"enable_dialout\": false,\n    \"dialout_config\": {\n      \"allow_room_start\": false,\n      \"dialout_geo\": \"ap-south-1\",\n      \"max_idle_timeout_sec\": 0\n    },\n    \"streaming_endpoints\": [\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"rtmp_ivs\",\n        \"type\": \"hls\",\n        \"hls_config['storage']['path']\": \"my-bucket-name/my-folder-name\",\n        \"hls_config['storage']['path_template']\": \"<string>\",\n        \"hls_config['save_hls_recording']\": \"<boolean>\",\n        \"hls_config['variants']\": [\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          },\n          {\n            \"width\": \"<number>\",\n            \"height\": \"<number>\",\n            \"fps\": \"<number>\",\n            \"bitrate\": \"<number>\",\n            \"iframe_only\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"permissions\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"sip\": {\n      \"display_name\": \"<string>\",\n      \"sip_mode\": \"<string>\",\n      \"video\": false,\n      \"num_endpoints\": 1,\n      \"force_digit_only_username\": false,\n      \"codecs\": {\n        \"audio\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"video\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"provider\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "381c09cd-d0c7-4fff-b1f7-0c0881f02ab1",
+          "name": "rooms/:name",
+          "request": {
+            "name": "rooms/:name",
+            "description": {
+              "content": "Delete a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "64520faf-83df-45e5-ab76-880efe25bb77",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deleted\": true,\n  \"name\": \"my-room\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8de3d612-74d0-40df-9749-dda53386c725",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a16c0362-4b75-48ee-be3c-d67b4a9c5899",
+          "name": "rooms/:name/presence",
+          "request": {
+            "name": "rooms/:name/presence",
+            "description": {
+              "content": "Get a presence snapshot for a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "presence"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Sets the number of participants returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>",
+                  "description": "Returns presence for the user with the given userId, if available. The userId is specified via a [meeting token](/products/rest-api/meeting-tokens/config#user_id)."
+                },
+                {
+                  "disabled": false,
+                  "key": "userName",
+                  "value": "<string>",
+                  "description": "Returns presence for the user with the given name, if available."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) The name of the room"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f1470510-6227-43d3-88aa-8fea0a9aa7a9",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "presence"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) The name of the room"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_count\": 1,\n  \"data\": [\n    {\n      \"room\": \"w2pp2cf4kltgFACPKXmX\",\n      \"id\": \"d61cd7b2-a273-42b4-89bd-be763fd562c1\",\n      \"userId\": \"pbZ+ismP7dk=\",\n      \"userName\": \"Moishe\",\n      \"mtgSessionId\": \"16e9701a-93e0-4933-83c9-223e7c40d552\",\n      \"joinTime\": \"2023-01-01T20:53:19.000Z\",\n      \"duration\": 2312\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80f488aa-3ef5-4621-bb0b-d813e5abe55c",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "presence"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) The name of the room"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18244d15-27b3-4aec-89a4-9abaccb13344",
+          "name": "rooms/:name/send-app-message",
+          "request": {
+            "name": "rooms/:name/send-app-message",
+            "description": {
+              "content": "Send a message to participants in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "send-app-message"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": \"<object>\",\n  \"recipient\": \"*\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff3c652f-7c30-43c8-b80b-6cc53b9a7d7f",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "send-app-message"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": \"<object>\",\n  \"recipient\": \"*\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74fff3fa-ff82-4294-a3d5-644a532a8300",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "send-app-message"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": \"<object>\",\n  \"recipient\": \"*\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36b2e18c-0361-4333-ac86-d01b6e351ff2",
+          "name": "rooms/:name/get-session-data",
+          "request": {
+            "name": "rooms/:name/get-session-data",
+            "description": {
+              "content": "Gets meeting session data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "get-session-data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cfcf13ec-9b76-4ab1-9f0e-0acf44798224",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "get-session-data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"hello\": \"world\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6a994f1-2e3c-478c-8281-0a8850cf6c86",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "get-session-data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c062b31-d78a-436b-af95-6997f80bcdb4",
+          "name": "rooms/:name/set-session-data",
+          "request": {
+            "name": "rooms/:name/set-session-data",
+            "description": {
+              "content": "Sets meeting session data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "set-session-data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": \"<object>\",\n  \"mergeStrategy\": \"replace\",\n  \"keysToDelete\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ae2e0abf-89bf-44a2-a971-bd7940327ea4",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "set-session-data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": \"<object>\",\n  \"mergeStrategy\": \"replace\",\n  \"keysToDelete\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33c872d4-adfb-456f-b6fd-14484f353d95",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "set-session-data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": \"<object>\",\n  \"mergeStrategy\": \"replace\",\n  \"keysToDelete\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a865070-3896-4b37-87fd-42d2e10b11ed",
+          "name": "rooms/:name/eject",
+          "request": {
+            "name": "rooms/:name/eject",
+            "description": {
+              "content": "Ejects participants from a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "eject"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"user_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ban\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "31267e2b-b0b8-47ab-88ac-48136c16d662",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "eject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"user_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ban\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ejectedIds\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50a433b6-9e54-4e4c-8886-64164b022d4b",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "eject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"user_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ban\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bf54f8f-e729-422c-b2ed-c4d78998608f",
+          "name": "rooms/:name/update-permissions",
+          "request": {
+            "name": "rooms/:name/update-permissions",
+            "description": {
+              "content": "Modifies permissions for one or more participants in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "update-permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"key_0\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5f8e73e5-bece-4dca-bdf5-292471415587",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "update-permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"key_0\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"key_1\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"key_2\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"sent\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f9882d2-404b-4bc1-8198-aacf54e8af72",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "update-permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"key_0\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"key_1\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    },\n    \"key_2\": {\n      \"hasPresence\": \"<boolean>\",\n      \"canSend\": \"<boolean>\",\n      \"canReceive\": \"<object>\",\n      \"canAdmin\": \"<boolean>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "822dbeba-b304-4650-b746-9cc04fccb731",
+          "name": "rooms/:name/recordings/start",
+          "request": {
+            "name": "rooms/:name/recordings/start",
+            "description": {
+              "content": "Start a recording in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "recordings",
+                "start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e6920bc6-02d8-451c-85ab-effb532cef19",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "recordings",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"sent\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "483b3088-6407-4987-8682-dafe4324c906",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "recordings",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2f57ff3-ab40-4b76-a194-343a2e1989a5",
+          "name": "rooms/:name/recordings/update",
+          "request": {
+            "name": "rooms/:name/recordings/update",
+            "description": {
+              "content": "Update a recording in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "recordings",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"<string>\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ddf00b60-81fe-40fd-b84e-cb2e885678eb",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "recordings",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"<string>\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"sent\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba5a30d1-6254-4dc5-81d9-665b806d65ae",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "recordings",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"<string>\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74d2ce11-0f26-49fd-b2cf-a6c2d628c865",
+          "name": "rooms/:name/recordings/stop",
+          "request": {
+            "name": "rooms/:name/recordings/stop",
+            "description": {
+              "content": "Stop a recording in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "recordings",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "05197b31-7b61-46f5-9b4b-3decf04f27d4",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "recordings",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"sent\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cfe47ae7-d658-484a-a685-4182b8df73ed",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "recordings",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2dd08a3-91ea-46f8-9ca5-e39a99beed4c",
+          "name": "rooms/:name/live-streaming/start",
+          "request": {
+            "name": "rooms/:name/live-streaming/start",
+            "description": {
+              "content": "Start a live stream in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "live-streaming",
+                "start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"rtmpUrl\": \"<string>\",\n  \"endpoints\": [\n    {\n      \"endpoint\": \"<string>\"\n    },\n    {\n      \"endpoint\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "867135d2-b4cb-4219-a247-ac2ac7c96281",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "live-streaming",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"rtmpUrl\": \"<string>\",\n  \"endpoints\": [\n    {\n      \"endpoint\": \"<string>\"\n    },\n    {\n      \"endpoint\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e080a80-ec8f-4346-a0e1-ed1db2069382",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "live-streaming",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"rtmpUrl\": \"<string>\",\n  \"endpoints\": [\n    {\n      \"endpoint\": \"<string>\"\n    },\n    {\n      \"endpoint\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e319c6e-0ef8-4ba2-97a6-bdf7a8c87d68",
+          "name": "rooms/:name/live-streaming/update",
+          "request": {
+            "name": "rooms/:name/live-streaming/update",
+            "description": {
+              "content": "Update a live stream in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "live-streaming",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"rtmpUrl\": \"<string>\",\n  \"endpoints\": [\n    {\n      \"endpoint\": \"<string>\"\n    },\n    {\n      \"endpoint\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "600d9110-b18d-4695-bdda-3a144de0a126",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "live-streaming",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"rtmpUrl\": \"<string>\",\n  \"endpoints\": [\n    {\n      \"endpoint\": \"<string>\"\n    },\n    {\n      \"endpoint\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f60369a2-399d-4bcf-b20b-6d8ca38d07ad",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "live-streaming",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"width\": \"<number>\",\n  \"height\": \"<number>\",\n  \"fps\": \"<number>\",\n  \"videoBitrate\": \"<number>\",\n  \"audioBitrate\": \"<number>\",\n  \"minIdleTimeOut\": \"<number>\",\n  \"maxDuration\": \"<number>\",\n  \"backgroundColor\": \"<string>\",\n  \"instanceId\": \"<string>\",\n  \"type\": \"cloud\",\n  \"layout\": {\n    \"preset\": \"<string>\",\n    \"max_cam_streams\": \"<number>\"\n  },\n  \"dataOutputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"rtmpUrl\": \"<string>\",\n  \"endpoints\": [\n    {\n      \"endpoint\": \"<string>\"\n    },\n    {\n      \"endpoint\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57fec341-16bc-43b4-9474-7af8f64ed276",
+          "name": "rooms/:name/live-streaming/stop",
+          "request": {
+            "name": "rooms/:name/live-streaming/stop",
+            "description": {
+              "content": "Stop a live stream in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "live-streaming",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e6568342-e65c-48d3-ac93-68575fbf70d8",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "live-streaming",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d908ff4-67f7-445d-89d1-fcd6d14c999c",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "live-streaming",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86f5d606-3077-4641-a6aa-ad8c0718d72b",
+          "name": "rooms/:name/transcription/start",
+          "request": {
+            "name": "rooms/:name/transcription/start",
+            "description": {
+              "content": "Start a transcription in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "transcription",
+                "start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"language\": \"<string>\",\n  \"model\": \"<string>\",\n  \"tier\": \"<string>\",\n  \"profanity_filter\": \"<boolean>\",\n  \"punctuate\": \"<boolean>\",\n  \"endpointing\": \"<number>\",\n  \"redact\": \"<boolean>\",\n  \"extra\": \"<object>\",\n  \"includeRawResponse\": \"<boolean>\",\n  \"instanceId\": \"<string>\",\n  \"participants\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"transcription_geo\": \"global\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "907225d3-2de8-4ae1-9720-d13fbf8083f2",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "transcription",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"language\": \"<string>\",\n  \"model\": \"<string>\",\n  \"tier\": \"<string>\",\n  \"profanity_filter\": \"<boolean>\",\n  \"punctuate\": \"<boolean>\",\n  \"endpointing\": \"<number>\",\n  \"redact\": \"<boolean>\",\n  \"extra\": \"<object>\",\n  \"includeRawResponse\": \"<boolean>\",\n  \"instanceId\": \"<string>\",\n  \"participants\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"transcription_geo\": \"global\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82e205b2-6f7d-46f5-8e47-966e3174d150",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "transcription",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"language\": \"<string>\",\n  \"model\": \"<string>\",\n  \"tier\": \"<string>\",\n  \"profanity_filter\": \"<boolean>\",\n  \"punctuate\": \"<boolean>\",\n  \"endpointing\": \"<number>\",\n  \"redact\": \"<boolean>\",\n  \"extra\": \"<object>\",\n  \"includeRawResponse\": \"<boolean>\",\n  \"instanceId\": \"<string>\",\n  \"participants\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"transcription_geo\": \"global\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa916de8-8467-4a73-b238-2eeb0955b7c6",
+          "name": "rooms/:name/transcription/update",
+          "request": {
+            "name": "rooms/:name/transcription/update",
+            "description": {
+              "content": "Update the set of participants being transcribed",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "transcription",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceId\": \"<string>\",\n  \"participants\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "27fdb1d2-41b3-4221-a9c9-a7d013b2b168",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "transcription",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceId\": \"<string>\",\n  \"participants\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b4a9929-37a4-4230-9a60-96860d80b7d9",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "transcription",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceId\": \"<string>\",\n  \"participants\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58eb3deb-aff7-4736-b731-87742f2107c9",
+          "name": "rooms/:name/transcription/stop",
+          "request": {
+            "name": "rooms/:name/transcription/stop",
+            "description": {
+              "content": "Stop a transcription in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "transcription",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1391916c-7daf-4f8b-8828-6884a07ecb2d",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "transcription",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sent\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "724c08ec-9411-4dd9-a00c-fa708a9c14bf",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "transcription",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36853ff6-8a8b-4a92-a00e-2e3e7b375de9",
+          "name": "rooms/:name/dialOut/start",
+          "request": {
+            "name": "rooms/:name/dialOut/start",
+            "description": {
+              "content": "Start a dial-out in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "dialOut",
+                "start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sipUri\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"extension\": \"<string>\",\n  \"waitBeforeExtensionDialSec\": 0,\n  \"displayName\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"callerId\": \"<string>\",\n  \"video\": \"<boolean>\",\n  \"videoSettings\": {\n    \"width\": 1280,\n    \"height\": 720,\n    \"fps\": 15,\n    \"videoBitrate\": 900\n  },\n  \"codecs\": {\n    \"audio\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"video\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d4528d9-aebf-4c37-8b3e-aeae55d89609",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "dialOut",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sipUri\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"extension\": \"<string>\",\n  \"waitBeforeExtensionDialSec\": 0,\n  \"displayName\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"callerId\": \"<string>\",\n  \"video\": \"<boolean>\",\n  \"videoSettings\": {\n    \"width\": 1280,\n    \"height\": 720,\n    \"fps\": 15,\n    \"videoBitrate\": 900\n  },\n  \"codecs\": {\n    \"audio\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"video\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ok\": \"true\",\n  \"sessionId\": \"UUID of the dial-out session\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90272ae0-a209-42e4-8e0d-0c21f2c6bcfe",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "dialOut",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sipUri\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"extension\": \"<string>\",\n  \"waitBeforeExtensionDialSec\": 0,\n  \"displayName\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"callerId\": \"<string>\",\n  \"video\": \"<boolean>\",\n  \"videoSettings\": {\n    \"width\": 1280,\n    \"height\": 720,\n    \"fps\": 15,\n    \"videoBitrate\": 900\n  },\n  \"codecs\": {\n    \"audio\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"video\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "030d533f-faab-4c39-92d9-6b9fbef8e20a",
+          "name": "rooms/:name/dialOut/sendDTMF",
+          "request": {
+            "name": "rooms/:name/dialOut/sendDTMF",
+            "description": {
+              "content": "send DTMF digits on the dialout",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "dialOut",
+                "sendDTMF"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"<string>\",\n  \"tones\": \"<string>\",\n  \"digitDurationMs\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cef1a2ea-0fce-4054-ae22-da7385320a75",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "dialOut",
+                    "sendDTMF"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"tones\": \"<string>\",\n  \"digitDurationMs\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ok\": \"true\",\n  \"sessionId\": \"UUID of the dial-out session\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3140dc9f-761b-4094-8f84-ddb0540b7041",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "dialOut",
+                    "sendDTMF"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"tones\": \"<string>\",\n  \"digitDurationMs\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab68b831-89b4-482c-b07b-7daa2dd834e0",
+          "name": "rooms/:name/dialOut/stop",
+          "request": {
+            "name": "rooms/:name/dialOut/stop",
+            "description": {
+              "content": "Stop a dial out in a room",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "dialOut",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff18f4a5-7239-4b1d-a3bc-993c1a2fc13d",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "dialOut",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"sent\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f79df238-9e14-45e0-8cda-88a592976ab5",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "dialOut",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4a0cae4-72a9-4d2a-b0e9-a1580fdccc8a",
+          "name": "rooms/:name/sipCallTransfer",
+          "request": {
+            "name": "rooms/:name/sipCallTransfer",
+            "description": {
+              "content": "transfer sip/pstn call",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "sipCallTransfer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"<string>\",\n  \"toEndPoint\": \"<string>\",\n  \"callerId\": \"<string>\",\n  \"waitBeforeExtensionDialSec\": 0,\n  \"extension\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d1f05635-acbd-46b7-96f0-94c5cec830f3",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "sipCallTransfer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"toEndPoint\": \"<string>\",\n  \"callerId\": \"<string>\",\n  \"waitBeforeExtensionDialSec\": 0,\n  \"extension\": \"1234\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ok\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4de1a23e-de78-453f-a3b1-6d1ca21bfe2a",
+          "name": "rooms/:name/sipRefer",
+          "request": {
+            "name": "rooms/:name/sipRefer",
+            "description": {
+              "content": "refer a sip call to other sip endpoint",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rooms",
+                ":room_name",
+                "sipRefer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"<string>\",\n  \"toEndPoint\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b85478a4-e477-4588-b598-8f0de079ac7d",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rooms",
+                    ":room_name",
+                    "sipRefer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"toEndPoint\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "27d23e8d-2422-4b51-9c8c-b5b710cc62fc",
+    "name": "Daily batch/ rooms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

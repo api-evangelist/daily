@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Daily batch/rooms phone-numbers API",
+    "version": "1.1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "phone-numbers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/list-available-numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/list-available-numbers",
+            "params": [
+              {
+                "name": "areacode",
+                "value": "",
+                "type": "query",
+                "description": "An areacode to search within."
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "A region or state to search within. Must be an ISO 3166-2 alpha-2 code, i.e. CA for California. Cannot be used in combination with areacode."
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "A specific City to search within. Example, New York. The string must be url encoded because it is a url parameter. Must be used in combination with region. Cannot be used in combination with areacode, starts_with, contains, or ends_with."
+              },
+              {
+                "name": "contains",
+                "value": "",
+                "type": "query",
+                "description": "A string of 3 to 7 digits that should appear somewhere in the number."
+              },
+              {
+                "name": "starts_with",
+                "value": "",
+                "type": "query",
+                "description": "A string of 3 to 7 digits that should be used as the start of a number. Cannot be used in combination with contains or ends_with."
+              },
+              {
+                "name": "ends_with",
+                "value": "",
+                "type": "query",
+                "description": "A string of 3 to 7 digits that should be used as the end of a number. Cannot be used in combination with starts_with or contains."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Search for available phone numbers to purchase"
+        },
+        {
+          "info": {
+            "name": "/purchased-phone-numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.daily.co/v1/purchased-phone-numbers",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List the purchased phone numbers for this domain"
+        },
+        {
+          "info": {
+            "name": "/buy-phone-number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.daily.co/v1/buy-phone-number",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "This will buy a phone number. In the POST request you can either provide the phone number you want to buy, or leave it empty. If the specified `number` is still available, it will be bought or the API will return a failure. Alternatively, if you skipped the `number` field, a random phone number from California (CA) will be bought."
+        },
+        {
+          "info": {
+            "name": "release-phone-number/:id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.daily.co/v1/release-phone-number/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Release a purchased number. The number is referenced by its id. A number cannot be deleted within the 14 days of purchase. Calling this API before this period expires results in an error."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

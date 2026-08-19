@@ -1,0 +1,709 @@
+{
+  "item": [
+    {
+      "id": "fc3168ef-a6c1-41b8-b27b-e6357c022b3e",
+      "name": "transcript",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3e2c3759-afaa-4586-89b1-5c2f11d00de3",
+          "name": "/transcript",
+          "request": {
+            "name": "/transcript",
+            "description": {
+              "content": "List transcripts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transcript"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "roomId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "mtgSessionId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1757d282-dbaa-4cf0-9fa6-137c26888694",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "roomId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mtgSessionId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_count\": 3,\n  \"data\": [\n    {\n      \"transcriptId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n      \"domainId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n      \"roomId\": \"1a5afbf4-211f-4be0-833d-8c7305b19902\",\n      \"mtgSessionId\": \"257764e6-c74e-4c30-944a-a887a03173a3\",\n      \"status\": \"t_finished\",\n      \"duration\": 277,\n      \"created_at\": \"2024-01-15T10:30:00.000Z\",\n      \"updated_at\": \"2024-01-15T10:35:00.000Z\"\n    },\n    {\n      \"transcriptId\": \"257764e6-211f-4be0-833d-8c7305b19903\",\n      \"domainId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n      \"roomId\": \"1a5afbf4-211f-4be0-833d-8c7305b19902\",\n      \"mtgSessionId\": \"211f64e6-c74e-4c30-944a-a887a03173a3\",\n      \"status\": \"t_in_progress\",\n      \"duration\": 21,\n      \"created_at\": \"2024-01-15T10:28:00.000Z\",\n      \"updated_at\": \"2024-01-15T10:28:00.000Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "094b1e30-d8f6-4756-9f13-446966f12c4f",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "roomId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mtgSessionId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "478daecf-e1b8-436b-b71f-9e5f95b5ce09",
+          "name": "transcript/:transcriptId",
+          "request": {
+            "name": "transcript/:transcriptId",
+            "description": {
+              "content": "Get info about a Transcript",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transcript",
+                ":transcriptId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transcriptId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fa41d667-7e6e-4e05-bfe6-65f1bf1b7dc6",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript",
+                    ":transcriptId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transcriptId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transcriptId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"domainId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"roomId\": \"1a5afbf4-211f-4be0-833d-8c7305b19902\",\n  \"mtgSessionId\": \"257764e6-c74e-4c30-944a-a887a03173a3\",\n  \"status\": \"t_finished\",\n  \"duration\": 277,\n  \"outParams\": {\n    \"key\": \"my-transcript.vtt\",\n    \"bucket\": \"my-transcript-bucket\",\n    \"region\": \"us-west-2\"\n  },\n  \"created_at\": \"2024-01-15T10:30:00.000Z\",\n  \"updated_at\": \"2024-01-15T10:35:00.000Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85f974c4-bf0b-4bc1-a34f-a8ef37f2df50",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript",
+                    ":transcriptId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transcriptId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bdb529e-cae9-4120-85b2-b7de8df83997",
+          "name": "transcript/:id",
+          "request": {
+            "name": "transcript/:id",
+            "description": {
+              "content": "Delete a transcript",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transcript",
+                ":transcriptId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transcriptId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a18b2519-5520-4f69-a1ae-6f68ecd9de22",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript",
+                    ":transcriptId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transcriptId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transcriptId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"domainId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"roomId\": \"1a5afbf4-211f-4be0-833d-8c7305b19902\",\n  \"mtgSessionId\": \"257764e6-c74e-4c30-944a-a887a03173a3\",\n  \"status\": \"t_deleted\",\n  \"duration\": 277,\n  \"outParams\": {\n    \"key\": \"my-transcript.vtt\",\n    \"bucket\": \"my-transcript-bucket\",\n    \"region\": \"us-west-2\"\n  },\n  \"created_at\": \"2024-01-15T10:30:00.000Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ddba4fbb-b972-4ad4-86bf-ac99084da5ff",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript",
+                    ":transcriptId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transcriptId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "228bdc21-88b1-4244-8ac4-5f853cee1572",
+          "name": "transcript/:id/access-link",
+          "request": {
+            "name": "transcript/:id/access-link",
+            "description": {
+              "content": "Generate an access link for a transcript",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transcript",
+                ":transcriptId",
+                "access-link"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transcriptId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8ec1eb59-a035-485b-b59d-880e19c87711",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript",
+                    ":transcriptId",
+                    "access-link"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transcriptId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transcriptId\": \"0cb313e1-211f-4be0-833d-8c7305b19902\",\n  \"download_link\": \"https://daily-meeting-transcripts.s3.us-west-2.amazonaws.com/api-demo/hello/1548790973821?AWSAccessKeyId=AKIAJVYA3B2F4672K3RQ&Expires=1548809176&Signature=xfSPW1kXksNriqmlm%2FT9hb%2Fq%2Bas%3D&response-content-disposition=attachment%3B%20filename%3D%22api-demo%2Fhello%2F1548790973821.webm%22\",\n  \"outParams\": {\n    \"key\": \"my-transcript.vtt\",\n    \"bucket\": \"my-transcript-bucket\",\n    \"region\": \"us-west-2\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c2281aa-354c-4340-a4cb-6ddf809029d2",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transcript",
+                    ":transcriptId",
+                    "access-link"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transcriptId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid-request-error\",\n  \"info\": \"missing required field\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.daily.co/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0ca0411f-fcc7-4131-b126-d07a8b6d0e82",
+    "name": "Daily batch/rooms transcript API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything\n\nContact Support:\n Name: Daily\n Email: help@daily.co",
+      "type": "text/plain"
+    }
+  }
+}

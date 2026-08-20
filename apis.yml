@@ -64,6 +64,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - DialIn
+  tags_raw:
   - dialin
   properties:
   - type: OpenAPI
@@ -78,6 +80,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Domain
+  tags_raw:
   - domain
   properties:
   - type: OpenAPI
@@ -106,6 +110,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Logs
+  tags_raw:
   - logs
   properties:
   - type: OpenAPI
@@ -120,6 +126,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - MeetingTokens
+  tags_raw:
   - meeting-tokens
   properties:
   - type: OpenAPI
@@ -134,6 +142,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Meetings
+  tags_raw:
   - meetings
   properties:
   - type: OpenAPI
@@ -148,6 +158,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Phone Numbers
+  tags_raw:
   - phone-numbers
   properties:
   - type: OpenAPI
@@ -162,6 +174,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Presence
+  tags_raw:
   - presence
   properties:
   - type: OpenAPI
@@ -176,6 +190,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Recordings
+  tags_raw:
   - recordings
   properties:
   - type: OpenAPI
@@ -190,6 +206,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Rooms
+  tags_raw:
   - rooms
   properties:
   - type: OpenAPI
@@ -218,6 +236,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Webhook
+  tags_raw:
   - webhooks
   properties:
   - type: OpenAPI

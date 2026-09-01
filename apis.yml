@@ -76,7 +76,7 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
-  - dialin
+  - DialIn
   tags_raw:
   - dialin
   properties:
@@ -138,7 +138,7 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
-  - meeting-tokens
+  - MeetingTokens
   tags_raw:
   - meeting-tokens
   properties:
@@ -186,7 +186,7 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
-  - presence
+  - Presence
   tags_raw:
   - presence
   properties:
@@ -202,7 +202,7 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
-  - recordings
+  - Recordings
   tags_raw:
   - recordings
   properties:
@@ -234,6 +234,8 @@ apis:
   humanURL: https://docs.daily.co/reference/rest-api
   baseURL: https://api.daily.co/v1
   tags:
+  - Transcript
+  tags_raw:
   - transcript
   properties:
   - type: OpenAPI

@@ -71,22 +71,6 @@ apis:
     url: https://docs.daily.co/reference/rest-api
   - type: Documentation
     url: https://docs.daily.co/docs/rest-api/index
-- aid: daily:daily-dialin-api
-  name: Daily dialin API
-  description: The dialin API from Daily — 1 operation(s) for dialin.
-  humanURL: https://docs.daily.co/reference/rest-api
-  baseURL: https://api.daily.co/v1
-  tags:
-  - DialIn
-  tags_raw:
-  - dialin
-  properties:
-  - type: OpenAPI
-    url: openapi/daily-dialin-api-openapi.yml
-  - type: APIReference
-    url: https://docs.daily.co/reference/rest-api
-  - type: Documentation
-    url: https://docs.daily.co/docs/rest-api/index
 - aid: daily:daily-domain-api
   name: Daily domain API
   description: The domain API from Daily — 1 operation(s) for domain.
@@ -257,6 +241,20 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/daily-webhooks-api-openapi.yml
+  - type: APIReference
+    url: https://docs.daily.co/reference/rest-api
+  - type: Documentation
+    url: https://docs.daily.co/docs/rest-api/index
+- aid: daily:daily-dial-in-api
+  name: Daily Dial In API
+  description: The Dial In API from Daily — 1 operation(s) for dial in.
+  humanURL: https://docs.daily.co/reference/rest-api
+  baseURL: https://api.daily.co/v1
+  tags:
+  - Dial In
+  properties:
+  - type: OpenAPI
+    url: openapi/daily-dial-in-api-openapi.yml
   - type: APIReference
     url: https://docs.daily.co/reference/rest-api
   - type: Documentation

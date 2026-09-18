@@ -1,7 +1,24 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Daily batch/rooms domain API
-  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  title: Daily Domain API
+  description: 'The Daily REST API offers the ability to manage the following:
+
+    - Overall Domain Configuration
+
+    - Individual Room creation and config management
+
+    - Meeting token creation and validation
+
+    - Recording and compositing management
+
+    - Meeting analytics
+
+    - Logs and metrics
+
+    - Real-time presence
+
+
+    Please reach out to help@daily.co if we can help with anything'
   version: 1.1.1
   contact:
     name: Daily
@@ -12,7 +29,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: domain
+- name: Domain
 paths:
   /:
     get:
@@ -176,7 +193,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - domain
+      - Domain
       security:
       - bearerAuth: []
     post:
@@ -204,7 +221,7 @@ paths:
                       lang: es
       deprecated: false
       tags:
-      - domain
+      - Domain
       security:
       - bearerAuth: []
 components:
@@ -216,82 +233,37 @@ components:
 
         See our [guides for supporting large experiences](/guides/scaling-calls) for additional instruction.'
       default: false
-    transcription_bucket:
-      type: object
-      description: 'Configures an S3 bucket in which to store transcriptions.
-
-        See the [S3 bucket guide](/guides/products/live-streaming-recording/storing-recordings-in-a-custom-s3-bucket) for more information.'
-      properties:
-        bucket_name:
-          type: string
-          description: The name of the Amazon S3 bucket to use for transcription storage.
-          example: my-daily-recording
-        bucket_region:
-          type: string
-          description: The region which the specified S3 bucket is located in.
-          example: ap-south-1
-        assume_role_arn:
-          type: string
-          description: The Amazon Resource Name (ARN) of the role Daily should assume when storing the transcription in the specified bucket.
-          example: arn:aws:iam::555555555555:role/DailyS3AccessRole
-        allow_api_access:
-          type: boolean
-          description: Whether the transcription should be accessible using Daily's API.
-    enforce_unique_user_ids:
+    enable_adaptive_simulcast:
       type: boolean
-      description: Configures a domain or room to disallow multiple participants from having the same `user_id`. This feature can be enabled to prevent users from "sharing" meeting tokens. When enabled, a participant joining or reconnecting to a meeting will cause existing participants with the same user_id to be ejected.
-      default: false
-    geo:
-      type: string
-      description: 'Daily uses signaling servers to manage all of the participants in a given call session. In an SFU/server mode call, the server will send and receive all audio and video from each participant. In a peer-to-peer call, each participant sends media directly to and from each other peer, but a signaling server still manages call state.
+      description: Configures a domain or room to use [Daily Adaptive Bitrate](/guides/building-additional-features/daily-adaptive-bitrate). When enabled, along with configuring the client to [`allowAdaptiveLayers`](/products/daily-js/instance-methods/update-send-settings#sendsettings), the Daily client will continually adapt send settings to the current network conditions. `allowAdaptiveLayers` is `true` by default; if you haven't modified that setting, then setting `enable_adaptive_simulcast` to `true` will enable Daily Adaptive Bitrate for 1:1 calls.
+      default: true
+    pin_dialin:
+      type: array
+      x-paidPlan: paid
+      deprecated: true
+      description: '**Deprecated:** Use [domain dial-in config](/rest-api/domainDialinConfig) instead.
 
 
-        Daily runs servers in several different AWS regions to minimize latency for users around the world. The job of ''picking'' a call server is handled when the first participant joins a room. The first participant''s browser connects to a call server using Amazon''s Route 53 DNS resolution, which chooses a server in the region closest to them.
-
-
-        This isn''t always optimal. For example, if one person joins in London, and then ten more people join from Cape Town, the call will still be hosted out of `eu-west-2` . The majority of the participants will have higher latency to the server than if one of them had joined first and the call was being hosted in `af-south-1`. In cases like this, you may want to configure your domain (or a specific room) to always choose a call server in a specific AWS region.
-
-
-        Available regions:
-
-        - `"af-south-1"` (Cape Town)
-
-        - `"ap-northeast-2"` (Seoul)
-
-        - `"ap-southeast-1"` (Singapore)
-
-        - `"ap-southeast-2"` (Sydney)
-
-        - `"ap-south-1"` (Mumbai)
-
-        - `"eu-central-1"` (Frankfurt)
-
-        - `"eu-west-2"` (London)
-
-        - `"sa-east-1"` (São Paulo)
-
-        - `"us-east-1"` (N. Virginia)
-
-        - `"us-west-2"` (Oregon)'
-      default: 'NULL'
-    transcription_template:
-      type: string
-      default: '{domain_name}/{room_name}/{epoch_time}.vtt.'
-      description: "transcriptions can be stored in either Daily's S3 bucket or the customer's own S3 bucket. By default transcriptions are stored as `{domain_name}/{room_name}/{epoch_time}.vtt`. Sometimes, the use case may call for custom file path to be used (for example, if you'd like to map stored transcription to mtgSessionId).\n\n`transcription_template` is made up of a replacement string with prefixes, suffixes, or both. The currently supported replacements are:\n  - `epoch_time`: The epoch time in seconds (mandatory)\n  - `domain_name`: Your Daily domain (optional)\n  - `room_name`: The name of the room which is getting transcribed (optional)\n  - `mtg_session_id`: The ID of the meeting session which is getting transcribed (optional)\n  - `instance_id`: The instance ID of the transcription (optional)\n  - `transcript_id`: The transcript ID of the transcription (optional)\n\n  The restrictions for defining a transcription template are as follows:\n  - The `epoch_time` tag is mandatory to ensure the transcription file name is unique under all conditions\n  - The maximum size of the template is 1024 characters\n  - Each replacement parameter should be placed within a curly bracket (e.g., `{domain_name}`)\n  - Only alphanumeric characters `(0-9, A-Z, a-z)` and `.`, `/`, `-`, `_` are valid within the template\n\nExamples\n- Example domain: \"myDomain\"\n- Example room: \"myRoom\"\n\nExample 1:\n- Template: `myprefix-{domain_name}-{epoch_time}.mp4`\n- Resulting file name: `myprefix-myDomain-1675842936274.mp4`\n\nExample 2:\n- Template: `{room_name}/{instance_id}/{epoch_time}`\n- Resulting room name: `myRoom/d529cd2f-fbcc-4fb7-b2c0-c4995b1162b6/1675842936274`"
+        Dialin with a [PIN code](/guides/products/dial-in-dial-out/dialin-pin). This works with both the Global phone numbers and any number that you purchased. When a call comes into one of the phone numbers, the dialer must enter the PIN code. If the code is correct, the user will be connected to the Daily Room. Otherwise the incoming call will be disconnected if an incorrect PIN code is entered.'
+      items:
+        type: object
+        properties:
+          phone_number:
+            type: string
+            description: Associate a purchased phone number to the dialin with PIN workflow. Must be in E.164 format (e.g. "+18058700061").
+          name_prefix:
+            type: string
+            description: An identifier or name to associate to the workflow.
+          ivr_greeting:
+            type: object
+            properties:
+              message:
+                type: string
+                description: message to "Say" when user call the phone_number.
     recordings_template:
       type: string
       default: '{domain_name}/{room_name}/{epoch_time}.'
       description: "Cloud recordings are stored in either Daily's S3 bucket or the customer's own S3 bucket. By default recordings are stored as `{domain_name}/{room_name}/{epoch_time}`. Sometimes, the use case may call for custom recording file names to be used (for example, if you'd like to enforce the presence of the .mp4 extension in the file name).\n\n`recordings_template` is made up of a replacement string with prefixes, suffixes, or both. The currently supported replacements are:\n  - `epoch_time`: The epoch time in milliseconds (mandatory)\n  - `domain_name`: Your Daily domain (optional)\n  - `room_name`: The name of the room which is getting recorded (optional)\n  - `mtg_session_id`: The ID of the meeting session which is getting recorded (optional)\n  - `instance_id`: The instance ID of the recording (optional)\n  - `recording_id`: The recording ID of the recording (optional)\n\n  The restrictions for defining a recording template are as follows:\n  - The `epoch_time` tag is mandatory to ensure the recording file name is unique under all conditions\n  - The maximum size of the template is 1024 characters\n  - Each replacement parameter should be placed within a curly bracket (e.g., `{domain_name}`)\n  - Only alphanumeric characters `(0-9, A-Z, a-z)` and `.`, `/`, `-`, `_` are valid within the template\n  - `.mp4` is the only valid extension\n\nExamples\n- Example domain: \"myDomain\"\n- Example room: \"myRoom\"\n\nExample 1:\n- Template: `myprefix-{domain_name}-{epoch_time}.mp4`\n- Resulting file name: `myprefix-myDomain-1675842936274.mp4`\n\nExample 2:\n- Template: `{room_name}/{instance_id}/{epoch_time}`\n- Resulting room name: `myRoom/d529cd2f-fbcc-4fb7-b2c0-c4995b1162b6/1675842936274`"
-    rtmp_geo:
-      type: string
-      default: The closest available region to the SFU region used by the meeting.
-      description: "Used to select the region where an RTMP stream should originate. In cases where RTMP streaming services aren't available in the desired region, we'll attempt to fall back to the default region based on the SFU being used for the meeting.\n\n  Available regions:\n  - `\"us-west-2\"` (Oregon)\n  - `\"eu-central-1\"` (Frankfurt)\n  - `\"ap-south-1\"` (Mumbai)\n\n  The default regions are grouped based on the SFU region like so:\n  - RTMP region `\"us-west-2\"` includes SFU regions: `\"us-west-2\"`, `\"us-east-1\"`, `\"sa-east-1\"`\n  - RTMP region `\"eu-central-1\"` includes SFU regions: `\"eu-central-1\"`, `\"eu-west-2\"`, `\"af-south-1\"`\n  - RTMP region `\"ap-south-1\"` includes SFU regions: `\"ap-southeast-1\"`, `\"ap-southeast-2\"`, `\"ap-northeast-2\"`, `\"ap-south-1\"`"
-    enable_mesh_sfu:
-      type: boolean
-      description: 'Configures a room to use multiple SFUs for a call''s media. This feature enables calls to scale to large sizes and to reduce latency between participants. It is recommended specifically for interactive live streaming.
-
-
-        See our [guide for interactive live streaming](/guides/scaling-calls/interactive-live-streaming-rtmp-output#daily-prebuilt-configurations-to-support-100-000-participants) for additional instruction.'
     pinless_dialin:
       type: array
       x-paidPlan: paid
@@ -321,29 +293,6 @@ components:
               message:
                 type: string
                 description: message to say if room could not be created within timeout of the hold_music. default message is "there are no available agents to service your call".
-    pin_dialin:
-      type: array
-      x-paidPlan: paid
-      deprecated: true
-      description: '**Deprecated:** Use [domain dial-in config](/rest-api/domainDialinConfig) instead.
-
-
-        Dialin with a [PIN code](/guides/products/dial-in-dial-out/dialin-pin). This works with both the Global phone numbers and any number that you purchased. When a call comes into one of the phone numbers, the dialer must enter the PIN code. If the code is correct, the user will be connected to the Daily Room. Otherwise the incoming call will be disconnected if an incorrect PIN code is entered.'
-      items:
-        type: object
-        properties:
-          phone_number:
-            type: string
-            description: Associate a purchased phone number to the dialin with PIN workflow. Must be in E.164 format (e.g. "+18058700061").
-          name_prefix:
-            type: string
-            description: An identifier or name to associate to the workflow.
-          ivr_greeting:
-            type: object
-            properties:
-              message:
-                type: string
-                description: message to "Say" when user call the phone_number.
     sfu_switchover:
       type: number
       description: 'Dictates the participant count after which room topology automatically switches from Peer-to-Peer (P2P) to Selective Forwarding Unit (SFU) mode, or vice versa.
@@ -405,16 +354,88 @@ components:
             - `true` (meaning "all")
 
             - `false` (meaning "none")'
+    rtmp_geo:
+      type: string
+      default: The closest available region to the SFU region used by the meeting.
+      description: "Used to select the region where an RTMP stream should originate. In cases where RTMP streaming services aren't available in the desired region, we'll attempt to fall back to the default region based on the SFU being used for the meeting.\n\n  Available regions:\n  - `\"us-west-2\"` (Oregon)\n  - `\"eu-central-1\"` (Frankfurt)\n  - `\"ap-south-1\"` (Mumbai)\n\n  The default regions are grouped based on the SFU region like so:\n  - RTMP region `\"us-west-2\"` includes SFU regions: `\"us-west-2\"`, `\"us-east-1\"`, `\"sa-east-1\"`\n  - RTMP region `\"eu-central-1\"` includes SFU regions: `\"eu-central-1\"`, `\"eu-west-2\"`, `\"af-south-1\"`\n  - RTMP region `\"ap-south-1\"` includes SFU regions: `\"ap-southeast-1\"`, `\"ap-southeast-2\"`, `\"ap-northeast-2\"`, `\"ap-south-1\"`"
     enable_multiparty_adaptive_simulcast:
       type: boolean
       description: Configures a domain or room to use [Daily Adaptive Bitrate](/guides/building-additional-features/daily-adaptive-bitrate). When enabled, along with configuring the client to [`allowAdaptiveLayers`](/products/daily-js/instance-methods/update-send-settings#sendsettings), the Daily client will continually adapt send settings to the current network conditions. `allowAdaptiveLayers` is `true` by default; if you haven't modified that setting, then setting `enable_multiparty_adaptive_simulcast` to `true` will enable Daily Adaptive Bitrate for multi-party calls. To use this feature, `enable_adaptive_simulcast` must also be set to `true`.
       default: false
+    transcription_template:
+      type: string
+      default: '{domain_name}/{room_name}/{epoch_time}.vtt.'
+      description: "transcriptions can be stored in either Daily's S3 bucket or the customer's own S3 bucket. By default transcriptions are stored as `{domain_name}/{room_name}/{epoch_time}.vtt`. Sometimes, the use case may call for custom file path to be used (for example, if you'd like to map stored transcription to mtgSessionId).\n\n`transcription_template` is made up of a replacement string with prefixes, suffixes, or both. The currently supported replacements are:\n  - `epoch_time`: The epoch time in seconds (mandatory)\n  - `domain_name`: Your Daily domain (optional)\n  - `room_name`: The name of the room which is getting transcribed (optional)\n  - `mtg_session_id`: The ID of the meeting session which is getting transcribed (optional)\n  - `instance_id`: The instance ID of the transcription (optional)\n  - `transcript_id`: The transcript ID of the transcription (optional)\n\n  The restrictions for defining a transcription template are as follows:\n  - The `epoch_time` tag is mandatory to ensure the transcription file name is unique under all conditions\n  - The maximum size of the template is 1024 characters\n  - Each replacement parameter should be placed within a curly bracket (e.g., `{domain_name}`)\n  - Only alphanumeric characters `(0-9, A-Z, a-z)` and `.`, `/`, `-`, `_` are valid within the template\n\nExamples\n- Example domain: \"myDomain\"\n- Example room: \"myRoom\"\n\nExample 1:\n- Template: `myprefix-{domain_name}-{epoch_time}.mp4`\n- Resulting file name: `myprefix-myDomain-1675842936274.mp4`\n\nExample 2:\n- Template: `{room_name}/{instance_id}/{epoch_time}`\n- Resulting room name: `myRoom/d529cd2f-fbcc-4fb7-b2c0-c4995b1162b6/1675842936274`"
+    recordings_bucket:
+      type: object
+      description: 'Configures an S3 bucket in which to store recordings.
+
+        See the [S3 bucket guide](/guides/products/live-streaming-recording/storing-recordings-in-a-custom-s3-bucket) for more information.
+
+
+        Properties:'
+      properties:
+        bucket_name:
+          type: string
+          description: The name of the Amazon S3 bucket to use for recording storage.
+          example: my-daily-recording
+        bucket_region:
+          type: string
+          description: The region which the specified S3 bucket is located in.
+          example: ap-south-1
+        assume_role_arn:
+          type: string
+          description: The Amazon Resource Name (ARN) of the role Daily should assume when storing the recording in the specified bucket.
+          example: arn:aws:iam::555555555555:role/DailyS3AccessRole
+        allow_api_access:
+          type: boolean
+          description: Controls whether the recording will be accessible using Daily's API.
+        allow_streaming_from_bucket:
+          type: boolean
+          description: 'Specifies which [`Content-Disposition`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition) response header the recording link retrieved from the [access-link](/products/rest-api/recordings/get-recording-link) REST API endpoint will have. If `allow_streaming_from_bucket` is `false`, the header will be `Content-Dispostion: attachment`. If `allow_streaming_from_bucket` is `true`, the header will be `Content-Disposition: inline`.
+
+            To play the recording link directly in the browser or embed it in a video player, set this property to `true`. Defaults to `false`'
+    enforce_unique_user_ids:
+      type: boolean
+      description: Configures a domain or room to disallow multiple participants from having the same `user_id`. This feature can be enabled to prevent users from "sharing" meeting tokens. When enabled, a participant joining or reconnecting to a meeting will cause existing participants with the same user_id to be ejected.
+      default: false
+    transcription_bucket:
+      type: object
+      description: 'Configures an S3 bucket in which to store transcriptions.
+
+        See the [S3 bucket guide](/guides/products/live-streaming-recording/storing-recordings-in-a-custom-s3-bucket) for more information.'
+      properties:
+        bucket_name:
+          type: string
+          description: The name of the Amazon S3 bucket to use for transcription storage.
+          example: my-daily-recording
+        bucket_region:
+          type: string
+          description: The region which the specified S3 bucket is located in.
+          example: ap-south-1
+        assume_role_arn:
+          type: string
+          description: The Amazon Resource Name (ARN) of the role Daily should assume when storing the transcription in the specified bucket.
+          example: arn:aws:iam::555555555555:role/DailyS3AccessRole
+        allow_api_access:
+          type: boolean
+          description: Whether the transcription should be accessible using Daily's API.
     disable_rtmp_geo_fallback:
       type: boolean
       default: false
       description: 'Disable the fall back behavior of rtmp_geo. When rtmp_geo is set, we first try to connect to a media server in desired region. If a media server is not available in the desired region, we fall back to default region based on SFU''s region. This property disables this automatic fall back.
 
         When this property is set, we will trigger a recording/streaming error event when media worker is unavailable. Also, the client should retry recording/streaming.'
+    enable_mesh_sfu:
+      type: boolean
+      description: 'Configures a room to use multiple SFUs for a call''s media. This feature enables calls to scale to large sizes and to reduce latency between participants. It is recommended specifically for interactive live streaming.
+
+
+        See our [guide for interactive live streaming](/guides/scaling-calls/interactive-live-streaming-rtmp-output#daily-prebuilt-configurations-to-support-100-000-participants) for additional instruction.'
+    enable_transcription_storage:
+      type: boolean
+      description: Live transcriptions generated can be saved as WebVTT. This flag controls if transcription started with [`startTranscription()`](/products/daily-js/instance-methods/start-transcription) should be saved or not.
+      default: false
     domain:
       type: object
       additionalProperties: false
@@ -626,43 +647,39 @@ components:
 
 
                 Leave unset to keep the default Opus audio in a `.webm` container. See the [recording guide](/docs/guides/features/recording#gapless-transcoded-audio).'
-    enable_adaptive_simulcast:
-      type: boolean
-      description: Configures a domain or room to use [Daily Adaptive Bitrate](/guides/building-additional-features/daily-adaptive-bitrate). When enabled, along with configuring the client to [`allowAdaptiveLayers`](/products/daily-js/instance-methods/update-send-settings#sendsettings), the Daily client will continually adapt send settings to the current network conditions. `allowAdaptiveLayers` is `true` by default; if you haven't modified that setting, then setting `enable_adaptive_simulcast` to `true` will enable Daily Adaptive Bitrate for 1:1 calls.
-      default: true
-    recordings_bucket:
-      type: object
-      description: 'Configures an S3 bucket in which to store recordings.
-
-        See the [S3 bucket guide](/guides/products/live-streaming-recording/storing-recordings-in-a-custom-s3-bucket) for more information.
+    geo:
+      type: string
+      description: 'Daily uses signaling servers to manage all of the participants in a given call session. In an SFU/server mode call, the server will send and receive all audio and video from each participant. In a peer-to-peer call, each participant sends media directly to and from each other peer, but a signaling server still manages call state.
 
 
-        Properties:'
-      properties:
-        bucket_name:
-          type: string
-          description: The name of the Amazon S3 bucket to use for recording storage.
-          example: my-daily-recording
-        bucket_region:
-          type: string
-          description: The region which the specified S3 bucket is located in.
-          example: ap-south-1
-        assume_role_arn:
-          type: string
-          description: The Amazon Resource Name (ARN) of the role Daily should assume when storing the recording in the specified bucket.
-          example: arn:aws:iam::555555555555:role/DailyS3AccessRole
-        allow_api_access:
-          type: boolean
-          description: Controls whether the recording will be accessible using Daily's API.
-        allow_streaming_from_bucket:
-          type: boolean
-          description: 'Specifies which [`Content-Disposition`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition) response header the recording link retrieved from the [access-link](/products/rest-api/recordings/get-recording-link) REST API endpoint will have. If `allow_streaming_from_bucket` is `false`, the header will be `Content-Dispostion: attachment`. If `allow_streaming_from_bucket` is `true`, the header will be `Content-Disposition: inline`.
+        Daily runs servers in several different AWS regions to minimize latency for users around the world. The job of ''picking'' a call server is handled when the first participant joins a room. The first participant''s browser connects to a call server using Amazon''s Route 53 DNS resolution, which chooses a server in the region closest to them.
 
-            To play the recording link directly in the browser or embed it in a video player, set this property to `true`. Defaults to `false`'
-    enable_transcription_storage:
-      type: boolean
-      description: Live transcriptions generated can be saved as WebVTT. This flag controls if transcription started with [`startTranscription()`](/products/daily-js/instance-methods/start-transcription) should be saved or not.
-      default: false
+
+        This isn''t always optimal. For example, if one person joins in London, and then ten more people join from Cape Town, the call will still be hosted out of `eu-west-2` . The majority of the participants will have higher latency to the server than if one of them had joined first and the call was being hosted in `af-south-1`. In cases like this, you may want to configure your domain (or a specific room) to always choose a call server in a specific AWS region.
+
+
+        Available regions:
+
+        - `"af-south-1"` (Cape Town)
+
+        - `"ap-northeast-2"` (Seoul)
+
+        - `"ap-southeast-1"` (Singapore)
+
+        - `"ap-southeast-2"` (Sydney)
+
+        - `"ap-south-1"` (Mumbai)
+
+        - `"eu-central-1"` (Frankfurt)
+
+        - `"eu-west-2"` (London)
+
+        - `"sa-east-1"` (São Paulo)
+
+        - `"us-east-1"` (N. Virginia)
+
+        - `"us-west-2"` (Oregon)'
+      default: 'NULL'
   responses:
     '400':
       description: '400'

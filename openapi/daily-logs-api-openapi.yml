@@ -1,7 +1,24 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Daily batch/rooms logs API
-  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  title: Daily Logs API
+  description: 'The Daily REST API offers the ability to manage the following:
+
+    - Overall Domain Configuration
+
+    - Individual Room creation and config management
+
+    - Meeting token creation and validation
+
+    - Recording and compositing management
+
+    - Meeting analytics
+
+    - Logs and metrics
+
+    - Real-time presence
+
+
+    Please reach out to help@daily.co if we can help with anything'
   version: 1.1.1
   contact:
     name: Daily
@@ -12,7 +29,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: logs
+- name: Logs
 paths:
   /logs:
     get:
@@ -138,15 +155,17 @@ paths:
                         userSessionId:
                           type: string
                         peerId:
-                          type: string
-                          nullable: true
+                          type:
+                          - string
+                          - 'null'
                         domainName:
                           type: string
                         level:
                           type: integer
                         code:
-                          type: integer
-                          nullable: true
+                          type:
+                          - integer
+                          - 'null'
               examples:
                 Result:
                   value:
@@ -196,7 +215,7 @@ paths:
                     info: mtgSessionId or userSessionId is required
       deprecated: false
       tags:
-      - logs
+      - Logs
       security:
       - bearerAuth: []
   /logs/api:
@@ -286,12 +305,14 @@ paths:
                       format: date-time
                       description: The timestamp representing when the record was created.
                     request:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                       description: A JSON string representing the request body of this API request.
                     response:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                       description: A JSON string representing the response body of this API request.
               examples:
                 Result:
@@ -349,7 +370,7 @@ paths:
                     error: invalid-request-error
       deprecated: false
       tags:
-      - logs
+      - Logs
       security:
       - bearerAuth: []
 components:

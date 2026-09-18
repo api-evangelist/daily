@@ -1,7 +1,24 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Daily batch/rooms meetings API
-  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  title: Daily Meetings API
+  description: 'The Daily REST API offers the ability to manage the following:
+
+    - Overall Domain Configuration
+
+    - Individual Room creation and config management
+
+    - Meeting token creation and validation
+
+    - Recording and compositing management
+
+    - Meeting analytics
+
+    - Logs and metrics
+
+    - Real-time presence
+
+
+    Please reach out to help@daily.co if we can help with anything'
   version: 1.1.1
   contact:
     name: Daily
@@ -12,7 +29,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: meetings
+- name: Meetings
 paths:
   /meetings:
     get:
@@ -119,15 +136,17 @@ paths:
                             type: object
                             properties:
                               user_id:
-                                type: string
-                                nullable: true
+                                type:
+                                - string
+                                - 'null'
                                 description: The user ID if set on the meeting token, otherwise null.
                               participant_id:
                                 type: string
                                 description: Unique participant session ID.
                               user_name:
-                                type: string
-                                nullable: true
+                                type:
+                                - string
+                                - 'null'
                                 description: Display name of the participant.
                               join_time:
                                 type: integer
@@ -190,7 +209,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - meetings
+      - Meetings
       security:
       - bearerAuth: []
   /meetings/{meeting}:
@@ -225,7 +244,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - meetings
+      - Meetings
       security:
       - bearerAuth: []
   /meetings/{meeting}/participants:
@@ -290,32 +309,11 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - meetings
+      - Meetings
       security:
       - bearerAuth: []
 components:
   schemas:
-    meetings_meeting-get-res:
-      type: object
-      properties:
-        id:
-          type: string
-          example: d61cd7b2-a273-42b4-89bd-be763fd562c1
-        room:
-          type: string
-          example: room-name
-        start_time:
-          type: integer
-          example: 1672606399
-        duration:
-          type: integer
-          example: 2055
-        ongoing:
-          type: boolean
-          example: false
-        max_participants:
-          type: integer
-          example: 4
     meeting_participants-get-res:
       type: object
       properties:
@@ -342,6 +340,27 @@ components:
               max_participants:
                 type: integer
                 example: 4
+    meetings_meeting-get-res:
+      type: object
+      properties:
+        id:
+          type: string
+          example: d61cd7b2-a273-42b4-89bd-be763fd562c1
+        room:
+          type: string
+          example: room-name
+        start_time:
+          type: integer
+          example: 1672606399
+        duration:
+          type: integer
+          example: 2055
+        ongoing:
+          type: boolean
+          example: false
+        max_participants:
+          type: integer
+          example: 4
   responses:
     '400':
       description: '400'

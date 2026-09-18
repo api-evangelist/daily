@@ -1,19 +1,7 @@
 {
   "provider": "daily",
   "sources": [
-    "daily-batch-rooms-api-openapi.yml",
-    "daily-dialin-api-openapi.yml",
-    "daily-domain-api-openapi.yml",
-    "daily-domain-dialin-config-api-openapi.yml",
-    "daily-logs-api-openapi.yml",
-    "daily-meeting-tokens-api-openapi.yml",
-    "daily-meetings-api-openapi.yml",
-    "daily-phone-numbers-api-openapi.yml",
-    "daily-presence-api-openapi.yml",
-    "daily-recordings-api-openapi.yml",
-    "daily-rooms-api-openapi.yml",
-    "daily-transcript-api-openapi.yml",
-    "daily-webhooks-api-openapi.yml"
+    "_original/daily-openapi-original.json"
   ],
   "outputs": [
     "daily-batch-rooms-api-openapi.yml",
@@ -30,9 +18,43 @@
     "daily-transcript-api-openapi.yml",
     "daily-webhooks-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "daily-openapi-original.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "daily-openapi-original.json: declared missing tag: batch/rooms",
+    "daily-openapi-original.json: declared missing tag: dialin",
+    "daily-openapi-original.json: declared missing tag: domain",
+    "daily-openapi-original.json: declared missing tag: domain-dialin-config",
+    "daily-openapi-original.json: declared missing tag: logs",
+    "daily-openapi-original.json: declared missing tag: meeting-tokens",
+    "daily-openapi-original.json: declared missing tag: meetings",
+    "daily-openapi-original.json: declared missing tag: phone-numbers",
+    "daily-openapi-original.json: declared missing tag: presence",
+    "daily-openapi-original.json: declared missing tag: recordings",
+    "daily-openapi-original.json: declared missing tag: rooms",
+    "daily-openapi-original.json: declared missing tag: transcript",
+    "daily-openapi-original.json: declared missing tag: webhooks",
+    "superseded outputs removed: daily-dial-in-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 13 total)"
+  ],
+  "skipped": [
+    "daily-batch-rooms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-dial-in-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-domain-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-domain-dialin-config-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-meeting-tokens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-meetings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-phone-numbers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-presence-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-recordings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-rooms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-transcript-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "daily-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

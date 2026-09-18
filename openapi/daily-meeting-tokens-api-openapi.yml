@@ -1,7 +1,24 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Daily batch/rooms meeting-tokens API
-  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  title: Daily Meeting Tokens API
+  description: 'The Daily REST API offers the ability to manage the following:
+
+    - Overall Domain Configuration
+
+    - Individual Room creation and config management
+
+    - Meeting token creation and validation
+
+    - Recording and compositing management
+
+    - Meeting analytics
+
+    - Logs and metrics
+
+    - Real-time presence
+
+
+    Please reach out to help@daily.co if we can help with anything'
   version: 1.1.1
   contact:
     name: Daily
@@ -12,7 +29,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: meeting-tokens
+- name: Meeting Tokens
 paths:
   /meeting-tokens:
     post:
@@ -46,7 +63,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - meeting-tokens
+      - Meeting Tokens
       security:
       - bearerAuth: []
   /meeting-tokens/{meeting_token}:
@@ -112,59 +129,18 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - meeting-tokens
+      - Meeting Tokens
       security:
       - bearerAuth: []
 components:
   schemas:
-    permissions:
-      type: object
-      description: 'Specifies the initial default permissions for a non-[meeting-owner](/guides/configurations-and-settings/controlling-who-joins-a-meeting#meeting-owner-privileges) participant joining a call.
+    enable_terse_logging:
+      type: boolean
+      description: 'Reduces the volume of log messages. This feature should be enabled when there are more than 200 participants in a meeting to help improve performance.
 
 
-        Each permission (i.e. each of the properties listed below) can be configured in the meeting token, the room, and/or the domain, in decreasing order of precedence.
-
-
-        Participant admins (those with the `''participants''` value in their `canAdmin` permission) can also change participants'' permissions on the fly during a call using [`updateParticipant()`](/products/daily-js/instance-methods/update-participant#param-update-permissions) or [`updateParticipants()`](/products/daily-js/instance-methods/update-participants).'
-      properties:
-        hasPresence:
-          type: boolean
-          description: Whether the participant appears as "present" in the call, i.e. whether they appear in [`participants()`](/products/daily-js/instance-methods/participants).
-        canSend:
-          oneOf:
-          - type: boolean
-          - type: array
-            items:
-              type: string
-          description: 'Which types of media a participant should be permitted to send.
-
-
-            Can be:
-
-            - An Array containing any of `''video''`, `''audio''`, `''screenVideo''`, and `''screenAudio''`
-
-            - `true` (meaning "all")
-
-            - `false` (meaning "none")'
-        canReceive:
-          type: object
-          description: "Which media the participant should be permitted to receive. \n\n[See here for `canReceive` object format](/products/daily-js/instance-methods/participants#permissionscanreceive-properties)."
-        canAdmin:
-          oneOf:
-          - type: boolean
-          - type: array
-            items:
-              type: string
-          description: 'Which admin tasks a participant is permitted to do.
-
-
-            Can be:
-
-            - An array containing any of `''participants''`, `''streaming''`, or `''transcription''`
-
-            - `true` (meaning "all")
-
-            - `false` (meaning "none")'
+        See our [guides for supporting large experiences](/guides/scaling-calls) for additional instruction.'
+      default: false
     properties:
       type: object
       additionalProperties: false
@@ -322,13 +298,54 @@ components:
           default: en
         permissions:
           $ref: '#/components/schemas/permissions'
-    enable_terse_logging:
-      type: boolean
-      description: 'Reduces the volume of log messages. This feature should be enabled when there are more than 200 participants in a meeting to help improve performance.
+    permissions:
+      type: object
+      description: 'Specifies the initial default permissions for a non-[meeting-owner](/guides/configurations-and-settings/controlling-who-joins-a-meeting#meeting-owner-privileges) participant joining a call.
 
 
-        See our [guides for supporting large experiences](/guides/scaling-calls) for additional instruction.'
-      default: false
+        Each permission (i.e. each of the properties listed below) can be configured in the meeting token, the room, and/or the domain, in decreasing order of precedence.
+
+
+        Participant admins (those with the `''participants''` value in their `canAdmin` permission) can also change participants'' permissions on the fly during a call using [`updateParticipant()`](/products/daily-js/instance-methods/update-participant#param-update-permissions) or [`updateParticipants()`](/products/daily-js/instance-methods/update-participants).'
+      properties:
+        hasPresence:
+          type: boolean
+          description: Whether the participant appears as "present" in the call, i.e. whether they appear in [`participants()`](/products/daily-js/instance-methods/participants).
+        canSend:
+          oneOf:
+          - type: boolean
+          - type: array
+            items:
+              type: string
+          description: 'Which types of media a participant should be permitted to send.
+
+
+            Can be:
+
+            - An Array containing any of `''video''`, `''audio''`, `''screenVideo''`, and `''screenAudio''`
+
+            - `true` (meaning "all")
+
+            - `false` (meaning "none")'
+        canReceive:
+          type: object
+          description: "Which media the participant should be permitted to receive. \n\n[See here for `canReceive` object format](/products/daily-js/instance-methods/participants#permissionscanreceive-properties)."
+        canAdmin:
+          oneOf:
+          - type: boolean
+          - type: array
+            items:
+              type: string
+          description: 'Which admin tasks a participant is permitted to do.
+
+
+            Can be:
+
+            - An array containing any of `''participants''`, `''streaming''`, or `''transcription''`
+
+            - `true` (meaning "all")
+
+            - `false` (meaning "none")'
   responses:
     '400':
       description: '400'

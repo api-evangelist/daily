@@ -1,7 +1,24 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Daily batch/rooms domain-dialin-config API
-  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  title: Daily Domain Dialin Config API
+  description: 'The Daily REST API offers the ability to manage the following:
+
+    - Overall Domain Configuration
+
+    - Individual Room creation and config management
+
+    - Meeting token creation and validation
+
+    - Recording and compositing management
+
+    - Meeting analytics
+
+    - Logs and metrics
+
+    - Real-time presence
+
+
+    Please reach out to help@daily.co if we can help with anything'
   version: 1.1.1
   contact:
     name: Daily
@@ -279,46 +296,6 @@ components:
           - pin_dialin
         config:
           $ref: '#/components/schemas/domain_dialin_config_create_req'
-    domain_dialin_config_update_req:
-      type: object
-      description: the configuration object passed to update an existing pinless or pin dialin.
-      properties:
-        phone_number:
-          type: string
-          example: '+12555599999'
-          description: The phone number to update to the existing dialin config, in E.164 format (e.g. "+18058700061"). If the same number is used by any other config then the API will fail.
-        name_prefix:
-          type: string
-          example: my-identifier-prefix
-          description: Update the name_prefix of an existing config.
-        hmac:
-          type: string
-          example: 9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=
-          description: The [HMAC signature](/guides/products/dial-in-dial-out/dialin-pinless#hmac) used to verify the webhook called to "room_creation_api". (only for pinless_dialin type).
-        room_creation_api:
-          type: string
-          example: https://mydomain.com/api/create-room
-          description: The URL to call when a call is received on configured phoneNumber or sip_uri. (only for pinless_dialin type). flow is described [here](/guides/products/dial-in-dial-out/dialin-pinless#quick-overview)
-        hold_music_url:
-          type: string
-          example: https://mydomain.com/hold-music.mp3
-          description: The URL to the hold music to play when the call is received, (only for pinless_dialin type). The hold music must be a publicly accessible URL in MP3 format. The hold music must be less than 10MB in size and less than 60 seconds in duration. In pinless_dialin, the hold music will be played twice.
-        timeout_config:
-          type: object
-          description: The timeout configuration for the dialin config.
-          properties:
-            message:
-              type: string
-              example: No Agents are available right now, please try again later
-              description: If room_creation_api does not respond within the timeout period, this message will be played to the caller.
-        ivr_greeting:
-          type: object
-          description: configuration when the call is received on phone number (only for pin_dialin).
-          properties:
-            message:
-              type: string
-              example: Please enter the dialin code for the meeting, it is in the meeting invite
-              description: The message to play when call first connects.
     domain_dialin_config_create_req:
       type: object
       description: the configuration object passed to the POST API that creates the dialin config.
@@ -348,6 +325,46 @@ components:
           type: string
           example: https://mydomain.com/api/create-room
           description: The API to request when a call is received on configured phoneNumber or sip_uri. (only for pinless_dialin type). flow is described [here](/guides/products/dial-in-dial-out/dialin-pinless#quick-overview)
+        hold_music_url:
+          type: string
+          example: https://mydomain.com/hold-music.mp3
+          description: The URL to the hold music to play when the call is received, (only for pinless_dialin type). The hold music must be a publicly accessible URL in MP3 format. The hold music must be less than 10MB in size and less than 60 seconds in duration. In pinless_dialin, the hold music will be played twice.
+        timeout_config:
+          type: object
+          description: The timeout configuration for the dialin config.
+          properties:
+            message:
+              type: string
+              example: No Agents are available right now, please try again later
+              description: If room_creation_api does not respond within the timeout period, this message will be played to the caller.
+        ivr_greeting:
+          type: object
+          description: configuration when the call is received on phone number (only for pin_dialin).
+          properties:
+            message:
+              type: string
+              example: Please enter the dialin code for the meeting, it is in the meeting invite
+              description: The message to play when call first connects.
+    domain_dialin_config_update_req:
+      type: object
+      description: the configuration object passed to update an existing pinless or pin dialin.
+      properties:
+        phone_number:
+          type: string
+          example: '+12555599999'
+          description: The phone number to update to the existing dialin config, in E.164 format (e.g. "+18058700061"). If the same number is used by any other config then the API will fail.
+        name_prefix:
+          type: string
+          example: my-identifier-prefix
+          description: Update the name_prefix of an existing config.
+        hmac:
+          type: string
+          example: 9jyatvPWQfBymCGDOYPYKF/TRZXR+08Gj4bvPF78pH0=
+          description: The [HMAC signature](/guides/products/dial-in-dial-out/dialin-pinless#hmac) used to verify the webhook called to "room_creation_api". (only for pinless_dialin type).
+        room_creation_api:
+          type: string
+          example: https://mydomain.com/api/create-room
+          description: The URL to call when a call is received on configured phoneNumber or sip_uri. (only for pinless_dialin type). flow is described [here](/guides/products/dial-in-dial-out/dialin-pinless#quick-overview)
         hold_music_url:
           type: string
           example: https://mydomain.com/hold-music.mp3

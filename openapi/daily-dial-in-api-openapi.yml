@@ -1,7 +1,24 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Daily batch/rooms dialin API
-  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  title: Daily Dialin API
+  description: 'The Daily REST API offers the ability to manage the following:
+
+    - Overall Domain Configuration
+
+    - Individual Room creation and config management
+
+    - Meeting token creation and validation
+
+    - Recording and compositing management
+
+    - Meeting analytics
+
+    - Logs and metrics
+
+    - Real-time presence
+
+
+    Please reach out to help@daily.co if we can help with anything'
   version: 1.1.1
   contact:
     name: Daily
@@ -12,7 +29,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: dialin
+- name: Dial In
 paths:
   /dialin/pinlessCallUpdate:
     post:
@@ -47,7 +64,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - dialin
+      - Dial In
       security:
       - bearerAuth: []
 components:

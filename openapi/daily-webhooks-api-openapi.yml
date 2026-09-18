@@ -1,7 +1,24 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Daily batch/rooms webhooks API
-  description: "The Daily REST API offers the ability to manage the following: \n- Overall Domain Configuration\n- Individual Room creation and config management \n- Meeting token creation and validation\n- Recording and compositing management \n- Meeting analytics\n- Logs and metrics\n- Real-time presence\n\nPlease reach out to help@daily.co if we can help with anything"
+  title: Daily Webhooks API
+  description: 'The Daily REST API offers the ability to manage the following:
+
+    - Overall Domain Configuration
+
+    - Individual Room creation and config management
+
+    - Meeting token creation and validation
+
+    - Recording and compositing management
+
+    - Meeting analytics
+
+    - Logs and metrics
+
+    - Real-time presence
+
+
+    Please reach out to help@daily.co if we can help with anything'
   version: 1.1.1
   contact:
     name: Daily
@@ -12,7 +29,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: webhooks
+- name: Webhooks
 paths:
   /webhooks:
     get:
@@ -32,7 +49,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
     post:
@@ -55,7 +72,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
   /webhooks/{id}:
@@ -84,7 +101,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
     post:
@@ -115,7 +132,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
     delete:
@@ -137,7 +154,7 @@ paths:
           $ref: '#/components/responses/400'
       deprecated: false
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
 components:
@@ -199,63 +216,6 @@ components:
         hmac:
           type: string
           description: A secret that can be used to verify the signature of the webhook.
-    post_webhook:
-      type: object
-      additionalProperties: false
-      properties:
-        url:
-          type: string
-          description: The webhook server endpoint that was provided.
-        basicAuth:
-          type: string
-          description: The basic auth credentials that will be used to POST to the webhook URL.
-        retryType:
-          type: string
-          description: The retry configuration for this webhook endpoint to use. The default is circuit-breaker.
-          enum:
-          - circuit-breaker
-          - exponential
-        eventTypes:
-          description: The set of event types this webhook is subscribed to.
-          type: array
-          items:
-            type: string
-            enum:
-            - recording.ready-to-download
-            - recording.started
-            - recording.error
-            - streaming.started
-            - streaming.updated
-            - streaming.ended
-            - streaming.error
-            - meeting.started
-            - meeting.ended
-            - participant.joined
-            - participant.left
-            - waiting-participant.joined
-            - waiting-participant.left
-            - batch-processor.job-finished
-            - batch-processor.error
-            - dialout.connected
-            - dialout.error
-            - dialout.stopped
-            - dialout.warning
-            - dialout.answered
-            - dialin.ready
-            - dialin.connected
-            - dialin.error
-            - dialin.stopped
-            - dialin.warning
-            - transcript.ready-to-download
-            - transcript.started
-            - transcript.error
-            - calltransfer.triggered
-            - calltransfer.initiated
-            - calltransfer.answered
-            - calltransfer.completed
-        hmac:
-          type: string
-          description: A secret that can be used to verify the signature of the webhook. If not provided, an hmac will be provisioned for you and returned.
     webhook:
       type: object
       additionalProperties: false
@@ -336,6 +296,63 @@ components:
         updatedAt:
           type: string
           description: The ISO 8601 time of when this webhook was last updated.
+    post_webhook:
+      type: object
+      additionalProperties: false
+      properties:
+        url:
+          type: string
+          description: The webhook server endpoint that was provided.
+        basicAuth:
+          type: string
+          description: The basic auth credentials that will be used to POST to the webhook URL.
+        retryType:
+          type: string
+          description: The retry configuration for this webhook endpoint to use. The default is circuit-breaker.
+          enum:
+          - circuit-breaker
+          - exponential
+        eventTypes:
+          description: The set of event types this webhook is subscribed to.
+          type: array
+          items:
+            type: string
+            enum:
+            - recording.ready-to-download
+            - recording.started
+            - recording.error
+            - streaming.started
+            - streaming.updated
+            - streaming.ended
+            - streaming.error
+            - meeting.started
+            - meeting.ended
+            - participant.joined
+            - participant.left
+            - waiting-participant.joined
+            - waiting-participant.left
+            - batch-processor.job-finished
+            - batch-processor.error
+            - dialout.connected
+            - dialout.error
+            - dialout.stopped
+            - dialout.warning
+            - dialout.answered
+            - dialin.ready
+            - dialin.connected
+            - dialin.error
+            - dialin.stopped
+            - dialin.warning
+            - transcript.ready-to-download
+            - transcript.started
+            - transcript.error
+            - calltransfer.triggered
+            - calltransfer.initiated
+            - calltransfer.answered
+            - calltransfer.completed
+        hmac:
+          type: string
+          description: A secret that can be used to verify the signature of the webhook. If not provided, an hmac will be provisioned for you and returned.
   responses:
     '400':
       description: '400'
